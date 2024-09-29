@@ -3,13 +3,13 @@ import React from 'react';
 const About = () => {
   return (
     <div name="about" className='w-full min-h-screen text-white bg-gradient-to-b from-gray-800 to-black'>
-      <div className='max-w-screen-lg p-4 mx-auto py-20 justify-center w-full h-full'>
+      <div className='max-w-screen-xl p-4 mx-auto py-20 justify-center w-full h-full'>
         <div className='pb-8'>
           <h2 className='text-4xl sm:text-7xl font-bold text-white'>Skills & Hobbies</h2>
         </div>
         <div className='flex flex-col md:flex-row gap-8 mt-10 leading-relaxed'>
           {/* Programming Languages Card */}
-          <div className='relative p-6 bg-gray-900 rounded-lg shadow-lg overflow-hidden'>
+          <div className='relative p-6 bg-gray-900 rounded-lg shadow-lg overflow-hidden w-full'>
             <h3 className='text-2xl font-semibold mb-4'>Programming Languages:</h3>
             <ul className='list-disc ml-6'>
               <li>Java</li>
@@ -24,7 +24,7 @@ const About = () => {
           </div>
 
           {/* Frameworks & Libraries Card */}
-          <div className='relative p-6 bg-gray-900 rounded-lg shadow-lg overflow-hidden'>
+          <div className='relative p-6 bg-gray-900 rounded-lg shadow-lg overflow-hidden w-full'>
             <h3 className='text-2xl font-semibold mb-4'>Frameworks & Libraries:</h3>
             <ul className='list-disc ml-6'>
               <li>React</li>
@@ -36,7 +36,7 @@ const About = () => {
           </div>
 
           {/* Tools & Platforms Card */}
-          <div className='relative p-6 bg-gray-900 rounded-lg shadow-lg overflow-hidden'>
+          <div className='relative p-6 bg-gray-900 rounded-lg shadow-lg overflow-hidden w-full'>
             <h3 className='text-2xl font-semibold mb-4'>Tools & Platforms:</h3>
             <ul className='list-disc ml-6'>
               <li>Figma</li>
