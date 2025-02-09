@@ -31,7 +31,7 @@ const Projects = memo(function Projects() {
       description: "A recruitment platform with job posting, application tracking, and resume generation capabilities. Features advanced filtering for job listings.",
       tech: ["React.js", "Tailwind CSS", "Firebase"],
       github: "https://github.com/KrishnaNAcharya/HireIn-JP",
-      demo: "#"
+      demo: "example.com"
     },
     {
       id: 4,
@@ -39,7 +39,7 @@ const Projects = memo(function Projects() {
       description: "Health Insurance Management System with automated form generation, admin panel, and policy management. Built with modern web technologies.",
       tech: ["React.js", "Express.js", "PostgreSQL", "Firebase"],
       github: "https://github.com/KrishnaNAcharya/HIMS",
-      demo: "#"
+      demo: "example.com"
     },
     {
       id: 5,
@@ -47,7 +47,7 @@ const Projects = memo(function Projects() {
       description: "Data analysis tool generating statistical insights from uploaded datasets. Features Python backend for processing and metric extraction.",
       tech: ["Express.js", "Python", "Tailwind CSS"],
       github: "https://github.com/KrishnaNAcharya/Xtract",
-      demo: "#"
+      demo: "example.com"
     },
     {
       id: 6,
@@ -55,7 +55,7 @@ const Projects = memo(function Projects() {
       description: "ML model predicting insurance subscriptions using advanced algorithms. Achieved AUROC of 0.986 through optimized classifiers.",
       tech: ["Python", "ML", "XGBoost", "CatBoost"],
       github: "https://www.kaggle.com/code/krishnanacharya/insureflow",
-      demo: "#"
+      demo: "example.com"
     },
     // Work in Progress Projects
     {
@@ -64,7 +64,7 @@ const Projects = memo(function Projects() {
       description: "SAR image colorization using CycleGAN.",
       tech: ["Python","CycleGAN"],
       github: "https://github.com/KrishnaNAcharya/SAR",
-      demo: "#",
+      demo: "example.com",
       wip: true
     },
     {
@@ -73,7 +73,7 @@ const Projects = memo(function Projects() {
       description: "Website of IDEA, AI and Data Science Department, NMAMIT.",
       tech: ["Next.js", "GSAP", "Tailwind CSS"],
       github: "#",
-      demo: "#",
+      demo: "example.com",
       wip: true
     },
     {
@@ -82,7 +82,7 @@ const Projects = memo(function Projects() {
       description: "Work in Progress",
       tech: [],
       github: "#",
-      demo: "#",
+      demo: "example.com",
       wip: true
     }
   ];
