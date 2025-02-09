@@ -1,14 +1,74 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
+@layer base {
   html {
-    font-family: "Raleway", sans-serif;
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-[#1a1a1a] text-white;
+    background-image: url('/src/assets/crissxcross.png');
+    background-repeat: repeat;
+    background-size: 100px;
+    background-position: center;
+   
+  }
+
+  section {
+    @apply bg-transparent;
+  }
+}
+
+* {
+  @apply transition-colors duration-200;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-[#1a1a1a];
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-emerald-500/50 rounded-full hover:bg-emerald-500 transition-colors duration-300;
+}
+
+@layer utilities {
+  .bg-pattern {
+    background-image: url('/src/assets/crossxcross.png');
+    background-repeat: repeat;
+    background-size: 30px;
+    background-position: center;
+    background-blend-mode: soft-light;
+  }
+}
+
+@layer components {
+  .btn-fill-animation {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+  }
+
+  .btn-fill-animation::before {
+    content: '';
+    position: absolute;
+    background: #10B981;
+    inset: 0;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: -1;
+  }
+
+  .btn-fill-animation:hover::before {
+    transform: translateX(0);
   }
 }
 
