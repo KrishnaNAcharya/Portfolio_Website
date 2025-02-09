@@ -63,7 +63,7 @@ const Projects = () => {
       title: "NASAR",
       description: "SAR image colorization using CycleGAN.",
       tech: ["Python","CycleGAN"],
-      github: "#",
+      github: "https://github.com/KrishnaNAcharya/SAR",
       demo: "#",
       wip: true
     },
