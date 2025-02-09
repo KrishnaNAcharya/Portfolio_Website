@@ -15,7 +15,7 @@ const Projects = memo(function Projects() {
       description: "AI audio tool featuring sentiment analysis, word clouds, entity recognition, and activity tracking. Integrated with Deepgram API for advanced voice processing.",
       tech: ["Next.js", "AI", "NLP", "Deepgram"],
       github: "https://github.com/hackfest-dev/HF24-Geek4",
-      demo: "#"
+      demo: "example.com"
     },
     {
       id: 2,
