@@ -1,10 +1,10 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, memo } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Projects = () => {
+const Projects = memo(function Projects() {
   const headerRef = useRef(null);
   const projectsRef = useRef([]);
 
@@ -175,6 +175,6 @@ const Projects = () => {
       </div>
     </section>
   );
-};
+});
 
 export default Projects;

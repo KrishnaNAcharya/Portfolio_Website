@@ -1,24 +1,27 @@
-import { useState } from 'react';
-import NavBar from "./components/NavBar"
-import Home from "./components/Home"
-import Projects from "./components/Projects"
-import About from "./components/About"
-import Contact from "./components/Contact"
+import React, { Suspense, lazy, useState } from 'react';
+import Loading from './components/Loading';
+
+// Lazy load components
+const NavBar = lazy(() => import('./components/NavBar'));
+const Home = lazy(() => import('./components/Home'));
+const Projects = lazy(() => import('./components/Projects'));
+const About = lazy(() => import('./components/About'));
+const Contact = lazy(() => import('./components/Contact'));
 
 function App() {
   const [loading, setLoading] = useState(true);
-  
+
   return (
-    <>
-      <div>
+    <div>
+      <Suspense fallback={<Loading />}>
         <NavBar loading={loading} />
         <Home setLoading={setLoading} />
         <Projects />
         <About />
         <Contact />
-      </div>
-    </>
-  )
+      </Suspense>
+    </div>
+  );
 }
 
-export default App
+export default App;
