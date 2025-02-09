@@ -82,7 +82,7 @@ const About = () => {
           <div ref={el => cardsRef.current[0] = el} 
             className='shadow-lg shadow-emerald-900/20 rounded-lg overflow-hidden bg-[#2a2a2a]/50 backdrop-blur-sm border border-emerald-500/20 hover:border-emerald-500 transition-colors duration-300'>
             <div className="p-6">
-              <h3 className='text-2xl font-semibold mb-4'>Programming Languages</h3>
+              <h3 className='text-2xl font-semibold mb-4 text-center'>Programming Languages</h3>
               <ul className='list-disc ml-6'>
                 <li>Java</li>
                 <li>C</li>
@@ -99,7 +99,7 @@ const About = () => {
           <div ref={el => cardsRef.current[1] = el}
             className='shadow-lg shadow-emerald-900/20 rounded-lg overflow-hidden bg-[#2a2a2a]/50 backdrop-blur-sm border border-emerald-500/20 hover:border-emerald-500 transition-colors duration-300'>
             <div className="p-6">
-              <h3 className='text-2xl font-semibold mb-4'>Frameworks & Libraries</h3>
+              <h3 className='text-2xl font-semibold mb-4 text-center'>Frameworks & Libraries</h3>
               <ul className='list-disc ml-6'>
                 <li>React.js</li>
                 <li>Next.js</li>
@@ -114,7 +114,7 @@ const About = () => {
           <div ref={el => cardsRef.current[2] = el}
             className='shadow-lg shadow-emerald-900/20 rounded-lg overflow-hidden bg-[#2a2a2a]/50 backdrop-blur-sm border border-emerald-500/20 hover:border-emerald-500 transition-colors duration-300'>
             <div className="p-6">
-              <h3 className='text-2xl font-semibold mb-4'>Tools & Platforms</h3>
+              <h3 className='text-2xl font-semibold mb-4 text-center'>Tools & Platforms</h3>
               <ul className='list-disc ml-6'>
                 <li>Figma</li>
                 <li>Firebase</li>
@@ -130,30 +130,30 @@ const About = () => {
         </div>
 
         {/* Text Sections */}
-        <div ref={el => sectionsRef.current[0] = el}>
-          <h3 className='text-2xl font-semibold mt-8 mb-4'>Current Focus</h3>
+        <div ref={el => sectionsRef.current[0] = el} className='text-justify'>
+          <h3 className='text-2xl font-semibold mt-8 mb-4 text-center sm:text-left'>Current Focus</h3>
           <p>
-            I am currently sharpening my skills in Data Structures and Algorithms (DSA) to improve my problem-solving abilities. 
-            Additionally, I am eager to learn Spring Boot in the near future.
+          I am currently sharpening my skills in Data Structures and Algorithms (DSA) to improve my problem-solving abilities. 
+          Additionally, I am eager to learn Spring Boot in the near future.
           </p>
         </div>
 
-        <div ref={el => sectionsRef.current[1] = el}>
-          <h3 className='text-2xl font-semibold mt-8 mb-4'>Additional Interests</h3>
+        <div ref={el => sectionsRef.current[1] = el} className='text-justify'>
+          <h3 className='text-2xl font-semibold mt-8 mb-4 text-center sm:text-left'>Additional Interests</h3>
           <p>
-            I have a foundational understanding of Machine Learning (ML) and Large Language Models (LLMs), which further fuels my passion for exploring cutting-edge technology solutions.
+          I have a foundational understanding of Machine Learning (ML) and Large Language Models (LLMs), which further fuels my passion for exploring cutting-edge technology solutions.
           </p>
         </div>
 
-        <div ref={el => sectionsRef.current[2] = el}>
-          <h3 className='text-2xl font-semibold mt-8 mb-4'>What I do in my free time?</h3>
+        <div ref={el => sectionsRef.current[2] = el} className='text-justify'>
+          <h3 className='text-2xl font-semibold mt-8 mb-4 text-center sm:text-left'>What I do in my free time?</h3>
           <p>
-            I enjoy listening to music, playing video games, and exploring anything related to technologies, new and old alike. Additionally, I love  photography and cooking.
+          I enjoy listening to music, playing video games, and exploring anything related to technologies, new and old alike. Additionally, I love  photography and cooking.
           </p>
         </div>
       </div>
     </section>
   );
-}
+};
 
 export default About;
