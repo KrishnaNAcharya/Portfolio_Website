@@ -65,7 +65,7 @@ const Home = ({ setLoading }) => {
   }
 
   return (
-    <section name="home" className="min-h-screen w-full pt-20 md:pt-24 pb-16 md:pb-20 flex items-center">
+    <section name="home" className="min-h-screen w-full pt-10 md:pt-24 pb-8 md:pb-16 flex items-center">
       <div className='max-w-[1440px] w-full mx-auto flex flex-col items-center justify-center px-4 md:px-10 md:flex-row md:gap-20'>
         <div className='flex flex-col justify-center w-full text-center md:text-left md:w-3/5'>
           <h2 ref={textRef} className='text-4xl sm:text-5xl md:text-[5.5rem] font-bold text-white'>
@@ -90,7 +90,7 @@ const Home = ({ setLoading }) => {
             </a>
           </div>
         </div>
-        <div ref={imageRef} className='mt-8 md:mt-10 mb-16 md:mb-20 w-full md:w-2/5 flex justify-center'>
+        <div ref={imageRef} className='hidden md:flex mt-10 mb-20 md:mt-0 md:mb-0 w-full md:w-2/5 justify-center'>
           <img 
             src={Hero} 
             alt="Hero" 

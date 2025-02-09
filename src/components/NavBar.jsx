@@ -70,7 +70,26 @@ const NavBar = ({ loading }) => {
         {nav ? <FaTimes size={30} /> : <FaBars size={30} />}
       </div>
 
-      <ul className={`flex flex-col md:flex-row md:items-center absolute md:static top-16 left-0 w-full md:w-auto h-[calc(100vh-4rem)] md:h-auto bg-[#2a2a2a]/95 md:bg-transparent justify-center items-center gap-4 transition-transform duration-300 ease-out ${nav ? 'translate-x-0' : '-translate-x-full md:translate-x-0'} md:ml-auto`}>
+      {/* Mobile menu popup */}
+      <div className={`md:hidden fixed inset-0 bg-black/20 backdrop-blur-sm transition-opacity duration-300 ${nav ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} onClick={() => setNav(false)}>
+        <div className={`fixed left-0 top-16 w-64 bg-[#2a2a2a]/95 backdrop-blur-md border-r border-b border-emerald-500/20 rounded-br-xl shadow-xl transition-transform duration-300 ${nav ? 'translate-x-0' : '-translate-x-full'}`} onClick={e => e.stopPropagation()}>
+          <ul className="flex flex-col p-4 gap-4">
+            {links.map(({ id, link }, index) => (
+              <li 
+                key={id} 
+                ref={el => linksRef.current[index] = el}
+                onClick={() => handleClick(link)}
+                className="px-4 py-2 cursor-pointer font-medium hover:text-emerald-500 transition-colors duration-200"
+              >
+                {link}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      {/* Desktop menu */}
+      <ul className="hidden md:flex items-center ml-auto gap-4">
         {links.map(({ id, link }, index) => (
           <li 
             key={id} 
