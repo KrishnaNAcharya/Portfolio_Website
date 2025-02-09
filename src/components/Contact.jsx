@@ -6,7 +6,9 @@ const Contact = () => {
   return (
     <section name="contact" className="w-full py-8 mt-auto">
       <div className="max-w-screen-lg w-full px-4 py-8 mx-auto">
-        <h2 className="text-4xl sm:text-6xl font-bold text-center mb-8">Contact Me</h2>
+        <div className="flex justify-center mb-8">
+          <h2 className="text-4xl sm:text-6xl font-bold inline border-b-4 border-emerald-500">Contact Me</h2>
+        </div>
         <div className="flex flex-col items-center">
           <div className="flex flex-wrap justify-center gap-8 md:gap-12 pb-4">
             <a href="https://github.com/KrishnaNAcharya" target="_blank" rel="noopener noreferrer" 

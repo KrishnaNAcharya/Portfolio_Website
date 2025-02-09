@@ -127,44 +127,43 @@ const Projects = memo(function Projects() {
   }, []);
 
   return (
-    <section name="projects" className="w-full min-h-screen">
-      <div className="max-w-screen-xl p-4 mx-auto py-0">
-        <div ref={headerRef} className="pb-8 text-center sm:text-left">
-          <h2 className="text-4xl sm:text-7xl font-bold text-white">Projects</h2>
-          <p className="text-xl py-6">Check out some of my works!</p>
+    <section name="projects" className="min-h-screen w-full pt-16 md:pt-24 pb-16 md:pb-20">
+      <div className="max-w-[1440px] mx-auto p-4 md:p-10 flex flex-col justify-center w-full h-full">
+        <div className="pb-10 md:pb-16 text-center sm:text-left">
+          <p className="text-5xl sm:text-8xl font-bold inline border-b-4 border-emerald-500 text-white">Projects</p>
         </div>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-10">
           {projects.map(({ id, title, description, tech, github, demo, wip }, index) => (
             <div
               key={id}
               ref={el => projectsRef.current[index] = el}
-              className="shadow-lg shadow-emerald-900/20 rounded-lg overflow-hidden bg-[#2a2a2a]/50 backdrop-blur-sm border border-emerald-500/20 hover:border-emerald-500 transition-colors duration-300 flex flex-col"
+              className="shadow-lg shadow-emerald-900/20 rounded-lg overflow-hidden bg-[#2a2a2a]/50 backdrop-blur-sm border border-emerald-500/20 hover:border-emerald-500 transition-colors duration-300 flex flex-col h-full"
             >
-              <div className="p-6 flex flex-col flex-grow">
-                <div className="flex justify-between items-start mb-2">
-                  <h3 className="text-2xl font-bold">{title}</h3>
+              <div className="p-6 md:p-8 flex flex-col flex-grow">
+                <div className="flex justify-between items-start mb-4">
+                  <h3 className="text-2xl md:text-3xl font-bold">{title}</h3>
                   {wip && (
-                    <span className="px-2 py-1 text-xs bg-emerald-500/20 text-emerald-500 rounded-full">
+                    <span className="px-2 py-1 text-sm bg-emerald-500/20 text-emerald-500 rounded-full">
                       WIP
                     </span>
                   )}
                 </div>
-                <p className="mb-4 text-gray-300">{description}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
+                <p className="mb-4 md:mb-6 text-gray-300 text-base md:text-lg text-justify">{description}</p>
+                <div className="flex flex-wrap gap-2 mb-4 md:mb-6">
                   {tech.map((item, index) => (
-                    <span key={index} className="px-2 py-1 bg-emerald-500/20 text-emerald-500 rounded-full text-sm">
+                    <span key={index} className="px-3 py-1 bg-emerald-500/20 text-emerald-500 rounded-full text-base">
                       {item}
                     </span>
                   ))}
                 </div>
                 <div className="flex justify-between mt-auto pt-4">
                   <a href={github} target="_blank" rel="noopener noreferrer" 
-                    className="px-6 py-2 bg-emerald-500 hover:bg-emerald-600 rounded-lg duration-200">
+                    className="px-6 py-2 bg-emerald-500 hover:bg-emerald-600 rounded-lg duration-200 text-base md:text-lg">
                     Code
                   </a>
                   <a href={demo} target="_blank" rel="noopener noreferrer"
-                    className="px-6 py-2 border border-emerald-500 hover:bg-emerald-500/20 rounded-lg duration-200">
+                    className="px-6 py-2 border border-emerald-500 hover:bg-emerald-500/20 rounded-lg duration-200 text-base md:text-lg">
                     Demo
                   </a>
                 </div>

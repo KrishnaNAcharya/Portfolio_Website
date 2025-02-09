@@ -65,35 +65,36 @@ const Home = ({ setLoading }) => {
   }
 
   return (
-    <section name="home" className="min-h-screen w-full pt-20 pb-16 md:pb-0 flex items-center">
-      <div className='max-w-screen-xl w-full mx-auto flex flex-col items-center justify-center px-4 md:px-8 md:flex-row md:gap-16'>
+    <section name="home" className="min-h-screen w-full pt-20 md:pt-24 pb-16 md:pb-20 flex items-center">
+      <div className='max-w-[1440px] w-full mx-auto flex flex-col items-center justify-center px-4 md:px-10 md:flex-row md:gap-20'>
         <div className='flex flex-col justify-center w-full text-center md:text-left md:w-3/5'>
-          <h2 ref={textRef} className='text-3xl sm:text-4xl md:text-7xl font-bold text-white'>
+          <h2 ref={textRef} className='text-4xl sm:text-5xl md:text-[5.5rem] font-bold text-white'>
             Hello there! My name is {" "}
             <span className='animate-shine'>
               Krishna
             </span>.
           </h2>
-          <p ref={descriptionRef} className="text-white text-base md:text-xl py-4 max-w-2xl text-justify leading-relaxed">
+          <p ref={descriptionRef} className="text-white text-lg md:text-2xl py-4 md:py-5 max-w-3xl text-justify leading-relaxed">
             Hi there! I'm Krishna N Acharya, a 3rd-year student at NMAMIT, currently pursuing a degree in Artificial Intelligence and Data Science.
             I'm passionate about full-stack development and love exploring the latest technologies. Outside of coding,
             when I'm not glued to my keyboard, you can find me catching up on the latest tech news or trying out new technologies.
             Let's connect and talk tech, cats or dogs, and anything else that sparks our interest!
           </p>
-          <br />
-          <div ref={buttonRef}>
-            <a href="https://drive.google.com/file/d/1x_qaE6DPhO02aUtoKaOBBJ4VJO3hhLxj/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-              <button className="text-white group border-2 border-emerald-500 px-6 py-3 my-2 flex items-center btn-fill-animation hover:border-emerald-500">
-                Resume <MdArrowRightAlt className="ml-1 group-hover:translate-x-1 transition-transform duration-300" />
+          <br className="hidden md:block" />
+          <div ref={buttonRef} className="w-full md:w-auto">
+            <a href="https://drive.google.com/file/d/1x_qaE6DPhO02aUtoKaOBBJ4VJO3hhLxj/view?usp=sharing" target="_blank" rel="noopener noreferrer" 
+               className="w-full md:w-auto">
+              <button className="w-full md:w-auto text-white group border-2 border-emerald-500 px-8 py-4 my-3 flex items-center justify-center md:justify-start btn-fill-animation hover:border-emerald-500">
+                Resume <MdArrowRightAlt className="ml-2 text-xl group-hover:translate-x-1 transition-transform duration-300" />
               </button>
             </a>
           </div>
         </div>
-        <div ref={imageRef} className='mt-8 mb-16 md:mt-0 md:mb-0 w-full md:w-2/5 flex justify-center'>
+        <div ref={imageRef} className='mt-8 md:mt-10 mb-16 md:mb-20 w-full md:w-2/5 flex justify-center'>
           <img 
             src={Hero} 
             alt="Hero" 
-            className="rounded-2xl w-4/5 md:w-full object-cover border-2 border-emerald-500 transition-colors duration-300 shadow-lg shadow-emerald-900/20" 
+            className="rounded-3xl w-4/5 md:w-full object-cover border-3 border-emerald-500 transition-colors duration-300 shadow-xl shadow-emerald-900/20" 
           />
         </div>
       </div>
