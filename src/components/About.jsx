@@ -72,54 +72,60 @@ const About = () => {
   return (
     <section name="skills" className="w-full min-h-screen">
       <div className='max-w-screen-xl p-4 mx-auto py-20 justify-center w-full h-full'>
-        <div ref={headerRef} className='pb-8'>
+        <div ref={headerRef} className='pb-8 text-center sm:text-left'>
           <h2 className='text-4xl sm:text-7xl font-bold text-white'>Skills & Hobbies</h2>
         </div>
         
-        <div className='flex flex-col md:flex-row gap-8 mt-10 leading-relaxed'>
+        {/* Changed from flex to grid layout to match Projects */}
+        <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0'>
           {/* Programming Languages Card */}
-          <div ref={el => cardsRef.current[0] = el} className='relative p-6 bg-[#2a2a2a]/50 backdrop-blur-sm rounded-lg shadow-lg shadow-emerald-900/20 overflow-hidden w-full border border-emerald-500/20 hover:border-emerald-500 transition-colors duration-300'>
-            <h3 className='text-2xl font-semibold mb-4'>Programming Languages</h3>
-            <ul className='list-disc ml-6'>
-              <li>Java</li>
-              <li>C</li>
-              <li>C++</li>
-              <li>Python</li>
-              <li>TypeScript</li>
-              <li>JavaScript</li>
-              <li>R</li>
-            </ul>
-            <div className="absolute inset-0 border border-transparent rounded-lg animate-border1"></div>
+          <div ref={el => cardsRef.current[0] = el} 
+            className='shadow-lg shadow-emerald-900/20 rounded-lg overflow-hidden bg-[#2a2a2a]/50 backdrop-blur-sm border border-emerald-500/20 hover:border-emerald-500 transition-colors duration-300'>
+            <div className="p-6">
+              <h3 className='text-2xl font-semibold mb-4'>Programming Languages</h3>
+              <ul className='list-disc ml-6'>
+                <li>Java</li>
+                <li>C</li>
+                <li>C++</li>
+                <li>Python</li>
+                <li>TypeScript</li>
+                <li>JavaScript</li>
+                <li>R</li>
+              </ul>
+            </div>
           </div>
 
           {/* Frameworks & Libraries Card */}
-          <div ref={el => cardsRef.current[1] = el} className='relative p-6 bg-[#2a2a2a]/50 backdrop-blur-sm rounded-lg shadow-lg shadow-emerald-900/20 overflow-hidden w-full border border-emerald-500/20 hover:border-emerald-500 transition-colors duration-300'>
-            <h3 className='text-2xl font-semibold mb-4'>Frameworks & Libraries</h3>
-            <ul className='list-disc ml-6'>
-              <li>React.js</li>
-              <li>Next.js</li>
-              <li>Node.js</li>
-              <li>Express.js</li>
-              <li>Tailwind CSS</li>
-              
-            </ul>
-            <div className="absolute inset-0 border border-transparent rounded-lg animate-border2"></div>
+          <div ref={el => cardsRef.current[1] = el}
+            className='shadow-lg shadow-emerald-900/20 rounded-lg overflow-hidden bg-[#2a2a2a]/50 backdrop-blur-sm border border-emerald-500/20 hover:border-emerald-500 transition-colors duration-300'>
+            <div className="p-6">
+              <h3 className='text-2xl font-semibold mb-4'>Frameworks & Libraries</h3>
+              <ul className='list-disc ml-6'>
+                <li>React.js</li>
+                <li>Next.js</li>
+                <li>Node.js</li>
+                <li>Express.js</li>
+                <li>Tailwind CSS</li>
+              </ul>
+            </div>
           </div>
 
           {/* Tools & Platforms Card */}
-          <div ref={el => cardsRef.current[2] = el} className='relative p-6 bg-[#2a2a2a]/50 backdrop-blur-sm rounded-lg shadow-lg shadow-emerald-900/20 overflow-hidden w-full border border-emerald-500/20 hover:border-emerald-500 transition-colors duration-300'>
-            <h3 className='text-2xl font-semibold mb-4'>Tools & Platforms</h3>
-            <ul className='list-disc ml-6'>
-              <li>Figma</li>
-              <li>Firebase</li>
-              <li>GitHub</li>
-              <li>MySQL</li>
-              <li>PostgreSQL</li>
-              <li>VS Code</li>
-              <li>Kaggle</li>
-              <li>NeonDB</li>
-            </ul>
-            <div className="absolute inset-0 border border-transparent rounded-lg animate-border3"></div>
+          <div ref={el => cardsRef.current[2] = el}
+            className='shadow-lg shadow-emerald-900/20 rounded-lg overflow-hidden bg-[#2a2a2a]/50 backdrop-blur-sm border border-emerald-500/20 hover:border-emerald-500 transition-colors duration-300'>
+            <div className="p-6">
+              <h3 className='text-2xl font-semibold mb-4'>Tools & Platforms</h3>
+              <ul className='list-disc ml-6'>
+                <li>Figma</li>
+                <li>Firebase</li>
+                <li>GitHub</li>
+                <li>MySQL</li>
+                <li>PostgreSQL</li>
+                <li>VS Code</li>
+                <li>Kaggle</li>
+                <li>NeonDB</li>
+              </ul>
+            </div>
           </div>
         </div>
 

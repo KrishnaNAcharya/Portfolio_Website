@@ -129,7 +129,7 @@ const Projects = memo(function Projects() {
   return (
     <section name="projects" className="w-full min-h-screen">
       <div className="max-w-screen-xl p-4 mx-auto py-0">
-        <div ref={headerRef} className="pb-8">
+        <div ref={headerRef} className="pb-8 text-center sm:text-left">
           <h2 className="text-4xl sm:text-7xl font-bold text-white">Projects</h2>
           <p className="text-xl py-6">Check out some of my works!</p>
         </div>

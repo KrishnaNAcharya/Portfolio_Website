@@ -65,16 +65,16 @@ const Home = ({ setLoading }) => {
   }
 
   return (
-    <section name="home" className="h-screen w-full">
-      <div className='max-w-screen-xl w-full mx-auto flex flex-col items-center justify-center h-full px-8 md:flex-row md:gap-16'>
-        <div className='flex flex-col justify-center h-full w-full text-center md:text-left md:w-3/5'>
-          <h2 ref={textRef} className='text-4xl sm:text-7xl font-bold text-white mt-24 md:mt-0'>
+    <section name="home" className="min-h-screen w-full pt-20 pb-16 md:pb-0 flex items-center">
+      <div className='max-w-screen-xl w-full mx-auto flex flex-col items-center justify-center px-4 md:px-8 md:flex-row md:gap-16'>
+        <div className='flex flex-col justify-center w-full text-center md:text-left md:w-3/5'>
+          <h2 ref={textRef} className='text-3xl sm:text-4xl md:text-7xl font-bold text-white'>
             Hello there! My name is {" "}
             <span className='animate-shine'>
               Krishna
             </span>.
           </h2>
-          <p ref={descriptionRef} className="text-white text-xl py-4 max-w-2xl text-justify leading-relaxed">
+          <p ref={descriptionRef} className="text-white text-base md:text-xl py-4 max-w-2xl text-justify leading-relaxed">
             Hi there! I'm Krishna N Acharya, a 3rd-year student at NMAMIT, currently pursuing a degree in Artificial Intelligence and Data Science.
             I'm passionate about full-stack development and love exploring the latest technologies. Outside of coding,
             when I'm not glued to my keyboard, you can find me catching up on the latest tech news or trying out new technologies.
@@ -89,11 +89,11 @@ const Home = ({ setLoading }) => {
             </a>
           </div>
         </div>
-        <div ref={imageRef} className='mt-10 md:mt-0 w-full md:w-2/5'>
+        <div ref={imageRef} className='mt-8 mb-16 md:mt-0 md:mb-0 w-full md:w-2/5 flex justify-center'>
           <img 
             src={Hero} 
             alt="Hero" 
-            className="rounded-2xl mx-auto w-2/3 md:w-full object-cover border-2 border-emerald-500 transition-colors duration-300 shadow-lg shadow-emerald-900/20" 
+            className="rounded-2xl w-4/5 md:w-full object-cover border-2 border-emerald-500 transition-colors duration-300 shadow-lg shadow-emerald-900/20" 
           />
         </div>
       </div>
