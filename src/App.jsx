@@ -1,5 +1,6 @@
 import React, { Suspense, lazy, useState } from 'react';
 import Loading from './components/Loading';
+import { Analytics } from "@vercel/analytics/react"
 
 // Lazy load components
 const NavBar = lazy(() => import('./components/NavBar'));
@@ -13,6 +14,7 @@ function App() {
 
   return (
     <div>
+       <Analytics />
       <Suspense fallback={<Loading />}>
         <NavBar loading={loading} />
         <Home setLoading={setLoading} />
