@@ -82,7 +82,7 @@ const Home = ({ setLoading }) => {
           </p>
           <br className="hidden md:block" />
           <div ref={buttonRef} className="w-full md:w-auto">
-            <a href="https://drive.google.com/file/d/1BeqDaKvYRbmk5IcOLNsmMQVe__MPUl3K/view?usp=sharing" target="_blank" rel="noopener noreferrer" 
+            <a href="https://drive.google.com/file/d/1raIGG08QHu27SR1yAcOiRobjlQ4LMY7V/view?usp=sharing" target="_blank" rel="noopener noreferrer" 
                className="w-full md:w-auto">
               <button className="w-full md:w-auto text-white group border-2 border-emerald-500 px-8 py-4 my-3 flex items-center justify-center md:justify-start btn-fill-animation hover:border-emerald-500">
                 Resume <MdArrowRightAlt className="ml-2 text-xl group-hover:translate-x-1 transition-transform duration-300" />
