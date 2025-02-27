@@ -23,7 +23,7 @@ const Projects = memo(function Projects() {
       description: "Modern portfolio website with smooth animations, responsive design, and interactive UI. Built with React and styled with Tailwind CSS.",
       tech: ["React", "GSAP", "Tailwind CSS", "ShadCN"],
       github: "https://github.com/KrishnaNAcharya/portfolio",
-      demo: "https://portfolio-nine-xi-33.vercel.app/"
+      demo: "https://krishnanacharya.vercel.app"
     },
     {
       id: 3,
@@ -31,7 +31,7 @@ const Projects = memo(function Projects() {
       description: "A recruitment platform with job posting, application tracking, and resume generation capabilities. Features advanced filtering for job listings.",
       tech: ["React.js", "Tailwind CSS", "Firebase"],
       github: "https://github.com/KrishnaNAcharya/HireIn-JP",
-      demo: "example.com"
+      demo: "https://hire-in-jp.vercel.app"
     },
     {
       id: 4,
@@ -39,7 +39,7 @@ const Projects = memo(function Projects() {
       description: "Health Insurance Management System with automated form generation, admin panel, and policy management. Built with modern web technologies.",
       tech: ["React.js", "Express.js", "PostgreSQL", "Firebase"],
       github: "https://github.com/KrishnaNAcharya/HIMS",
-      demo: "example.com"
+      demo: "https://hims-f.onrender.com"
     },
     {
       id: 5,
