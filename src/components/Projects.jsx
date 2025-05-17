@@ -12,16 +12,27 @@ const Projects = memo(function Projects() {
     {
       id: 1,
       title: "SonicSeeker",
-      description: "AI audio tool featuring sentiment analysis, word clouds, entity recognition, and activity tracking. Integrated with Deepgram API for advanced voice processing.",
-      tech: ["Next.js", "AI", "NLP", "Deepgram"],
-      github: "https://github.com/hackfest-dev/HF24-Geek4",
-      demo: "example.com"
+      description: "AI-driven audio and video analysis tool for transcription, diarization, summarization, and translation. Added NLP-based entity and sentiment analysis, waveform visualization, and mind map generation which runs locally.",
+      tech: [
+        "Next.js",
+        "Faster-Whisper",
+        "Compromise.js",
+        "Sentiment.js",
+        "facebooknllb",
+        "facebookbart",
+        "Ollama Ilama V3",
+        "Aceternity",
+        "MongoDB"
+
+      ],
+      github: "https://github.com/hackfest-dev/Hackfest25-56",
+      //demo: "example.com"
     },
     {
       id: 2,
       title: "Portfolio Website",
       description: "Modern portfolio website with smooth animations, responsive design, and interactive UI. Built with React and styled with Tailwind CSS.",
-      tech: ["React", "GSAP", "Tailwind CSS", "ShadCN"],
+      tech: ["Next.js", "GSAP", "Tailwind CSS", "ShadCN"],
       github: "https://github.com/KrishnaNAcharya/portfolio",
       demo: "https://krishnanacharya.vercel.app"
     },
@@ -53,9 +64,9 @@ const Projects = memo(function Projects() {
       id: 6,
       title: "InsureFlow",
       description: "ML model predicting insurance subscriptions using advanced algorithms. Achieved AUROC of 0.986 through optimized classifiers.",
-      tech: ["Python", "ML", "XGBoost", "CatBoost"],
+      tech: ["Python", "ML", "XGBoost", "CatBoost"," Random Forest","Linear Regression"],
       github: "https://www.kaggle.com/code/krishnanacharya/insureflow",
-      demo: "example.com"
+      //demo: "example.com"
     },
     // Work in Progress Projects
     {
@@ -69,18 +80,9 @@ const Projects = memo(function Projects() {
     },
     {
       id: 8,
-      title: "IDEA Department Website",
-      description: "Website of IDEA, AI and Data Science Department, NMAMIT.",
-      tech: ["Next.js", "GSAP", "Tailwind CSS"],
-      github: "#",
-      demo: "example.com",
-      wip: true
-    },
-    {
-      id: 9,
-      title: "Work In Progress",
-      description: "Work in Progress",
-      tech: [],
+      title: "Wipfli MentorStack",
+      description: "A Stack Overflow-like knowledge sharing platform for IT & Management Mentorship and Problem Solving.",
+      tech: ["Next.js", "GSAP", "Tailwind CSS", "ShadCN","Express.js", "PostgreSQL","Prisma","NeonDB"],
       github: "#",
       demo: "example.com",
       wip: true

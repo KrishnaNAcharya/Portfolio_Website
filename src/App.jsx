@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/react"
 // Lazy load components
 const NavBar = lazy(() => import('./components/NavBar'));
 const Home = lazy(() => import('./components/Home'));
+const Experience = lazy(() => import('./components/Experience'));
 const Projects = lazy(() => import('./components/Projects'));
 const About = lazy(() => import('./components/About'));
 const Contact = lazy(() => import('./components/Contact'));
@@ -18,6 +19,7 @@ function App() {
       <Suspense fallback={<Loading />}>
         <NavBar loading={loading} />
         <Home setLoading={setLoading} />
+        <Experience />
         <Projects />
         <About />
         <Contact />

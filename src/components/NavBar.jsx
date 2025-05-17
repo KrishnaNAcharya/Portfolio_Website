@@ -9,9 +9,10 @@ const NavBar = ({ loading }) => {
 
   const links = [
     { id: 1, link: 'Home' },
-    { id: 2, link: 'Projects' },
-    { id: 3, link: 'Skills' },  // This matches the section name now
-    { id: 4, link: 'Contact' },
+    { id: 2, link: 'Experience' },
+    { id: 3, link: 'Projects' },
+    { id: 4, link: 'Skills' },
+    { id: 5, link: 'Contact' },
   ];
 
   const handleClick = (sectionName) => {
