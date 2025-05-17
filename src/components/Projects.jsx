@@ -1,14 +1,16 @@
 import React, { useEffect, useRef, memo } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { HoverEffect } from './ui/card-hover-effect'; // Import HoverEffect
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Projects = memo(function Projects() {
   const headerRef = useRef(null);
-  const projectsRef = useRef([]);
+  // projectsRef is no longer needed for individual card animations with HoverEffect
+  // const projectsRef = useRef([]); 
 
-  const projects = [
+  const projectsData = [
     {
       id: 1,
       title: "SonicSeeker",
@@ -89,6 +91,64 @@ const Projects = memo(function Projects() {
     }
   ];
 
+  const transformedProjects = projectsData.map(project => ({
+    id: project.id,
+    title: project.title,
+    description: ( // This JSX is the child of CardDescription
+      <>
+        {/* This div contains the main text and will grow */}
+        <div className="flex-grow">
+          <p>{project.description}</p>
+        </div>
+        {/* This div contains footer elements (tech stack, WIP, buttons) and will not grow */}
+        <div className="mt-auto pt-4"> {/* mt-auto pushes this block to the bottom if CardDescription has space, pt-4 for spacing */}
+          <div className="mb-3"> {/* Grouping for tech stack and WIP */}
+            <strong className="text-zinc-300 text-xs font-semibold">Tech Stack:</strong>
+            <div className="flex flex-wrap gap-1 mt-1">
+              {project.tech.map((item, index) => (
+                <span key={index} className="px-2 py-0.5 bg-emerald-700/30 text-emerald-400 rounded-full text-xs">
+                  {item}
+                </span>
+              ))}
+            </div>
+            {project.wip && (
+              <span className="inline-block mt-3 px-2 py-0.5 text-xs bg-yellow-700/30 text-yellow-400 rounded-full">
+                Work in Progress
+              </span>
+            )}
+          </div>
+          {/* Container for Code and Demo buttons */}
+          <div className="flex flex-wrap gap-3"> {/* Removed mt-4 from here, handled by parent div's pt-4 */}
+            {project.github && project.github !== "#" && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="px-4 py-2 text-sm border border-emerald-500 hover:bg-emerald-500/20 rounded-md duration-200 text-emerald-400 hover:text-emerald-300" // Swapped style: now border
+              >
+                View Code
+              </a>
+            )}
+            {project.demo && project.demo !== "example.com" && (
+              <a
+                href={project.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="px-4 py-2 text-sm bg-emerald-600 hover:bg-emerald-700 rounded-md duration-200 text-white" // Swapped style: now background
+              >
+                View Demo
+              </a>
+            )}
+          </div>
+        </div>
+      </>
+    ),
+    link: project.github === "#" ? undefined : project.github, // Main card link remains GitHub repo
+  }));
+
+
   useEffect(() => {
     // Header animation
     gsap.fromTo(headerRef.current,
@@ -106,35 +166,39 @@ const Projects = memo(function Projects() {
       }
     );
 
-    // Project cards animation
-    projectsRef.current.forEach((project, index) => {
-      gsap.fromTo(project,
-        { 
-          y: 100,
-          opacity: 0
-        },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          scrollTrigger: {
-            trigger: project,
-            start: "top bottom",
-            end: "top center+=100",
-            scrub: 1
-          }
-        }
-      );
-    });
+    // Individual project card animations are now handled by HoverEffect
+    // projectsRef.current.forEach((project, index) => {
+    //   gsap.fromTo(project,
+    //     { 
+    //       y: 100,
+    //       opacity: 0
+    //     },
+    //     {
+    //       y: 0,
+    //       opacity: 1,
+    //       duration: 1,
+    //       scrollTrigger: {
+    //         trigger: project,
+    //         start: "top bottom",
+    //         end: "top center+=100",
+    //         scrub: 1
+    //       }
+    //     }
+    //   );
+    // });
   }, []);
 
   return (
     <section name="projects" className="min-h-screen w-full pt-8 md:pt-16 pb-16 md:pb-20">
       <div className="max-w-[1440px] mx-auto p-4 md:p-10 flex flex-col justify-center w-full h-full">
-        <div className="pb-10 md:pb-16 text-center sm:text-left">
+        <div ref={headerRef} className="pb-10 md:pb-16 text-center sm:text-left">
           <p className="text-5xl sm:text-8xl font-bold inline border-b-4 border-emerald-500 text-white">Projects</p>
         </div>
 
+        {/* Replace the existing grid with HoverEffect */}
+        <HoverEffect items={transformedProjects} />
+        
+        {/* Old grid structure (to be removed or commented out):
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-10">
           {projects.map(({ id, title, description, tech, github, demo, wip }, index) => (
             <div
@@ -173,6 +237,7 @@ const Projects = memo(function Projects() {
             </div>
           ))}
         </div>
+        */}
       </div>
     </section>
   );

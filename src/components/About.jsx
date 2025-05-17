@@ -1,13 +1,65 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { HoverEffect } from './ui/card-hover-effect'; // Import HoverEffect
 
 gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
   const headerRef = useRef(null);
-  const cardsRef = useRef([]);
+  // cardsRef is no longer needed for individual card animations with HoverEffect for these cards
+  // const cardsRef = useRef([]); 
   const sectionsRef = useRef([]);
+
+  const skillCategories = [
+    {
+      id: "prog-lang",
+      title: "Programming Languages",
+      description: (
+        <ul className='list-disc ml-5 space-y-1'>
+          <li>Java</li>
+          <li>C</li>
+          <li>C++</li>
+          <li>Python</li>
+          <li>TypeScript</li>
+          <li>JavaScript</li>
+          <li>R</li>
+        </ul>
+      ),
+      // link: undefined, // No specific link for these cards
+    },
+    {
+      id: "frameworks-libs",
+      title: "Frameworks & Libraries",
+      description: (
+        <ul className='list-disc ml-5 space-y-1'>
+          <li>React.js</li>
+          <li>Next.js</li>
+          <li>Node.js</li>
+          <li>Express.js</li>
+          <li>Tailwind CSS</li>
+        </ul>
+      ),
+      // link: undefined,
+    },
+    {
+      id: "tools-platforms",
+      title: "Tools & Platforms",
+      description: (
+        <ul className='list-disc ml-5 space-y-1'>
+          <li>Figma</li>
+          <li>Firebase</li>
+          <li>GitHub</li>
+          <li>MySQL</li>
+          <li>PostgreSQL</li>
+          <li>VS Code</li>
+          <li>Kaggle</li>
+          <li>NeonDB</li>
+        </ul>
+      ),
+      // link: undefined,
+    }
+  ];
 
   useEffect(() => {
     // Header animation
@@ -26,28 +78,28 @@ const About = () => {
       }
     );
 
-    // Cards animation
-    cardsRef.current.forEach((card, index) => {
-      gsap.fromTo(card,
-        { 
-          y: 100,
-          opacity: 0
-        },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          scrollTrigger: {
-            trigger: card,
-            start: "top bottom",
-            end: "top center+=100",
-            scrub: 1
-          }
-        }
-      );
-    });
+    // Cards animation is now handled by HoverEffect for the skill cards
+    // cardsRef.current.forEach((card, index) => {
+    //   gsap.fromTo(card,
+    //     { 
+    //       y: 100,
+    //       opacity: 0
+    //     },
+    //     {
+    //       y: 0,
+    //       opacity: 1,
+    //       duration: 1,
+    //       scrollTrigger: {
+    //         trigger: card,
+    //         start: "top bottom",
+    //         end: "top center+=100",
+    //         scrub: 1
+    //       }
+    //     }
+    //   );
+    // });
 
-    // Text sections animation
+    // Text sections animation (remains unchanged)
     sectionsRef.current.forEach((section) => {
       gsap.fromTo(section,
         { 
@@ -76,9 +128,12 @@ const About = () => {
           <h2 className='text-5xl sm:text-8xl font-bold inline border-b-4 border-emerald-500 text-white'>Skills & Hobbies</h2>
         </div>
         
-        {/* Changed from flex to grid layout to match Projects */}
+        {/* Use HoverEffect for the skill category cards */}
+        <HoverEffect items={skillCategories} />
+
+        {/* Old grid layout for cards (to be removed or commented out):
         <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-10'>
-          {/* Programming Languages Card */}
+          {/* Programming Languages Card * / }
           <div ref={el => cardsRef.current[0] = el} 
             className='shadow-lg shadow-emerald-900/20 rounded-lg overflow-hidden bg-[#2a2a2a]/50 backdrop-blur-sm border border-emerald-500/20 hover:border-emerald-500 transition-colors duration-300 flex flex-col h-full'>
             <div className="p-6 md:p-8 flex flex-col h-full">
@@ -95,7 +150,7 @@ const About = () => {
             </div>
           </div>
 
-          {/* Frameworks & Libraries Card */}
+          {/* Frameworks & Libraries Card * /}
           <div ref={el => cardsRef.current[1] = el}
             className='shadow-lg shadow-emerald-900/20 rounded-lg overflow-hidden bg-[#2a2a2a]/50 backdrop-blur-sm border border-emerald-500/20 hover:border-emerald-500 transition-colors duration-300 flex flex-col h-full'>
             <div className="p-6 md:p-8 flex flex-col h-full">
@@ -110,7 +165,7 @@ const About = () => {
             </div>
           </div>
 
-          {/* Tools & Platforms Card */}
+          {/* Tools & Platforms Card * /}
           <div ref={el => cardsRef.current[2] = el}
             className='shadow-lg shadow-emerald-900/20 rounded-lg overflow-hidden bg-[#2a2a2a]/50 backdrop-blur-sm border border-emerald-500/20 hover:border-emerald-500 transition-colors duration-300 flex flex-col h-full'>
             <div className="p-6 md:p-8 flex flex-col h-full">
@@ -128,8 +183,9 @@ const About = () => {
             </div>
           </div>
         </div>
+        */}
 
-        {/* Text Sections */}
+        {/* Text Sections (remain unchanged) */}
         <div ref={el => sectionsRef.current[0] = el} className='text-justify'>
           <h3 className='text-3xl font-semibold mt-8 md:mt-10 mb-4 md:mb-5 text-center sm:text-left'>Current Focus</h3>
           <p className='text-lg md:text-2xl text-white text-justify leading-relaxed'>
