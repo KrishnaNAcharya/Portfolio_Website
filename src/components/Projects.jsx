@@ -93,16 +93,25 @@ const Projects = memo(function Projects() {
 
   const transformedProjects = projectsData.map(project => ({
     id: project.id,
-    title: project.title,
-    description: ( // This JSX is the child of CardDescription
+    title: ( // Title is now JSX
+      <>
+        {project.title}
+        {project.wip && (
+          <span className="ml-2 px-2 py-0.5 text-xs bg-yellow-700/30 text-yellow-400 rounded-full align-middle font-semibold">
+            WIP
+          </span>
+        )}
+      </>
+    ),
+    description: ( 
       <>
         {/* This div contains the main text and will grow */}
         <div className="flex-grow">
           <p>{project.description}</p>
         </div>
-        {/* This div contains footer elements (tech stack, WIP, buttons) and will not grow */}
-        <div className="mt-auto pt-4"> {/* mt-auto pushes this block to the bottom if CardDescription has space, pt-4 for spacing */}
-          <div className="mb-3"> {/* Grouping for tech stack and WIP */}
+        {/* This div contains footer elements (tech stack, buttons) and will not grow */}
+        <div className="mt-auto pt-4"> 
+          <div className="mb-3"> 
             <strong className="text-zinc-300 text-xs font-semibold">Tech Stack:</strong>
             <div className="flex flex-wrap gap-1 mt-1">
               {project.tech.map((item, index) => (
@@ -111,11 +120,7 @@ const Projects = memo(function Projects() {
                 </span>
               ))}
             </div>
-            {project.wip && (
-              <span className="inline-block mt-3 px-2 py-0.5 text-xs bg-yellow-700/30 text-yellow-400 rounded-full">
-                Work in Progress
-              </span>
-            )}
+            {/* WIP badge removed from here */}
           </div>
           {/* Container for Code and Demo buttons */}
           <div className="flex flex-wrap gap-3"> {/* Removed mt-4 from here, handled by parent div's pt-4 */}

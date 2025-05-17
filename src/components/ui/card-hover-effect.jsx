@@ -57,7 +57,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "rounded-2xl h-full w-full p-4 overflow-hidden bg-black/50 backdrop-blur-sm border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20 flex flex-col", // Ensured flex flex-col
+        "rounded-2xl h-full w-full p-4 overflow-hidden bg-black/50 backdrop-blur-sm border border-transparent dark:border-white/[0.2] group-hover:border-emerald-500 group-hover:shadow-[0_0_15px_1px_rgba(16,185,129,0.6)] relative z-20 flex flex-col transition-all duration-200", // Ensured flex flex-col, added neon shadow and updated border on hover
         className
       )}
     >

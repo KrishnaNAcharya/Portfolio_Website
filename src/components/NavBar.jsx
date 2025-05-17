@@ -66,14 +66,14 @@ const NavBar = ({ loading }) => {
   if (loading) return null;
 
   return (
-    <div ref={navbarRef} className="flex justify-between items-center w-full h-16 text-white bg-[#2a2a2a]/80 backdrop-blur-sm fixed top-0 left-0 px-4 z-50">
+    <div ref={navbarRef} className="flex justify-between items-center w-full h-16 text-white bg-black/90 backdrop-blur-sm fixed top-0 left-0 px-4 z-50">
       <div onClick={() => setNav(!nav)} className="cursor-pointer md:hidden z-50">
         {nav ? <FaTimes size={30} /> : <FaBars size={30} />}
       </div>
 
       {/* Mobile menu popup */}
       <div className={`md:hidden fixed inset-0 bg-black/20 backdrop-blur-sm transition-opacity duration-300 ${nav ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} onClick={() => setNav(false)}>
-        <div className={`fixed left-0 top-16 w-64 bg-[#2a2a2a]/95 backdrop-blur-md border-r border-b border-emerald-500/20 rounded-br-xl shadow-xl transition-transform duration-300 ${nav ? 'translate-x-0' : '-translate-x-full'}`} onClick={e => e.stopPropagation()}>
+        <div className={`fixed left-0 top-16 w-64 bg-black/90 backdrop-blur-md border-r border-b border-emerald-500/20 rounded-br-xl shadow-xl transition-transform duration-300 ${nav ? 'translate-x-0' : '-translate-x-full'}`} onClick={e => e.stopPropagation()}>
           <ul className="flex flex-col p-4 gap-4">
             {links.map(({ id, link }, index) => (
               <li 
