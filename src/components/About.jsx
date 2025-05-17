@@ -214,8 +214,7 @@ const About = () => {
         <div ref={el => sectionsRef.current[2] = el} className='text-justify'>
           <h3 className='text-3xl font-semibold mt-10 mb-5 text-center sm:text-left'>What I do in my free time?</h3>
           <p className='text-lg md:text-2xl text-white text-justify leading-relaxed'>
-          In my leisure time, I enjoy listening to music, playing video games, and exploring a wide array of technologies, both new and old. Photography is another passion of mine. I also have a penchant for conducting in-depth research on various topics that capture my curiosity. I don’t really watch web series, anime, or movies — I just read the plot instead. Way faster, and I still get the gist. So please, don’t call me a walking encyclopedia. Adios now!
-          </p>
+          During my leisure time, I enjoy listening to music, playing video games, and exploring a wide array of technologies, both new and old. Photography is another passion. I also have a penchant for conducting in-depth research on various topics that pique my curiosity. An interesting quirk: I don’t really watch web series, anime, or movies – I simply read the plot summaries. It's much faster, and I still grasp the main points (blame my love-hate relationship with perfection and efficiency). So please, refrain from calling me a walking encyclopedia. Also, my Reddit and LeetCode accounts are impossible to find, so don't bother searching because I'm a tad shy. Anyway, that's all I can yap about. Adios for now!          </p>
         </div>
       </div>
     </section>
