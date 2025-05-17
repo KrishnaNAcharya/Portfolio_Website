@@ -1,4 +1,3 @@
-import React from 'react';
 import Hero from "../assets/Heroimg.jpg";
 import Loading from './Loading';
 import { MdArrowRightAlt } from "react-icons/md";

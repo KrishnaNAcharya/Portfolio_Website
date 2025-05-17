@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { FaBars, FaTimes } from "react-icons/fa";
 import gsap from 'gsap';
 
@@ -11,8 +11,9 @@ const NavBar = ({ loading }) => {
     { id: 1, link: 'Home' },
     { id: 2, link: 'Experience' },
     { id: 3, link: 'Projects' },
-    { id: 4, link: 'Skills' },
-    { id: 5, link: 'Contact' },
+    { id: 4, link: 'Achievements' }, // Added Achievements link
+    { id: 5, link: 'Skills' }, // Adjusted ID
+    { id: 6, link: 'Contact' }, // Adjusted ID
   ];
 
   const handleClick = (sectionName) => {

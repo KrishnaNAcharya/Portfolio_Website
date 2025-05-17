@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { HoverEffect } from './ui/card-hover-effect'; // Import HoverEffect
@@ -21,8 +21,11 @@ const About = () => {
           <li>C</li>
           <li>C++</li>
           <li>Python</li>
-          <li>TypeScript</li>
           <li>JavaScript</li>
+          <li>TypeScript</li>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>SQL</li>
           <li>R</li>
         </ul>
       ),
@@ -38,6 +41,11 @@ const About = () => {
           <li>Node.js</li>
           <li>Express.js</li>
           <li>Tailwind CSS</li>
+          <li>GSAP</li>
+          <li>Redux</li>
+          <li>TensorFlow</li>
+          <li>PyTorch</li>
+          <li>Scikit-learn</li>
         </ul>
       ),
       // link: undefined,
@@ -47,14 +55,18 @@ const About = () => {
       title: "Tools & Platforms",
       description: (
         <ul className='list-disc ml-5 space-y-1'>
+          <li>Git</li>
+          <li>GitHub</li>
+          <li>VS Code</li>
+          <li>Docker</li>
           <li>Figma</li>
           <li>Firebase</li>
-          <li>GitHub</li>
+          <li>MongoDB</li>
           <li>MySQL</li>
           <li>PostgreSQL</li>
-          <li>VS Code</li>
-          <li>Kaggle</li>
           <li>NeonDB</li>
+          <li>Kaggle</li>
+          <li>Jupyter Notebooks</li>
         </ul>
       ),
       // link: undefined,
@@ -189,22 +201,21 @@ const About = () => {
         <div ref={el => sectionsRef.current[0] = el} className='text-justify'>
           <h3 className='text-3xl font-semibold mt-8 md:mt-10 mb-4 md:mb-5 text-center sm:text-left'>Current Focus</h3>
           <p className='text-lg md:text-2xl text-white text-justify leading-relaxed'>
-          I am currently sharpening my skills in Data Structures and Algorithms (DSA) to improve my problem-solving abilities. 
-          Additionally, I am eager to learn Spring Boot in the near future.
+          My current efforts are centered on enhancing my problem-solving capabilities by deepening my understanding of Data Structures and Algorithms (DSA). Simultaneously, I'm actively developing several projects, including NASAR, Wipfli MentorStack, and the IDEA Website. Alongside these technical pursuits, I am dedicated to maintaining my physical and mental well-being and am also diligently preparing for upcoming placement opportunities.
           </p>
         </div>
 
         <div ref={el => sectionsRef.current[1] = el} className='text-justify'>
           <h3 className='text-3xl font-semibold mt-10 mb-5 text-center sm:text-left'>Additional Interests</h3>
           <p className='text-lg md:text-2xl text-white text-justify leading-relaxed'>
-          I have a foundational understanding of Machine Learning (ML) and Large Language Models (LLMs), which further fuels my passion for exploring cutting-edge technology solutions.
+          Beyond my primary focus, I possess a foundational understanding of Machine Learning (ML) and Large Language Models (LLMs), which fuels my passion for exploring cutting-edge technology solutions. I am also keenly interested in the future trajectory of AI, including its societal impact and the underlying hardware advancements that power these technologies.
           </p>
         </div>
 
         <div ref={el => sectionsRef.current[2] = el} className='text-justify'>
           <h3 className='text-3xl font-semibold mt-10 mb-5 text-center sm:text-left'>What I do in my free time?</h3>
           <p className='text-lg md:text-2xl text-white text-justify leading-relaxed'>
-          I enjoy listening to music, playing video games, and exploring anything related to technologies, new and old alike. Additionally, I love  photography and cooking.
+          In my leisure time, I enjoy listening to music, playing video games, and exploring a wide array of technologies, both new and old. Photography is another passion of mine. I also have a penchant for conducting in-depth research on various topics that capture my curiosity.
           </p>
         </div>
       </div>

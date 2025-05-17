@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, memo } from 'react';
+import { useEffect, useRef, memo } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { HoverEffect } from './ui/card-hover-effect'; // Import HoverEffect
@@ -123,14 +123,14 @@ const Projects = memo(function Projects() {
             {/* WIP badge removed from here */}
           </div>
           {/* Container for Code and Demo buttons */}
-          <div className="flex flex-wrap gap-3"> {/* Removed mt-4 from here, handled by parent div's pt-4 */}
+          <div className="flex items-center gap-3"> {/* Changed to items-center, justify-between will be handled by ml-auto or if only one button */}
             {project.github && project.github !== "#" && (
               <a
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
-                className="px-4 py-2 text-sm border border-emerald-500 hover:bg-emerald-500/20 rounded-md duration-200 text-emerald-400 hover:text-emerald-300" // Swapped style: now border
+                className="px-4 py-2 text-sm border border-emerald-500 hover:bg-emerald-500/20 rounded-md duration-200 text-emerald-400 hover:text-emerald-300"
               >
                 View Code
               </a>
@@ -141,7 +141,7 @@ const Projects = memo(function Projects() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
-                className="px-4 py-2 text-sm bg-emerald-600 hover:bg-emerald-700 rounded-md duration-200 text-white" // Swapped style: now background
+                className={`px-4 py-2 text-sm bg-emerald-600 hover:bg-emerald-700 rounded-md duration-200 text-white ${project.github && project.github !== "#" ? 'ml-auto' : 'ml-0'}`} // Added ml-auto if View Code button exists
               >
                 View Demo
               </a>

@@ -1,4 +1,4 @@
-import React, { Suspense, lazy, useState } from 'react';
+import { Suspense, lazy, useState } from 'react';
 import Loading from './components/Loading';
 import { Analytics } from "@vercel/analytics/react"
 import { Vortex } from './components/ui/vortex';
@@ -8,6 +8,7 @@ const NavBar = lazy(() => import('./components/NavBar'));
 const Home = lazy(() => import('./components/Home'));
 const Experience = lazy(() => import('./components/Experience'));
 const Projects = lazy(() => import('./components/Projects'));
+const Achievements = lazy(() => import('./components/Achievements'));
 const About = lazy(() => import('./components/About'));
 const Contact = lazy(() => import('./components/Contact'));
 
@@ -30,6 +31,7 @@ function App() {
           <Home setLoading={setLoading} />
           <Experience />
           <Projects />
+          <Achievements />
           <About />
           <Contact />
         </Suspense>
