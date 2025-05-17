@@ -73,15 +73,20 @@ const Home = ({ setLoading }) => {
               Krishna
             </span>.
           </h2>
-          <p ref={descriptionRef} className="text-white text-lg md:text-2xl py-4 md:py-5 max-w-3xl text-justify leading-relaxed">
-            Hi there! I'm Krishna N Acharya, a 3rd-year student at NMAMIT, currently pursuing a degree in Artificial Intelligence and Data Science.
-            I'm passionate about full-stack development and love exploring the latest technologies. Outside of coding,
-            when I'm not glued to my keyboard, you can find me catching up on the latest tech news or trying out new technologies.
-            Let's connect and talk tech, cats or dogs, and anything else that sparks our interest!
-          </p>
+          <div ref={descriptionRef} className="text-white text-lg md:text-2xl py-4 md:py-5 max-w-3xl text-justify leading-relaxed">
+            <p className="mb-3">
+              Hey, I'm Krishna N Acharya, a third-year AI & Data Science student at NMAMIT. I'm into full-stack development, always exploring the latest in tech, and I love messing around with new (and old) tools just to see what they can do. I'm a sucker for good user experience, high performance, and top efficiency – maybe a little too much, leaning towards perfectionism. I can't seem to run away from it.
+            </p>
+            <p className="mb-3">
+              Outside the usual coding grind, I keep up with tech news, dive deep into random research rabbit holes, and enjoy photography, music, and, once every 12 full moons, video games.
+            </p>
+            <p>
+              If you're looking for me, I'm probably geeking out over some new tech or testing something weird just because I can.
+            </p>
+          </div>
           <br className="hidden md:block" />
           <div ref={buttonRef} className="w-full md:w-auto">
-            <a href="https://drive.google.com/file/d/1raIGG08QHu27SR1yAcOiRobjlQ4LMY7V/view?usp=sharing" target="_blank" rel="noopener noreferrer" 
+            <a href="https://drive.google.com/file/d/1CrKpsrni_YHl0RdTJwLYFdogMdyF3w4q/view?usp=sharing" target="_blank" rel="noopener noreferrer" 
                className="w-full md:w-auto">
               <button className="w-full md:w-auto text-white group border-2 border-emerald-500 px-8 py-4 my-3 flex items-center justify-center md:justify-start btn-fill-animation hover:border-emerald-500">
                 Resume <MdArrowRightAlt className="ml-2 text-xl group-hover:translate-x-1 transition-transform duration-300" />

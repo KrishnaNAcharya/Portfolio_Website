@@ -42,7 +42,6 @@ const About = () => {
           <li>Express.js</li>
           <li>Tailwind CSS</li>
           <li>GSAP</li>
-          <li>Redux</li>
           <li>TensorFlow</li>
           <li>PyTorch</li>
           <li>Scikit-learn</li>
@@ -55,10 +54,10 @@ const About = () => {
       title: "Tools & Platforms",
       description: (
         <ul className='list-disc ml-5 space-y-1'>
-          <li>Git</li>
           <li>GitHub</li>
           <li>VS Code</li>
-          <li>Docker</li>
+          <li>Postman</li>
+          <li>Cloudinary</li>
           <li>Figma</li>
           <li>Firebase</li>
           <li>MongoDB</li>
@@ -66,9 +65,9 @@ const About = () => {
           <li>PostgreSQL</li>
           <li>NeonDB</li>
           <li>Kaggle</li>
-          <li>Jupyter Notebooks</li>
         </ul>
       ),
+      //<li>Docker</li>
       // link: undefined,
     }
   ];
@@ -215,7 +214,7 @@ const About = () => {
         <div ref={el => sectionsRef.current[2] = el} className='text-justify'>
           <h3 className='text-3xl font-semibold mt-10 mb-5 text-center sm:text-left'>What I do in my free time?</h3>
           <p className='text-lg md:text-2xl text-white text-justify leading-relaxed'>
-          In my leisure time, I enjoy listening to music, playing video games, and exploring a wide array of technologies, both new and old. Photography is another passion of mine. I also have a penchant for conducting in-depth research on various topics that capture my curiosity.
+          In my leisure time, I enjoy listening to music, playing video games, and exploring a wide array of technologies, both new and old. Photography is another passion of mine. I also have a penchant for conducting in-depth research on various topics that capture my curiosity. I don’t really watch web series, anime, or movies — I just read the plot instead. Way faster, and I still get the gist. So please, don’t call me a walking encyclopedia. Adios now!
           </p>
         </div>
       </div>

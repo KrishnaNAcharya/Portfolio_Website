@@ -19,7 +19,7 @@ const Achievements = memo(function Achievements() {
     {
       id: 2,
       title: "Hackfest 2024 - Top 15",
-      description: "Achieved a Top 15 position among 300+ teams in Hackfest 2024.",
+      description: "Achieved a Top 15 position and Top 3 among Open Innovation track among 300+ teams in Hackfest 2024.",
       category: "Hackathon",
       link: "https://drive.google.com/file/d/13ctWL3RuGc0my0zErnxp5IuGYqJj_IYq/view?usp=sharing"
     },

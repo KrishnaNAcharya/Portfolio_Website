@@ -38,7 +38,7 @@ const Experience = () => {
         <p>{exp.description}</p>
         {exp.skills && exp.skills.length > 0 && (
           <div className="mt-4">
-            <strong className="text-zinc-300 text-xs font-semibold">Skills:</strong>
+            <strong className="text-zinc-300 text-xs font-semibold">Tech Stack:</strong>
             <div className="flex flex-wrap gap-1 mt-1">
               {exp.skills.map((skill, index) => (
                 <span key={index} className="px-2 py-0.5 bg-emerald-700/30 text-emerald-400 rounded-full text-xs">
