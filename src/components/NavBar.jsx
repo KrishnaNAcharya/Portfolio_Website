@@ -67,21 +67,21 @@ const NavBar = ({ loading }) => {
   if (loading) return null;
 
   return (
-    <div ref={navbarRef} className="flex justify-between items-center w-full h-14 md:h-16 text-white bg-black/80 backdrop-blur-sm fixed top-0 left-0 px-4 z-50"> {/* Changed h-16 to h-14 for mobile, md:h-16 for desktop, bg-black/90 to bg-black/80 */}
+    <div ref={navbarRef} className="flex justify-between items-center w-full h-12 md:h-16 text-white bg-black/80 backdrop-blur-sm fixed top-0 left-0 px-4 z-50"> {/* Reduced h-14 to h-12 for mobile */}
       <div onClick={() => setNav(!nav)} className="cursor-pointer md:hidden z-50">
-        {nav ? <FaTimes size={30} /> : <FaBars size={30} />}
+        {nav ? <FaTimes size={25} /> : <FaBars size={25} />} {/* Reduced icon size from 30 to 25 */}
       </div>
 
       {/* Mobile menu popup */}
       <div className={`md:hidden fixed inset-0 bg-black/20 backdrop-blur-sm transition-opacity duration-300 ${nav ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} onClick={() => setNav(false)}>
-        <div className={`fixed left-0 top-14 w-64 bg-black/70 backdrop-blur-md border-r border-b border-emerald-500/20 rounded-br-xl shadow-xl transition-transform duration-300 ${nav ? 'translate-x-0' : '-translate-x-full'}`} onClick={e => e.stopPropagation()}> {/* Changed top-16 to top-14, bg-black/90 to bg-black/70 */}
-          <ul className="flex flex-col p-4 gap-4">
+        <div className={`fixed left-0 top-12 w-60 bg-black/70 backdrop-blur-md border-r border-b border-emerald-500/20 rounded-br-xl shadow-xl transition-transform duration-300 ${nav ? 'translate-x-0' : '-translate-x-full'}`} onClick={e => e.stopPropagation()}> {/* Changed top-14 to top-12, w-64 to w-60 */}
+          <ul className="flex flex-col p-3 gap-3"> {/* Reduced padding and gap */}
             {links.map(({ id, link }, index) => (
               <li 
                 key={id} 
                 ref={el => linksRef.current[index] = el}
                 onClick={() => handleClick(link)}
-                className="px-4 py-2 cursor-pointer font-medium hover:text-emerald-500 transition-colors duration-200"
+                className="px-3 py-1.5 cursor-pointer font-medium text-sm hover:text-emerald-500 transition-colors duration-200" /* Reduced padding, font size */
               >
                 {link}
               </li>
