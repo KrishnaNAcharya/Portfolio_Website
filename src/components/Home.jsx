@@ -67,15 +67,15 @@ const Home = ({ setLoading }) => {
     <section name="home" className="min-h-screen w-full pt-10 md:pt-24 pb-8 md:pb-16 flex items-center">
       <div className='max-w-[1440px] w-full mx-auto flex flex-col items-center justify-center px-4 md:px-10 md:flex-row md:gap-20'>
         <div className='flex flex-col justify-center w-full text-center md:text-left md:w-3/5'>
-          <h2 ref={textRef} className='text-4xl sm:text-5xl md:text-[5.5rem] font-bold text-white'>
+          <h1 ref={textRef} className='text-4xl sm:text-5xl md:text-[5.5rem] font-bold text-white'>
             Hello there! My name is {" "}
             <span className='animate-shine'>
               Krishna
             </span>.
-          </h2>
+          </h1>
           <div ref={descriptionRef} className="text-white text-lg md:text-2xl py-4 md:py-5 max-w-3xl text-justify leading-relaxed">
             <p className="mb-3">
-              Hey, I'm Krishna N Acharya, a third-year AI & Data Science student at NMAMIT. I'm into full-stack development, always exploring the latest in tech, and I love messing around with new (and old) tools just to see what they can do. I'm a sucker for good user experience, high performance, and top efficiency – maybe a little too much, leaning towards perfectionism. I can't seem to run away from it.
+              Hey, I'm Krishna N Acharya, a third-year AI & Data Science student at NMAMIT. I'm into full-stack development, always exploring the latest in tech, and I love messing around with new (and old) tools just to see what they can do. I love focusing on building good user experience, high performance, and top efficiency – maybe a little too much, leaning towards perfectionism. I can't seem to run away from it.
             </p>
             <p className="mb-3">
               Outside the usual coding grind, I keep up with tech news, dive deep into random research rabbit holes, and enjoy photography, music, and, once every 12 full moons, video games.
@@ -97,7 +97,7 @@ const Home = ({ setLoading }) => {
         <div ref={imageRef} className='hidden md:flex mt-10 mb-20 md:mt-0 md:mb-0 w-full md:w-2/5 justify-center'>
           <img 
             src={Hero} 
-            alt="Hero" 
+            alt="Krishna N Acharya - Portfolio Hero Image"
             className="rounded-3xl w-4/5 md:w-full object-cover border-3 border-emerald-500 transition-colors duration-300 shadow-xl shadow-emerald-900/20" 
           />
         </div>

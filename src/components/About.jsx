@@ -1,14 +1,12 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { HoverEffect } from './ui/card-hover-effect'; // Import HoverEffect
+import { HoverEffect } from './ui/card-hover-effect';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
   const headerRef = useRef(null);
-  // cardsRef is no longer needed for individual card animations with HoverEffect for these cards
-  // const cardsRef = useRef([]); 
   const sectionsRef = useRef([]);
 
   const skillCategories = [
@@ -74,7 +72,7 @@ const About = () => {
 
   useEffect(() => {
     // Header animation
-    gsap.fromTo(headerRef.current,
+    gsap.fromTo(headerRef.current, // This will now target the div
       { y: 50, opacity: 0 },
       {
         y: 0,
@@ -88,27 +86,6 @@ const About = () => {
         }
       }
     );
-
-    // Cards animation is now handled by HoverEffect for the skill cards
-    // cardsRef.current.forEach((card, index) => {
-    //   gsap.fromTo(card,
-    //     { 
-    //       y: 100,
-    //       opacity: 0
-    //     },
-    //     {
-    //       y: 0,
-    //       opacity: 1,
-    //       duration: 1,
-    //       scrollTrigger: {
-    //         trigger: card,
-    //         start: "top bottom",
-    //         end: "top center+=100",
-    //         scrub: 1
-    //       }
-    //     }
-    //   );
-    // });
 
     // Text sections animation (remains unchanged)
     sectionsRef.current.forEach((section) => {
@@ -135,66 +112,16 @@ const About = () => {
   return (
     <section name="skills" className="w-full min-h-screen pt-16 md:pt-24 pb-16 md:pb-20">
       <div className='max-w-[1440px] mx-auto p-4 md:p-10 flex flex-col justify-center w-full h-full'>
-        <div ref={headerRef} className='pb-10 md:pb-16 text-center sm:text-left'>
-          <h2 className='text-5xl sm:text-8xl font-bold inline border-b-4 border-emerald-500 text-white'>Skills & Hobbies</h2>
+        <div ref={headerRef} className='pb-10 md:pb-16 text-center sm:text-left'> {/* Moved ref here */}
+          <h2 // Changed from motion.h2 to h2
+            // Removed Framer Motion props: initial, whileInView, transition
+            className='text-5xl sm:text-8xl font-bold inline border-b-4 border-emerald-500 text-white'
+          >
+            Skills & Hobbies
+          </h2>
         </div>
         
-        {/* Use HoverEffect for the skill category cards */}
         <HoverEffect items={skillCategories} />
-
-        {/* Old grid layout for cards (to be removed or commented out):
-        <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-10'>
-          {/* Programming Languages Card * / }
-          <div ref={el => cardsRef.current[0] = el} 
-            className='shadow-lg shadow-emerald-900/20 rounded-lg overflow-hidden bg-[#2a2a2a]/50 backdrop-blur-sm border border-emerald-500/20 hover:border-emerald-500 transition-colors duration-300 flex flex-col h-full'>
-            <div className="p-6 md:p-8 flex flex-col h-full">
-              <h3 className='text-2xl md:text-3xl font-semibold mb-4 md:mb-6 text-center'>Programming Languages</h3>
-              <ul className='list-disc ml-6 md:ml-8 text-base md:text-lg space-y-2 flex-grow'>
-                <li>Java</li>
-                <li>C</li>
-                <li>C++</li>
-                <li>Python</li>
-                <li>TypeScript</li>
-                <li>JavaScript</li>
-                <li>R</li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Frameworks & Libraries Card * /}
-          <div ref={el => cardsRef.current[1] = el}
-            className='shadow-lg shadow-emerald-900/20 rounded-lg overflow-hidden bg-[#2a2a2a]/50 backdrop-blur-sm border border-emerald-500/20 hover:border-emerald-500 transition-colors duration-300 flex flex-col h-full'>
-            <div className="p-6 md:p-8 flex flex-col h-full">
-              <h3 className='text-2xl md:text-3xl font-semibold mb-4 md:mb-6 text-center'>Frameworks & Libraries</h3>
-              <ul className='list-disc ml-6 md:ml-8 text-base md:text-lg space-y-2 flex-grow'>
-                <li>React.js</li>
-                <li>Next.js</li>
-                <li>Node.js</li>
-                <li>Express.js</li>
-                <li>Tailwind CSS</li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Tools & Platforms Card * /}
-          <div ref={el => cardsRef.current[2] = el}
-            className='shadow-lg shadow-emerald-900/20 rounded-lg overflow-hidden bg-[#2a2a2a]/50 backdrop-blur-sm border border-emerald-500/20 hover:border-emerald-500 transition-colors duration-300 flex flex-col h-full'>
-            <div className="p-6 md:p-8 flex flex-col h-full">
-              <h3 className='text-2xl md:text-3xl font-semibold mb-4 md:mb-6 text-center'>Tools & Platforms</h3>
-              <ul className='list-disc ml-6 md:ml-8 text-base md:text-lg space-y-2 flex-grow'>
-                <li>Figma</li>
-                <li>Firebase</li>
-                <li>GitHub</li>
-                <li>MySQL</li>
-                <li>PostgreSQL</li>
-                <li>VS Code</li>
-                <li>Kaggle</li>
-                <li>NeonDB</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        */}
 
         {/* Text Sections (remain unchanged) */}
         <div ref={el => sectionsRef.current[0] = el} className='text-justify'>

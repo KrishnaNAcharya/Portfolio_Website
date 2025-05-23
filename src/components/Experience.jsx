@@ -1,8 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-// Import HoverEffect instead of CardSpotlight
-import { HoverEffect, CardTitle, CardDescription } from './ui/card-hover-effect'; 
+import { HoverEffect } from './ui/card-hover-effect';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -54,7 +53,7 @@ const Experience = () => {
   }));
 
   useEffect(() => {
-    gsap.fromTo(headerRef.current,
+    gsap.fromTo(headerRef.current, // This will now target the div
       { y: 50, opacity: 0 },
       {
         y: 0,
@@ -73,11 +72,15 @@ const Experience = () => {
   return (
     <section name="experience" className="w-full min-h-screen pt-16 md:pt-24 pb-16 md:pb-20">
       <div className='max-w-[1440px] mx-auto p-4 md:p-10 flex flex-col justify-center w-full h-full'>
-        <div ref={headerRef} className='pb-10 md:pb-16 text-center sm:text-left'>
-          <h2 className='text-5xl sm:text-8xl font-bold inline border-b-4 border-emerald-500 text-white'>Experience</h2>
+        <div ref={headerRef} className='pb-10 md:pb-16 text-center sm:text-left'> {/* Moved ref here */}
+          <h2 // Changed from motion.h2 to h2
+            // Removed Framer Motion props: initial, whileInView, transition
+            className='text-5xl sm:text-8xl font-bold inline border-b-4 border-emerald-500 text-white'
+          >
+            Experience
+          </h2>
         </div>
         
-        {/* Use HoverEffect for the experience cards */}
         <HoverEffect items={transformedExperiences} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6 md:gap-8 py-10" />
         
       </div>
