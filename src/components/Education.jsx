@@ -12,7 +12,7 @@ const Education = memo(function Education() {
     {
       id: 1,
       institution: "NMAM Institute of Technology",
-      location: "Mangaluru, India",
+      location: "Nitte, India",
       degree: "B.Tech in Artificial Intelligence and Data Science",
       score: "CGPA: 8.82",
       duration: "August 2022 - May 2026 (Expected)",
