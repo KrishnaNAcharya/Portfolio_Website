@@ -14,18 +14,18 @@ const Projects = memo(function Projects() {
     {
       id: 1,
       title: "SonicSeeker",
-      description: "AI-driven audio and video analysis tool for transcription, diarization, summarization, and translation. Added NLP-based entity and sentiment analysis, waveform visualization, and mind map generation which runs locally.",
+      description: "Comprehensive AI-powered media analysis platform built with Next.js and Python. Features audio/video transcription using Whisper AI, speaker diarization with PyAnnote, sentiment analysis, entity recognition, and grammar analysis. Includes AI-powered summarization using BART, mind map generation with Ollama/Llama3, multi-language translation with NLLB-200, and YouTube integration. Built with advanced media player, interactive transcripts, WER/CER comparison, and MongoDB storage with GridFS.",
       tech: [
         "Next.js",
-        "Faster-Whisper",
-        "Compromise.js",
-        "Sentiment.js",
-        "facebooknllb",
-        "facebookbart",
-        "Ollama Ilama V3",
-        "Aceternity",
-        "MongoDB"
-
+        "TypeScript",
+        "Python",
+        "Whisper AI",
+        "PyAnnote",
+        "Hugging Face",
+        "Ollama Llama3",
+        "MongoDB",
+        "FFmpeg",
+        "WaveSurfer.js"
       ],
       github: "https://github.com/hackfest-dev/Hackfest25-56",
       //demo: "example.com"
@@ -33,40 +33,40 @@ const Projects = memo(function Projects() {
     {
       id: 2,
       title: "Portfolio Website",
-      description: "Modern portfolio website with smooth animations, responsive design, and interactive UI. Built with React and styled with Tailwind CSS.",
-      tech: ["Next.js", "GSAP", "Tailwind CSS", "ShadCN"],
+      description: "Modern React portfolio website with advanced animations and responsive design. Features lazy loading, GSAP scroll-triggered animations, Vortex particle background, and interactive UI components. Built with semantic HTML structure, custom hover effects, scroll-based animations, and optimized performance. Includes comprehensive sections for projects, experience, education, achievements, and skills with HoverEffect cards, SEO optimization with React Helmet, and Vercel Analytics integration.",
+      tech: ["React.js", "Vite", "GSAP", "Tailwind CSS", "React Helmet", "Vercel Analytics"],
       github: "https://github.com/KrishnaNAcharya/portfolio",
       demo: "https://krishnanacharya.vercel.app"
     },
     {
       id: 3,
       title: "HireIN-JP",
-      description: "A recruitment platform with job posting, application tracking, and resume generation capabilities. Features advanced filtering for job listings.",
-      tech: ["React.js", "Tailwind CSS", "Firebase"],
+      description: "Comprehensive React-based job portal connecting job seekers with employers. Features Firebase authentication with Google OAuth, advanced job search with multiple filters (job type, timings, eligibility), user profile management with resume uploads, and job posting capabilities for recruiters. Built with responsive design, real-time database updates, secure file storage, and role-based access control. Includes mobile-first approach with collapsible navigation and touch-friendly interfaces.",
+      tech: ["React.js", "Firebase", "Tailwind CSS", "Firestore", "Firebase Auth", "React Router", "Material Tailwind"],
       github: "https://github.com/KrishnaNAcharya/HireIn-JP",
       demo: "https://hire-in-jp.vercel.app"
     },
     {
       id: 4,
       title: "HIMS",
-      description: "Health Insurance Management System with automated form generation, admin panel, and policy management. Built with modern web technologies.",
-      tech: ["React.js", "Express.js", "PostgreSQL", "Firebase"],
+      description: "Comprehensive Health Insurance Management System with multi-step application process, admin panel, and document generation. Features Firebase authentication with Google OAuth, role-based access control, and three insurance plans (Basic, Standard, Premium). Built with React + Vite frontend, Node.js/Express backend, and PostgreSQL database. Includes payment processing, family member management, health information tracking, and PDF generation for applications.",
+      tech: ["React.js", "Express.js", "PostgreSQL", "Firebase", "Tailwind CSS", "Vite", "Node.js"],
       github: "https://github.com/KrishnaNAcharya/HIMS",
       demo: "https://hims-f.onrender.com"
     },
     {
       id: 5,
       title: "Xtract",
-      description: "Data analysis tool generating statistical insights from uploaded datasets. Features Python backend for processing and metric extraction.",
-      tech: ["Express.js", "Python", "Tailwind CSS"],
+      description: "Full-stack statistical data analysis web application that enables users to upload CSV files and automatically generate comprehensive statistical insights and visualizations. Features robust encoding handling, eight different chart types (scatter plots, histograms, box plots, heat maps, etc.), and a complete analysis engine. Built with Express.js backend, Python data processing using Pandas/Matplotlib/Seaborn, and modern responsive frontend. Includes Docker support and automatic file cleanup for production deployment.",
+      tech: ["Express.js", "Python", "Pandas", "Matplotlib", "Seaborn", "Tailwind CSS", "Multer", "Docker"],
       github: "https://github.com/KrishnaNAcharya/Xtract",
       demo: "example.com"
     },
     {
       id: 6,
       title: "InsureFlow",
-      description: "ML model predicting insurance subscriptions using advanced algorithms. Achieved AUROC of 0.986 through optimized classifiers.",
-      tech: ["Python", "ML", "XGBoost", "CatBoost"," Random Forest","Linear Regression"],
+      description: "Comprehensive ML project for insurance subscription prediction using advanced algorithms. Handled class imbalance using SMOTE techniques, implemented multiple models (XGBoost, Random Forest, CatBoost), and achieved 93.54% accuracy with 0.986 AUROC. Features outlier detection, feature importance analysis, and real-time prediction interface. Provides business insights for customer targeting and acquisition optimization.",
+      tech: ["Python", "XGBoost", "CatBoost", "Random Forest", "SMOTE", "Flask", "Scikit-learn", "Pandas", "Matplotlib"],
       github: "https://www.kaggle.com/code/krishnanacharya/insureflow",
       //demo: "example.com"
     },
@@ -74,8 +74,8 @@ const Projects = memo(function Projects() {
     {
       id: 7,
       title: "NASAR",
-      description: "SAR image colorization using CycleGAN.",
-      tech: ["Python","CycleGAN"],
+      description: "Comprehensive DL project for SAR image colorization. Built a ResNet34-based terrain classifier to categorize SAR images into urban, grassland, agricultural, and barren land types. Implemented a conditional GAN with U-Net generator and PatchGAN discriminator for realistic colorization. Features multiple loss functions (adversarial, L1, perceptual, feature matching), mixed precision training, and automatic terrain prediction pipeline.",
+      tech: ["Python", "PyTorch", "Computer Vision", "GANs", "ResNet34", "U-Net", "PatchGAN", "CUDA", "Deep Learning"],
       github: "https://github.com/KrishnaNAcharya/SAR",
       demo: "example.com",
       wip: true

@@ -12,6 +12,21 @@ const Experience = () => {
     {
       id: 1,
       role: "Full Stack Developer",
+      company: "Inspirante Technologies Private Limited",
+      duration: "May 2025 - Present",
+      description: "Working as a Full Stack Developer at Inspirante Technologies Private Limited, contributing to web application development and software solutions.",  
+      skills: [
+        "Next.js",
+        "TypeScript",
+        "Node.js",
+        "PostgreSQL",
+        "Tailwind CSS",
+        "Express.js",
+      ]      
+    },
+    {
+      id: 2,
+      role: "Full Stack Developer",
       company: "Intelligence and Data Science Engineers' Association",
       duration: "August 2024 - Present",
       description: "Developed a responsive Gallery Page using Next.js, featuring a custom-built image carousel for enhanced user experience. Integrated a RESTful API to dynamically fetch and display content. Utilized NeonDB with Prisma ORM for efficient database management, Cloudinary for optimized image storage and delivery, and Postman for testing and validating API endpoints.",  
@@ -30,7 +45,12 @@ const Experience = () => {
 
   const transformedExperiences = experiencesData.map(exp => ({
     id: exp.id,
-    title: `${exp.role} at ${exp.company}`, // This will be used by CardTitle inside HoverEffect's Card
+    title: (
+      <div>
+        <div className="text-lg font-bold">{exp.company}</div>
+        <div className="text-base font-medium text-emerald-400">{exp.role}</div>
+      </div>
+    ),
     description: ( // This will be used by CardDescription inside HoverEffect's Card
       <>
         <p className="text-sm text-emerald-400 mb-2">{exp.duration}</p>
