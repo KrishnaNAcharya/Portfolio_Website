@@ -74,13 +74,13 @@ const Home = ({ setLoading }) => {
             </span>.
           </h1>
           <div ref={descriptionRef} className="text-white text-lg md:text-2xl py-4 md:py-5 max-w-3xl text-justify leading-relaxed">
-            <p className="mb-3">
+            <p className="mb-3 text-justify">
               Hey, I'm Krishna N Acharya, a final-year AI & Data Science student at NMAMIT. I'm into full-stack development, always exploring the latest in tech, and I love messing around with new (and old) tools just to see what they can do. I love focusing on building good user experience, high performance, and top efficiency – maybe a little too much, leaning towards perfectionism. I can't seem to run away from it.
             </p>
-            <p className="mb-3">
+            <p className="mb-3 text-justify">
               Outside the usual coding grind, I keep up with tech news, dive deep into random research rabbit holes, and enjoy photography, music, and, once every 12 full moons, video games.
             </p>
-            <p>
+            <p className="text-justify">
               If you're looking for me, I'm probably geeking out over some new tech or testing something weird just because I can.
             </p>
           </div>

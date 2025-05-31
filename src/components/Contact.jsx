@@ -17,11 +17,11 @@ const Contact = () => {
         y: 0,
         opacity: 1,
         duration: 1,
+        ease: "power3.out",
         scrollTrigger: {
           trigger: headerRef.current,
-          start: "top bottom",
-          end: "top center",
-          scrub: 1
+          start: "top bottom-=100",
+          toggleActions: "play none none reverse"
         }
       }
     );

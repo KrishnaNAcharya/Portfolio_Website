@@ -33,8 +33,8 @@ const Projects = memo(function Projects() {
     {
       id: 2,
       title: "Portfolio Website",
-      description: "Modern React portfolio website with advanced animations and responsive design. Features lazy loading, GSAP scroll-triggered animations, Vortex particle background, and interactive UI components. Built with semantic HTML structure, custom hover effects, scroll-based animations, and optimized performance. Includes comprehensive sections for projects, experience, education, achievements, and skills with HoverEffect cards, SEO optimization with React Helmet, and Vercel Analytics integration.",
-      tech: ["React.js", "Vite", "GSAP", "Tailwind CSS", "React Helmet", "Vercel Analytics"],
+      description: "Modern Next.js portfolio website with advanced animations and responsive design. Features lazy loading, GSAP scroll-triggered animations, Vortex particle background, and interactive UI components. Built with semantic HTML structure, custom hover effects, scroll-based animations, and optimized performance. Includes comprehensive sections for projects, experience, education, achievements, and skills with HoverEffect cards, SEO optimization with React Helmet, and Vercel Analytics integration.",
+      tech: ["Next.js.js", "Vite", "GSAP", "Tailwind CSS", "React Helmet", "Vercel Analytics"],
       github: "https://github.com/KrishnaNAcharya/portfolio",
       demo: "https://krishnanacharya.vercel.app"
     },
@@ -107,7 +107,7 @@ const Projects = memo(function Projects() {
       <>
         {/* This div contains the main text and will grow */}
         <div className="flex-grow">
-          <p>{project.description}</p>
+          <p className="text-justify">{project.description}</p>
         </div>
         {/* This div contains footer elements (tech stack, buttons) and will not grow */}
         <div className="mt-auto pt-4"> 
