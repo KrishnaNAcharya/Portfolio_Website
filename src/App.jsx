@@ -40,7 +40,7 @@ function App() {
       </Helmet>
       <Vortex
         backgroundColor="black"
-        particleCount={500}
+        particleCount={50}
         rangeY={800}
         baseHue={120}
         containerClassName="w-full min-h-screen"
