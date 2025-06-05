@@ -16,7 +16,16 @@ const Contact = lazy(() => import('./components/Contact'));
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(() => {
+    // More comprehensive mobile detection on initialization
+    if (typeof window !== 'undefined') {
+      const hasTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+      const isSmallScreen = window.innerWidth <= 768;
+      const isMobileUA = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      return hasTouch || isSmallScreen || isMobileUA;
+    }
+    return false;
+  });
   const siteTitle = "Krishna N Acharya | Full-Stack Developer & AI Enthusiast";
   const siteDescription = "Portfolio of Krishna N Acharya, a passionate Full-Stack Developer and AI & Data Science student. Explore projects, skills, and experience.";
   const siteUrl = "https://krishnanacharya.vercel.app"; // Replace with your actual deployed URL
@@ -24,13 +33,28 @@ function App() {
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+      const hasTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+      const isSmallScreen = window.innerWidth <= 768; // Back to 768px but with additional checks
+      const isMobileUA = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      const matchMediaMobile = window.matchMedia('(max-width: 768px)').matches;
+      
+      setIsMobile(hasTouch || isSmallScreen || isMobileUA || matchMediaMobile);
     };
     
+    // Check immediately on mount
     checkMobile();
-    window.addEventListener('resize', checkMobile);
     
-    return () => window.removeEventListener('resize', checkMobile);
+    // Use both resize and matchMedia listeners
+    const mediaQuery = window.matchMedia('(max-width: 768px)');
+    const handleMediaChange = () => checkMobile();
+    
+    window.addEventListener('resize', checkMobile);
+    mediaQuery.addEventListener('change', handleMediaChange);
+    
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+      mediaQuery.removeEventListener('change', handleMediaChange);
+    };
   }, []);
 
   return (
