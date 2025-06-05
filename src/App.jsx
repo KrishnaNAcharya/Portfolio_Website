@@ -1,4 +1,4 @@
-import { Suspense, lazy, useState } from 'react';
+import { Suspense, lazy, useState, useEffect } from 'react';
 import Loading from './components/Loading';
 import { Analytics } from "@vercel/analytics/react"
 import { Vortex } from './components/ui/vortex';
@@ -16,10 +16,22 @@ const Contact = lazy(() => import('./components/Contact'));
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
   const siteTitle = "Krishna N Acharya | Full-Stack Developer & AI Enthusiast";
   const siteDescription = "Portfolio of Krishna N Acharya, a passionate Full-Stack Developer and AI & Data Science student. Explore projects, skills, and experience.";
   const siteUrl = "https://krishnanacharya.vercel.app"; // Replace with your actual deployed URL
   const socialImage = "/src/assets/Heroimg.jpg"; // Replace with a path to a suitable social sharing image
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   return (
     <>
@@ -40,7 +52,7 @@ function App() {
       </Helmet>
       <Vortex
         backgroundColor="black"
-        particleCount={50}
+        particleCount={isMobile ? 10 : 50}
         rangeY={800}
         baseHue={120}
         containerClassName="w-full min-h-screen"
