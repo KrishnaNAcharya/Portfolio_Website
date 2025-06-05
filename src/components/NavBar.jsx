@@ -74,21 +74,21 @@ const NavBar = ({ loading }) => {
       </div>
 
       {/* Mobile menu popup */}
-      <div className={`md:hidden fixed inset-0 bg-black/20 backdrop-blur-sm transition-opacity duration-300 ${nav ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} onClick={() => setNav(false)}>
-        <nav className={`fixed left-0 top-12 w-60 bg-black/70 backdrop-blur-md border-r border-b border-emerald-500/20 rounded-br-xl shadow-xl transition-transform duration-300 ${nav ? 'translate-x-0' : '-translate-x-full'}`} onClick={e => e.stopPropagation()} aria-label="Mobile navigation"> {/* Changed div to nav and added aria-label */}
-          <ul className="flex flex-col p-3 gap-3"> {/* Reduced padding and gap */}
+      <div className={`md:hidden fixed inset-0 bg-black/95 backdrop-blur-3xl transition-opacity duration-300 ${nav ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} onClick={() => setNav(false)}>
+        <nav className={`fixed left-0 top-12 w-60 bg-black/95 backdrop-blur-[100px] border-r border-b border-emerald-500/30 rounded-br-xl shadow-2xl shadow-emerald-900/20 transition-transform duration-300 ${nav ? 'translate-x-0' : '-translate-x-full'}`} onClick={e => e.stopPropagation()} aria-label="Mobile navigation">
+          <ul className="flex flex-col p-3 gap-3">
             {links.map(({ id, link }, index) => (
               <li 
                 key={id} 
                 ref={el => linksRef.current[index] = el}
                 onClick={() => handleClick(link)}
-                className="px-3 py-1.5 cursor-pointer font-medium text-sm hover:text-emerald-500 transition-colors duration-200" /* Reduced padding, font size */
+                className="px-3 py-1.5 cursor-pointer font-medium text-sm hover:text-emerald-500 hover:bg-emerald-500/10 rounded-md transition-all duration-200"
               >
                 {link}
               </li>
             ))}
           </ul>
-        </nav> {/* Changed div to nav */}
+        </nav>
       </div>
 
       {/* Desktop menu */}
