@@ -57,10 +57,7 @@ const Contact = () => {
               <FaPhoneAlt className="text-4xl hover:text-emerald-500 transition duration-300" />
               <span className="mt-2 group-hover:text-emerald-500">Phone</span>
             </a>
-            <a href="https://leetcode.com/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center group transform hover:scale-110 transition-all duration-300">
-              <SiLeetcode className="text-4xl hover:text-emerald-500 transition duration-300" />
-              <span className="mt-2 group-hover:text-emerald-500">LeetCode</span>
-            </a>
+            
           </div>
         </div>
       </div>

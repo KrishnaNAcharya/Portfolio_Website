@@ -23,7 +23,11 @@ export default {
         'xl': '24px',
         '2xl': '40px',
         '3xl': '64px',
-      }
+      },
+      backdropFilter: {
+        'none': 'none',
+        'blur': 'blur(20px)',
+      },
     },
   },
   plugins: [],

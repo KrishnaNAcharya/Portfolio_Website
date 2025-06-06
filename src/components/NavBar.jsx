@@ -6,8 +6,12 @@ import { FloatingNav } from './ui/floating-navbar';
 
 const NavBar = ({ loading }) => {
   const [nav, setNav] = useState(false);
+  const [isClosing, setIsClosing] = useState(false); // Add closing state
   const linksRef = useRef([]);
-  const navbarRef = useRef(null);  const links = [
+  const navbarRef = useRef(null);
+  const sidebarRef = useRef(null);
+
+  const links = [
     { id: 1, link: 'home', icon: <CustomIcons.Home /> },
     { id: 2, link: 'education', icon: <CustomIcons.Education /> },
     { id: 3, link: 'experience', icon: <CustomIcons.Experience /> },
@@ -67,7 +71,72 @@ const NavBar = ({ loading }) => {
         "-=0.1"
       );
     }
-  }, [loading]);  if (loading) {
+  }, [loading]);  // Modified animation effect for sidebar
+  useEffect(() => {
+    if (sidebarRef.current) {
+      if (nav && !isClosing) {
+        // Opening animation - much faster
+        gsap.fromTo(sidebarRef.current, 
+          { 
+            x: -176,
+            opacity: 0
+          },
+          { 
+            x: 0, 
+            opacity: 1,
+            duration: 0.15, // Reduced from 0.2
+            ease: "power2.out"
+          }
+        );
+        
+        // Animate navigation items in - much faster
+        gsap.fromTo(linksRef.current,
+          { 
+            x: -30,
+            opacity: 0
+          },
+          { 
+            x: 0,
+            opacity: 1,
+            duration: 0.1, // Reduced from 0.15
+            stagger: 0.02, // Reduced from 0.03
+            delay: 0.03, // Reduced from 0.05
+            ease: "power2.out"
+          }
+        );
+      } else if (isClosing) {
+        // Closing animation - very fast
+        gsap.to(linksRef.current, {
+          x: -30,
+          opacity: 0,
+          duration: 0.08, // Reduced from 0.1
+          stagger: 0.015, // Reduced from 0.02
+          ease: "power2.in",
+          onComplete: () => {
+            // Then animate sidebar out - very fast
+            gsap.to(sidebarRef.current, {
+              x: -176,
+              opacity: 0,
+              duration: 0.1, // Reduced from 0.15
+              ease: "power2.in",
+              onComplete: () => {
+                // Close the sidebar after animation completes
+                setNav(false);
+                setIsClosing(false);
+              }
+            });
+          }
+        });
+      }
+    }
+  }, [nav, isClosing]);  // Modified close handler
+  const handleClose = () => {
+    if (nav && !isClosing) {
+      setIsClosing(true);
+    }
+  };
+
+  if (loading) {
     return (
       <div className="hidden md:block">        <div className="flex w-full items-center justify-center relative top-0 z-[5000]">
           <div 
@@ -103,25 +172,27 @@ const NavBar = ({ loading }) => {
              WebkitBackdropFilter: 'blur(2px)',
            }}>
         {/* Mobile menu toggle */}
-        <div onClick={() => setNav(!nav)} className="cursor-pointer md:hidden z-[70] relative">
+        <div onClick={() => nav ? handleClose() : setNav(true)} className="cursor-pointer md:hidden z-[70] relative">
           {nav ? <FaTimes size={25} /> : <FaBars size={25} />}
         </div>
       </div>
 
       {/* Mobile menu backdrop and sidebar */}
-      {nav && (
+      {(nav || isClosing) && (
         <>
           {/* Full screen backdrop without blur */}
           <div 
             className="md:hidden fixed inset-0 z-40 bg-black/30" 
-            onClick={() => setNav(false)}
+            onClick={handleClose}
           />            
           
           {/* Mobile navigation sidebar with frosted glass effect */}          
           <nav 
-            className={`md:hidden fixed left-0 w-44 transition-transform duration-300 ease-out z-50`}
+            ref={sidebarRef}
+            className={`md:hidden fixed left-0 w-44 z-50`}
             onClick={e => e.stopPropagation()} 
-            aria-label="Mobile navigation"            style={{
+            aria-label="Mobile navigation"            
+            style={{
               top: '48px',
               background: 'rgba(0, 0, 0, 0.85)',
               backdropFilter: 'blur(2px)',
@@ -130,7 +201,6 @@ const NavBar = ({ loading }) => {
               height: 'auto',
               border: 'none',
               outline: 'none',
-              transform: nav ? 'translateX(0) translateY(-1px)' : 'translateX(-100%) translateY(-1px)',
             }}
           >
             {/* Navigation content */}
@@ -140,7 +210,10 @@ const NavBar = ({ loading }) => {
                   <li 
                     key={id} 
                     ref={el => linksRef.current[index] = el}
-                    onClick={() => handleClick(link)}
+                    onClick={() => {
+                      handleClick(link);
+                      handleClose(); // Use handleClose instead of setNav(false)
+                    }}
                     className="px-2 py-2 cursor-pointer font-medium text-white hover:text-emerald-400 transition-colors duration-200"
                   >
                     {link.charAt(0).toUpperCase() + link.slice(1)}

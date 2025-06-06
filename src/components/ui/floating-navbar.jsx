@@ -1,4 +1,4 @@
-import React, { useState, useEffect, memo } from "react";
+import { useState, useEffect, memo } from "react";
 import { cn } from "../../lib/utils";
 import PropTypes from 'prop-types';
 import "./navbar-styles.css";
@@ -50,9 +50,7 @@ export const FloatingNav = memo(({ navItems, className }) => {
         id: s.getAttribute('id')
       }))); 
     }
-  };
-
-  return (
+  };  return (
     <div
       className={cn(
         "navbar-container flex w-full items-center justify-center z-[5000] transition-all duration-300 ease-out fixed",
@@ -60,38 +58,42 @@ export const FloatingNav = memo(({ navItems, className }) => {
         className
       )}
     >
-      <div        className={cn(
-          "navbar-backdrop flex items-center justify-center transition-all duration-300 ease-out",
+      <div
+        className={cn(
+          "navbar-backdrop flex items-center justify-center transition-all duration-300 ease-out relative overflow-hidden",
           isFloating ? 
-            "max-w-fit rounded-full px-8 py-2 space-x-6" :
-            "w-full px-12 py-1 space-x-8"
+            "max-w-fit rounded-full px-12 py-3 space-x-8" :
+            "w-full px-16 py-2 space-x-10"
         )}
         style={{
           background: isFloating ? 'rgba(0, 0, 0, 0.85)' : 'rgba(0, 0, 0, 0.95)',
-          backdropFilter: 'blur(4px)',
-          WebkitBackdropFilter: 'blur(4px)',
-          border: isFloating ? '2px solid rgba(16, 185, 129, 0.6)' : 'none',
+          backdropFilter: isFloating ? 'blur(20px)' : 'none',
+          WebkitBackdropFilter: isFloating ? 'blur(20px)' : 'none',
+          border: isFloating ? '1px solid rgba(255, 255, 255, 0.18)' : 'none',
+          borderRadius: isFloating ? '50px' : '0px',
+          boxShadow: isFloating ? '0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1)' : 'none',
         }}
-      >        {navItems.map((navItem, idx) => (
+      >
+        {navItems.map((navItem, idx) => (
           <button
             key={`link=${idx}`}
             onClick={() => handleClick(navItem.name)}            className={cn(
               "navbar-item relative items-center flex space-x-1 transition-colors duration-200",
               isFloating ? 
-                "text-white hover:text-emerald-400 px-3 py-1" :
-                "text-white hover:text-emerald-400 text-xl font-medium px-4 py-1"
+                "text-white hover:text-emerald-400 px-4 py-2" :
+                "text-white hover:text-emerald-400 text-xl font-medium px-6 py-2"
             )}
           >
             <span className="block sm:hidden">{navItem.icon}</span>
             <span className={cn(
               "hidden sm:block transition-colors duration-200",
-              isFloating ? "text-sm" : "text-lg font-semibold"
+              isFloating ? "text-base font-medium" : "text-xl font-semibold"
             )}>
               {navItem.name}
-            </span>
-          </button>
+            </span>          </button>
         ))}
-      </div>    </div>
+      </div>
+    </div>
   );
 });
 
