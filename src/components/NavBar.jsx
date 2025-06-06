@@ -56,20 +56,26 @@ const NavBar = ({ loading }) => {
   };
   useEffect(() => {
     if (!loading) {
-      // Simplified animation for better performance
+      // Enhanced animation for better performance and visual appeal
       const tl = gsap.timeline();
       
-      tl.fromTo(navbarRef.current, 
-        { opacity: 0, y: -10 },
-        { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }
-      );
+      // Animate mobile navbar
+      if (navbarRef.current) {
+        tl.fromTo(navbarRef.current, 
+          { opacity: 0, y: -20 },
+          { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }
+        );
+      }
       
-      // Reduce stagger animation complexity
-      tl.fromTo(linksRef.current,
-        { opacity: 0 },
-        { opacity: 1, duration: 0.2, stagger: 0.05, ease: "power2.out" },
-        "-=0.1"
-      );
+      // Animate desktop floating navbar elements (if they exist)
+      const floatingNavElements = document.querySelectorAll('.navbar-item');
+      if (floatingNavElements.length > 0) {
+        tl.fromTo(floatingNavElements,
+          { opacity: 0, y: -15 },
+          { opacity: 1, y: 0, duration: 0.5, stagger: 0.1, ease: "power3.out" },
+          "-=0.3"
+        );
+      }
     }
   }, [loading]);  // Modified animation effect for sidebar
   useEffect(() => {
@@ -138,7 +144,8 @@ const NavBar = ({ loading }) => {
 
   if (loading) {
     return (
-      <div className="hidden md:block">        <div className="flex w-full items-center justify-center relative top-0 z-[5000]">
+      <div className="hidden md:block">
+        <div className="flex w-full items-center justify-center relative top-0 z-[5000]">
           <div 
             className="flex items-center justify-center w-full px-12 py-1 space-x-8"
             style={{
@@ -149,7 +156,7 @@ const NavBar = ({ loading }) => {
           >
             {links.map(({ id, link }) => (
               <div key={id} className="text-white text-xl font-medium px-4 py-1 opacity-50">
-                {link}
+                {link.charAt(0).toUpperCase() + link.slice(1)} {/* Capitalize the first letter */}
               </div>
             ))}
           </div>
@@ -167,13 +174,14 @@ const NavBar = ({ loading }) => {
       {/* Mobile navbar */}
       <div ref={navbarRef} className="flex justify-between items-center w-full h-12 md:hidden text-white fixed top-0 left-0 px-4 z-[70]"
            style={{
-             background: 'rgba(0, 0, 0, 0.85)',
+             background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0.3) 80%, rgba(0, 0, 0, 0) 100%)',
              backdropFilter: 'blur(2px)',
              WebkitBackdropFilter: 'blur(2px)',
+             height: '35px', // Reduced from 40px to 35px
            }}>
         {/* Mobile menu toggle */}
         <div onClick={() => nav ? handleClose() : setNav(true)} className="cursor-pointer md:hidden z-[70] relative">
-          {nav ? <FaTimes size={25} /> : <FaBars size={25} />}
+          {nav ? <FaTimes size={20} /> : <FaBars size={20} />} {/* Reduced icon size from 22 to 20 */}
         </div>
       </div>
 
@@ -189,18 +197,23 @@ const NavBar = ({ loading }) => {
           {/* Mobile navigation sidebar with frosted glass effect */}          
           <nav 
             ref={sidebarRef}
-            className={`md:hidden fixed left-0 w-44 z-50`}
+            className={`md:hidden fixed left-0 w-44 z-50 rounded-r-2xl`}
             onClick={e => e.stopPropagation()} 
             aria-label="Mobile navigation"            
             style={{
-              top: '48px',
-              background: 'rgba(0, 0, 0, 0.85)',
+              top: '35px',
+              background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.7) 70%, rgba(0, 0, 0, 0.3) 100%)',
               backdropFilter: 'blur(2px)',
               WebkitBackdropFilter: 'blur(2px)',
-              boxShadow: '4px 0 24px rgba(0, 0, 0, 0.2)',
+              boxShadow: '4px 0 24px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.15)',
               height: 'auto',
               border: 'none',
               outline: 'none',
+              borderTopRightRadius: '16px',
+              borderBottomRightRadius: '16px',
+              borderRight: '1px solid rgba(255, 255, 255, 0.2)',
+              borderTop: '1px solid rgba(255, 255, 255, 0.15)',
+              borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
             }}
           >
             {/* Navigation content */}

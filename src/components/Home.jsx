@@ -10,6 +10,7 @@ const Home = ({ setLoading }) => {
   const textRef = useRef(null);
   const descriptionRef = useRef(null);
   const buttonRef = useRef(null);
+  const mobileButtonRef = useRef(null); // Add separate ref for mobile button
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -49,13 +50,21 @@ const Home = ({ setLoading }) => {
         ease: "power3.out"
       }, "-=0.6");
 
-      // Animate the button
+      // Animate the desktop button
       tl.from(buttonRef.current, {
         duration: 0.8,
         y: 20,
         opacity: 0,
         ease: "power3.out"
       }, "-=0.6");
+
+      // Animate the mobile button
+      tl.from(mobileButtonRef.current, {
+        duration: 0.8,
+        y: 20,
+        opacity: 0,
+        ease: "power3.out"
+      }, "-=0.8"); // Start at same time as desktop button
     }
   }, [localLoading]);
 
@@ -154,7 +163,7 @@ const Home = ({ setLoading }) => {
         </div>
         
         {/* Mobile Resume Button - only shown on screens smaller than md */}
-        <div ref={buttonRef} className="w-full md:hidden">
+        <div ref={mobileButtonRef} className="w-full md:hidden">
           <a href="https://drive.google.com/file/d/1CrKpsrni_YHl0RdTJwLYFdogMdyF3w4q/view?usp=sharing" target="_blank" rel="noopener noreferrer" 
              className="w-full">
             <button className="w-full text-white group border-2 border-emerald-500 px-8 py-4 my-3 flex items-center justify-center btn-fill-animation hover:border-emerald-500">
