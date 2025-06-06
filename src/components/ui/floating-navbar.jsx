@@ -1,7 +1,6 @@
 import { useState, useEffect, memo } from "react";
 import { cn } from "../../lib/utils";
 import PropTypes from 'prop-types';
-import "./navbar-styles.css";
 
 export const FloatingNav = memo(({ navItems, className }) => {
   const [isFloating, setIsFloating] = useState(false);
@@ -23,16 +22,15 @@ export const FloatingNav = memo(({ navItems, className }) => {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);  const handleClick = (sectionName) => {
-    console.log('FloatingNav: Clicking on', sectionName);
+    // console.log('FloatingNav: Clicking on', sectionName);
     
     // Simple approach - just scroll to the section by name
     const targetSection = sectionName.toLowerCase();
     const element = document.querySelector(`section[name="${targetSection}"]`);
-    
-    console.log(`FloatingNav: Looking for section[name="${targetSection}"]`, element);
+      // console.log(`FloatingNav: Looking for section[name="${targetSection}"]`, element);
     
     if (element) {
-      console.log('FloatingNav: Found element, scrolling...');
+      // console.log('FloatingNav: Found element, scrolling...');
       // Much larger offsets to ensure heading appears at top of viewport
       const offset = isFloating ? 0 : 0; // Significantly increased offsets
       const elementTop = element.offsetTop - offset;
@@ -43,14 +41,13 @@ export const FloatingNav = memo(({ navItems, className }) => {
       });
     } else {
       console.error(`FloatingNav: Section with name="${targetSection}" not found!`);
-      // Log all available sections for debugging
-      const allSections = document.querySelectorAll('section');
-      console.log('FloatingNav: Available sections:', Array.from(allSections).map(s => ({
-        name: s.getAttribute('name'),
-        id: s.getAttribute('id')
-      }))); 
+      // Log all available sections for debugging      const allSections = document.querySelectorAll('section');
+      // console.log('FloatingNav: Available sections:', Array.from(allSections).map(s => ({
+      //   name: s.getAttribute('name'),
+      //   id: s.getAttribute('id')
+      // }))); 
     }
-  };  return (
+  };return (
     <div
       className={cn(
         "navbar-container flex w-full items-center justify-center z-[5000] transition-all duration-300 ease-out fixed",

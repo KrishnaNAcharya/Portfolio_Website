@@ -57,18 +57,16 @@ function App() {
       window.removeEventListener('resize', checkMobile);
       mediaQuery.removeEventListener('change', handleMediaChange);
     };
-  }, []);
-
-  // Debug function to log all sections
+  }, []);  // Debug function to log all sections
   useEffect(() => {
     const debugSections = () => {
-      const sections = document.querySelectorAll('section');
-      console.log('App.jsx: All sections found:', Array.from(sections).map(s => ({
-        tagName: s.tagName,
-        name: s.getAttribute('name'),
-        id: s.getAttribute('id'),
-        className: s.className
-      })));
+      // const sections = document.querySelectorAll('section');
+      // console.log('App.jsx: All sections found:', Array.from(sections).map(s => ({
+      //   tagName: s.tagName,
+      //   name: s.getAttribute('name'),
+      //   id: s.getAttribute('id'),
+      //   className: s.className
+      // })));
     };
     
     // Run after components are mounted

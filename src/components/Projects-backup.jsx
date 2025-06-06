@@ -1,15 +1,16 @@
-import { useEffect, useRef, memo, useMemo, useCallback } from 'react';
+import { useEffect, useRef, memo } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { HoverEffect } from './ui/card-hover-effect';
+import { HoverEffect } from './ui/card-hover-effect'; // Import HoverEffect
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Projects = memo(function Projects() {
   const headerRef = useRef(null);
+  // projectsRef is no longer needed for individual card animations with HoverEffect
+  // const projectsRef = useRef([]); 
 
-  // Memoize projects data to prevent recreation on every render
-  const projectsData = useMemo(() => [
+  const projectsData = [
     {
       id: 1,
       title: "SonicSeeker",
@@ -27,6 +28,7 @@ const Projects = memo(function Projects() {
         "WaveSurfer.js"
       ],
       github: "https://github.com/hackfest-dev/Hackfest25-56",
+      //demo: "example.com"
     },
     {
       id: 2,
@@ -66,7 +68,9 @@ const Projects = memo(function Projects() {
       description: "Comprehensive ML project for insurance subscription prediction using advanced algorithms. Handled class imbalance using SMOTE techniques, implemented multiple models (XGBoost, Random Forest, CatBoost), and achieved 93.54% accuracy with 0.986 AUROC. Features outlier detection, feature importance analysis, and real-time prediction interface. Provides business insights for customer targeting and acquisition optimization.",
       tech: ["Python", "XGBoost", "CatBoost", "Random Forest", "SMOTE", "Flask", "Scikit-learn", "Pandas", "Matplotlib"],
       github: "https://www.kaggle.com/code/krishnanacharya/insureflow",
+      //demo: "example.com"
     },
+    // Work in Progress Projects
     {
       id: 7,
       title: "NASAR",
@@ -85,107 +89,107 @@ const Projects = memo(function Projects() {
       demo: "example.com",
       wip: true
     }
-  ], []);
-  // Memoize button click handlers
-  const createButtonHandler = useCallback((url) => (e) => {
-    e.stopPropagation();
-    if (url && url !== "example.com" && url !== "#") {
-      window.open(url, '_blank', 'noopener,noreferrer');
-    }
-  }, []);
+  ];
 
-  // Memoize transformed projects with optimized JSX generation
-  const transformedProjects = useMemo(() => 
-    projectsData.map(project => ({
-      id: project.id,
-      title: (
-        <>
-          {project.title}
-          {project.wip && (
-            <span className="ml-2 px-2 py-0.5 text-xs bg-yellow-700/30 text-yellow-400 rounded-full align-middle font-semibold">
-              WIP
-            </span>
-          )}
-        </>
-      ),
-      description: (
-        <>
-          <div className="flex-grow">
-            <p className="text-justify">{project.description}</p>
-          </div>
-          <div className="mt-auto pt-4"> 
-            <div className="mb-3"> 
-              <strong className="text-zinc-300 text-xs font-semibold">Tech Stack:</strong>
-              <div className="flex flex-wrap gap-1 mt-1">
-                {project.tech.map((item, index) => (
-                  <span key={`${project.id}-tech-${index}`} className="px-2 py-0.5 bg-emerald-700/30 text-emerald-400 rounded-full text-xs">
-                    {item}
-                  </span>
-                ))}
-              </div>
+  const transformedProjects = projectsData.map(project => ({
+    id: project.id,
+    title: ( // Title is now JSX
+      <>
+        {project.title}
+        {project.wip && (
+          <span className="ml-2 px-2 py-0.5 text-xs bg-yellow-700/30 text-yellow-400 rounded-full align-middle font-semibold">
+            WIP
+          </span>
+        )}
+      </>
+    ),
+    description: ( 
+      <>
+        {/* This div contains the main text and will grow */}
+        <div className="flex-grow">
+          <p className="text-justify">{project.description}</p>
+        </div>
+        {/* This div contains footer elements (tech stack, buttons) and will not grow */}
+        <div className="mt-auto pt-4"> 
+          <div className="mb-3"> 
+            <strong className="text-zinc-300 text-xs font-semibold">Tech Stack:</strong>
+            <div className="flex flex-wrap gap-1 mt-1">
+              {project.tech.map((item, index) => (
+                <span key={index} className="px-2 py-0.5 bg-emerald-700/30 text-emerald-400 rounded-full text-xs">
+                  {item}
+                </span>
+              ))}
             </div>
-            <div className="flex items-center gap-3">
-              {project.github && project.github !== "#" && (
-                <button
-                  type="button"                  onClick={createButtonHandler(project.github)}
-                  className="px-4 py-2 text-sm border border-emerald-500 hover:bg-emerald-500/20 rounded-md duration-200 text-emerald-400 hover:text-emerald-300 focus:outline-none focus:ring-2 focus:ring-emerald-500/50"
-                  aria-label={`View ${project.title} source code`}
-                >
-                  View Code
-                </button>
-              )}
-              {project.demo && project.demo !== "example.com" && (
-                <button
-                  type="button"                  onClick={createButtonHandler(project.demo)}
-                  className={`px-4 py-2 text-sm bg-emerald-600 hover:bg-emerald-700 rounded-md duration-200 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500/50 ${project.github && project.github !== "#" ? 'ml-auto' : 'ml-0'}`}
-                  aria-label={`View ${project.title} live demo`}
-                >
-                  View Demo
-                </button>
-              )}
-            </div>
+            {/* WIP badge removed from here */}
           </div>
-        </>
-      ),
-      link: project.github === "#" ? undefined : project.github,
-    })), 
-    [projectsData, createButtonHandler]
-  );
+          {/* Container for Code and Demo buttons */}
+          <div className="flex items-center gap-3"> {/* Changed to items-center, justify-between will be handled by ml-auto or if only one button */}
+            {project.github && project.github !== "#" && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="px-4 py-2 text-sm border border-emerald-500 hover:bg-emerald-500/20 rounded-md duration-200 text-emerald-400 hover:text-emerald-300"
+              >
+                View Code
+              </a>
+            )}
+            {project.demo && project.demo !== "example.com" && (
+              <a
+                href={project.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className={`px-4 py-2 text-sm bg-emerald-600 hover:bg-emerald-700 rounded-md duration-200 text-white ${project.github && project.github !== "#" ? 'ml-auto' : 'ml-0'}`} // Added ml-auto if View Code button exists
+              >
+                View Demo
+              </a>
+            )}
+          </div>
+        </div>
+      </>
+    ),
+    link: project.github === "#" ? undefined : project.github, // Main card link remains GitHub repo
+  }));
 
-  // Memoize animation configuration
-  const animationConfig = useMemo(() => ({
-    from: { y: 50, opacity: 0 },
-    to: {
-      y: 0,
-      opacity: 1,
-      duration: 1,
-      scrollTrigger: {
-        trigger: null, // Will be set dynamically
-        start: "top bottom",
-        end: "top center",
-        scrub: 1
-      }
-    }
-  }), []);
-
-  // Memoize animation setup
-  const setupHeaderAnimation = useCallback(() => {
-    if (headerRef.current) {
-      const config = { ...animationConfig.to };
-      config.scrollTrigger.trigger = headerRef.current;
-      
-      gsap.fromTo(headerRef.current, animationConfig.from, config);
-    }
-  }, [animationConfig]);
 
   useEffect(() => {
-    setupHeaderAnimation();
-    
-    // Cleanup function for ScrollTrigger
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
-  }, [setupHeaderAnimation]);
+    // Header animation
+    gsap.fromTo(headerRef.current,
+      { y: 50, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        scrollTrigger: {
+          trigger: headerRef.current,
+          start: "top bottom",
+          end: "top center",
+          scrub: 1
+        }
+      }
+    );    // Individual project card animations are now handled by HoverEffect
+    // projectsRef.current.forEach((project, index) => {
+    //   gsap.fromTo(project,
+    //     { 
+    //       y: 100,
+    //       opacity: 0
+    //     },
+    //     {
+    //       y: 0,
+    //       opacity: 1,
+    //       duration: 1,
+    //       scrollTrigger: {
+    //         trigger: project,
+    //         start: "top bottom",
+    //         end: "top center+=100",
+    //         scrub: 1
+    //       }
+    //     }
+    //   );
+    // });
+  }, []);
   return (
     <section name="projects" className="min-h-screen w-full pt-16 md:pt-24 pb-16 md:pb-20">
       <div className="max-w-[1440px] mx-auto p-4 md:p-10 flex flex-col justify-center w-full h-full">

@@ -1,4 +1,5 @@
-import { useEffect, useRef, memo, useMemo, useCallback } from 'react';
+// filepath: e:\GitHub\personalportfolio\src\components\Achievements.jsx
+import { useEffect, useRef, memo } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { HoverEffect } from './ui/card-hover-effect';
@@ -7,10 +8,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Achievements = memo(function Achievements() {
   const headerRef = useRef(null);
-  const scrollTriggerRef = useRef(null);
 
-  // Memoize static achievements data
-  const achievementsData = useMemo(() => [
+  const achievementsData = [
     {
       id: 1,
       title: "Hackfest 2025 - Runner Up",
@@ -44,6 +43,7 @@ const Achievements = memo(function Achievements() {
       title: "IDEA Website - Developer",
       description: "Contributed as a developer on the technical team that built the official website for the Department of AI & DS, NMAMIT, Nitte.",
       category: "Web Development Contribution",
+      //link: "https://idea.nmamit.in/" // Link to the IDEA website
     },
     {
       id: 6,
@@ -52,85 +52,51 @@ const Achievements = memo(function Achievements() {
       category: "Hackathon",
       link: "https://drive.google.com/file/d/1G9XX5um5Yl4hu_asMG_mpkiYZGOEyZb2/view"
     },
-  ], []);
+  ];
 
-  // Memoize certificate button click handler
-  const handleCertificateClick = useCallback((e) => {
-    e.stopPropagation();
-  }, []);
-
-  // Memoize certificate button rendering
-  const renderCertificateButton = useCallback((link) => {
-    if (!link) return null;
-    
-    return (
-      <div className="mt-auto pt-4">
-        <a
-          href={link}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={handleCertificateClick}
-          className="px-4 py-2 text-sm border border-emerald-500 hover:bg-emerald-500/20 rounded-md duration-200 text-emerald-400 hover:text-emerald-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 focus:ring-offset-gray-900"
-          aria-label="View certificate"
-        >
-          View Certificate
-        </a>
-      </div>
-    );
-  }, [handleCertificateClick]);
-
-  // Memoize transformed achievements to prevent recreation on every render
-  const transformedAchievements = useMemo(() => 
-    achievementsData.map(achievement => ({
-      id: achievement.id,
-      title: achievement.title,
-      description: (
-        <>
-          <div className="flex-grow">
-            <p className="text-sm text-emerald-400 mb-2">{achievement.category}</p>
-            <p>{achievement.description}</p>
+  const transformedAchievements = achievementsData.map(achievement => ({
+    id: achievement.id,
+    title: achievement.title,
+    description: (
+      <>
+        <div className="flex-grow"> {/* Div for content that grows */}
+          <p className="text-sm text-emerald-400 mb-2">{achievement.category}</p>
+          <p>{achievement.description}</p>
+        </div>
+        {achievement.link && (
+          <div className="mt-auto pt-4"> {/* Div for button, pushed to bottom */}
+            <a
+              href={achievement.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="px-4 py-2 text-sm border border-emerald-500 hover:bg-emerald-500/20 rounded-md duration-200 text-emerald-400 hover:text-emerald-300"
+            >
+              View Certificate
+            </a>
           </div>
-          {renderCertificateButton(achievement.link)}
-        </>
-      ),
-      link: achievement.link,
-    })), 
-    [achievementsData, renderCertificateButton]
-  );
-
-  // Memoize animation configuration
-  const animationConfig = useMemo(() => ({
-    from: { y: 50, opacity: 0 },
-    to: {
-      y: 0,
-      opacity: 1,
-      duration: 1,
-      scrollTrigger: {
-        trigger: null, // Will be set in useEffect
-        start: "top bottom",
-        end: "top center",
-        scrub: 1
-      }
-    }
-  }), []);
+        )}
+      </>
+    ),
+    link: achievement.link, // Main card link for clickable card area
+  }));
 
   useEffect(() => {
-    if (!headerRef.current) return;
-
-    const element = headerRef.current;
-    const config = { ...animationConfig.to };
-    config.scrollTrigger.trigger = element;
-
-    scrollTriggerRef.current = gsap.fromTo(element, animationConfig.from, config);
-
-    // Cleanup function to prevent memory leaks
-    return () => {
-      if (scrollTriggerRef.current) {
-        scrollTriggerRef.current.kill();
-        scrollTriggerRef.current = null;
+    gsap.fromTo(headerRef.current,
+      { y: 50, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        scrollTrigger: {
+          trigger: headerRef.current,
+          start: "top bottom",
+          end: "top center",
+          scrub: 1
+        }
       }
-    };
-  }, [animationConfig]);  return (
+    );
+  }, []);  return (
     <section name="achievements" className="min-h-screen w-full pt-16 md:pt-24 pb-16 md:pb-20">
       <div className="max-w-[1440px] mx-auto p-4 md:p-10 flex flex-col justify-center w-full h-full">
         <div ref={headerRef} className="pb-10 md:pb-16 text-center sm:text-left">

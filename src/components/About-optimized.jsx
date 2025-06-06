@@ -2,6 +2,7 @@ import { useEffect, useRef, useMemo, useCallback, memo } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { HoverEffect } from './ui/card-hover-effect';
+import PropTypes from 'prop-types';
 
 gsap.registerPlugin(ScrollTrigger);
 

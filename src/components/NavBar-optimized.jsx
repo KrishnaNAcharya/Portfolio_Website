@@ -17,8 +17,8 @@ const NavBar = memo(function NavBar({ loading }) {
     { id: 2, link: 'education', icon: <CustomIcons.Education /> },
     { id: 3, link: 'experience', icon: <CustomIcons.Experience /> },
     { id: 4, link: 'projects', icon: <CustomIcons.Projects /> },
-    { id: 5, link: 'achievements', icon: <CustomIcons.Achievements /> },
-    { id: 6, link: 'skills', icon: <CustomIcons.Skills /> },
+    { id: 5, link: 'skills', icon: <CustomIcons.Skills /> },
+    { id: 6, link: 'achievements', icon: <CustomIcons.Achievements /> },
     { id: 7, link: 'contact', icon: <CustomIcons.Contact /> }
   ], []);
 
@@ -188,17 +188,21 @@ const NavBar = memo(function NavBar({ loading }) {
             ref={sidebarRef}
             className="md:hidden fixed left-0 w-44 z-50 rounded-r-2xl"
             onClick={e => e.stopPropagation()} 
-            aria-label="Mobile navigation"            style={{
+            aria-label="Mobile navigation"
+            style={{
               top: '35px',
               background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.7) 70%, rgba(0, 0, 0, 0.3) 100%)',
               backdropFilter: 'blur(2px)',
               WebkitBackdropFilter: 'blur(2px)',
-              boxShadow: '4px 0 24px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 0 1px rgba(16, 185, 129, 0.3)',
+              boxShadow: '4px 0 24px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.15)',
               height: 'auto',
-              border: '2px solid rgba(16, 185, 129, 0.6)',
+              border: 'none',
               outline: 'none',
               borderTopRightRadius: '16px',
               borderBottomRightRadius: '16px',
+              borderRight: '1px solid rgba(255, 255, 255, 0.2)',
+              borderTop: '1px solid rgba(255, 255, 255, 0.15)',
+              borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
             }}
           >
             <div className="relative py-6 px-6">

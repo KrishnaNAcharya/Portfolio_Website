@@ -1,4 +1,4 @@
-import { useEffect, useRef, memo } from 'react';
+import { useEffect, useRef, memo, useMemo, useCallback } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { HoverEffect } from './ui/card-hover-effect';
@@ -7,8 +7,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Education = memo(function Education() {
   const headerRef = useRef(null);
+  const scrollTriggerRef = useRef(null);
 
-  const educationData = [
+  // Memoize static education data
+  const educationData = useMemo(() => [
     {
       id: 1,
       institution: "NMAM Institute of Technology",
@@ -33,40 +35,61 @@ const Education = memo(function Education() {
       score: "Percentage: 85.6%",
       duration: "2019 - 2020",
     },
-  ];
+  ], []);
 
-  const transformedEducation = educationData.map(edu => ({
-    id: edu.id,
-    title: edu.institution,
-    description: (
-      <>
-        <div className="flex-grow">
-          <p className="text-sm text-emerald-400 mb-1">{edu.degree}</p>
-          <p className="text-sm text-zinc-400 mb-1">{edu.location}</p>
-          <p className="text-sm text-zinc-400 mb-2">{edu.duration}</p>
-          <p className="font-semibold text-emerald-300">{edu.score}</p>
-        </div>
-      </>
-    ),
-    // link: undefined, // No specific link for education cards
-  }));
+  // Memoize education description rendering
+  const renderEducationDescription = useCallback((edu) => (
+    <div className="flex-grow">
+      <p className="text-sm text-emerald-400 mb-1">{edu.degree}</p>
+      <p className="text-sm text-zinc-400 mb-1">{edu.location}</p>
+      <p className="text-sm text-zinc-400 mb-2">{edu.duration}</p>
+      <p className="font-semibold text-emerald-300">{edu.score}</p>
+    </div>
+  ), []);
+
+  // Memoize transformed education data
+  const transformedEducation = useMemo(() => 
+    educationData.map(edu => ({
+      id: edu.id,
+      title: edu.institution,
+      description: renderEducationDescription(edu),
+    })), 
+    [educationData, renderEducationDescription]
+  );
+
+  // Memoize animation configuration
+  const animationConfig = useMemo(() => ({
+    from: { y: 50, opacity: 0 },
+    to: {
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      scrollTrigger: {
+        trigger: null, // Will be set in useEffect
+        start: "top bottom",
+        end: "top center",
+        scrub: 1
+      }
+    }
+  }), []);
 
   useEffect(() => {
-    gsap.fromTo(headerRef.current,
-      { y: 50, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        scrollTrigger: {
-          trigger: headerRef.current,
-          start: "top bottom",
-          end: "top center",
-          scrub: 1
-        }
+    if (!headerRef.current) return;
+
+    const element = headerRef.current;
+    const config = { ...animationConfig.to };
+    config.scrollTrigger.trigger = element;
+
+    scrollTriggerRef.current = gsap.fromTo(element, animationConfig.from, config);
+
+    // Cleanup function to prevent memory leaks
+    return () => {
+      if (scrollTriggerRef.current) {
+        scrollTriggerRef.current.kill();
+        scrollTriggerRef.current = null;
       }
-    );
-  }, []);  return (
+    };
+  }, [animationConfig]);  return (
     <section name="education" className="min-h-screen w-full pt-32 md:pt-48 pb-16 md:pb-20">
       <div className="max-w-[1440px] mx-auto p-4 md:p-10 flex flex-col justify-center w-full h-full">
         <div ref={headerRef} className="pb-10 md:pb-16 text-center sm:text-left">

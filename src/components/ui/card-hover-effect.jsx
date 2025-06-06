@@ -1,6 +1,7 @@
 import { cn } from "../../lib/utils";
-import { AnimatePresence, motion } from "framer-motion"; // Changed from motion/react to framer-motion
-import React, { useState } from "react"; // Added React import for useState
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
+import PropTypes from 'prop-types';
 
 export const HoverEffect = ({
   items,
@@ -50,6 +51,17 @@ export const HoverEffect = ({
   );
 };
 
+// PropTypes validation
+HoverEffect.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    link: PropTypes.string
+  })).isRequired,
+  className: PropTypes.string
+};
+
 export const Card = ({
   className,
   children,
@@ -66,6 +78,11 @@ export const Card = ({
   );
 };
 
+Card.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.node.isRequired
+};
+
 export const CardTitle = ({
   className,
   children,
@@ -75,6 +92,11 @@ export const CardTitle = ({
       {children}
     </h4>
   );
+};
+
+CardTitle.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.node.isRequired
 };
 
 export const CardDescription = ({
@@ -91,4 +113,9 @@ export const CardDescription = ({
       {children}
     </div>
   );
+};
+
+CardDescription.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.node.isRequired
 };
