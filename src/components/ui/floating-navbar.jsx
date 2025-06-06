@@ -33,7 +33,8 @@ export const FloatingNav = memo(({ navItems, className }) => {
     
     if (element) {
       console.log('FloatingNav: Found element, scrolling...');
-      const offset = 100; // Simple offset
+      // Much larger offsets to ensure heading appears at top of viewport
+      const offset = isFloating ? 0 : 0; // Significantly increased offsets
       const elementTop = element.offsetTop - offset;
       
       window.scrollTo({
@@ -47,7 +48,7 @@ export const FloatingNav = memo(({ navItems, className }) => {
       console.log('FloatingNav: Available sections:', Array.from(allSections).map(s => ({
         name: s.getAttribute('name'),
         id: s.getAttribute('id')
-      })));
+      }))); 
     }
   };
 

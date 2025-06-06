@@ -33,7 +33,7 @@ const NavBar = ({ loading }) => {
     
     if (element) {
       console.log('NavBar: Found element, scrolling...');
-      const offset = 100; // Simple offset
+      const offset = 0; // Significantly increased offset for mobile
       const elementTop = element.offsetTop - offset;
       
       window.scrollTo({
