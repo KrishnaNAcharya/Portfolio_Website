@@ -15,10 +15,11 @@ export const HoverEffect = ({
         "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10",
         className
       )}
-    >
-      {items.map((item, idx) => (
+    >      {items.map((item, idx) => (
         <a
           href={item?.link}
+          target={item?.link ? "_blank" : undefined}
+          rel={item?.link ? "noopener noreferrer" : undefined}
           key={item.id} // Changed to item.id for a more reliable key
           className="relative group block p-2 h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}

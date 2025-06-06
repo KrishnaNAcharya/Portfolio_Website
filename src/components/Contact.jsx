@@ -8,7 +8,6 @@ gsap.registerPlugin(ScrollTrigger);
 const Contact = memo(function Contact() {
   const headerRef = useRef(null);
   const scrollTriggerRef = useRef(null);
-
   // Memoize contact links data
   const contactLinks = useMemo(() => [
     {
@@ -29,12 +28,16 @@ const Contact = memo(function Contact() {
     },
     {
       href: "mailto:knacharyakavoor@gmail.com",
+      target: "_self",
+      rel: undefined,
       icon: FaEnvelope,
       label: "Email",
       ariaLabel: "Send me an email"
     },
     {
       href: "tel:+918088022968",
+      target: "_self",
+      rel: undefined,
       icon: FaPhoneAlt,
       label: "Phone",
       ariaLabel: "Call me"

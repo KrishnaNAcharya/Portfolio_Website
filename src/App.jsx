@@ -12,6 +12,7 @@ const Home = lazy(() => import('./components/Home'));
 const Experience = lazy(() => import('./components/Experience'));
 const Projects = lazy(() => import('./components/Projects'));
 const Achievements = lazy(() => import('./components/Achievements'));
+const Certificates = lazy(() => import('./components/Certificates'));
 const About = lazy(() => import('./components/About'));
 const Education = lazy(() => import('./components/Education'));
 const Contact = lazy(() => import('./components/Contact'));
@@ -101,13 +102,13 @@ function App() {
       >        
         <main className="relative z-10">
           <Analytics />
-          <NavBar loading={loading} />
-          <Suspense fallback={<Loading />}>
+          <NavBar loading={loading} />          <Suspense fallback={<Loading />}>
             <Home setLoading={setLoading} />
             <Education />
             <Experience />
             <Projects />
             <Achievements />
+            <Certificates />
             <About />
             <Contact />
           </Suspense>

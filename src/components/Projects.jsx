@@ -32,7 +32,7 @@ const Projects = memo(function Projects() {
       id: 2,
       title: "Portfolio Website",
       description: "Modern Next.js portfolio website with advanced animations and responsive design. Features lazy loading, GSAP scroll-triggered animations, Vortex particle background, and interactive UI components. Built with semantic HTML structure, custom hover effects, scroll-based animations, and optimized performance. Includes comprehensive sections for projects, experience, education, achievements, and skills with HoverEffect cards, SEO optimization with React Helmet, and Vercel Analytics integration.",
-      tech: ["Next.js.js", "Vite", "GSAP", "Tailwind CSS", "React Helmet", "Vercel Analytics"],
+      tech: ["React.js", "Vite", "GSAP", "Tailwind CSS", "React Helmet", "Vercel Analytics","namecheap"],
       github: "https://github.com/KrishnaNAcharya/portfolio",
       demo: "https://krishnanacharya.vercel.app"
     },

@@ -11,15 +11,14 @@ const NavBar = memo(function NavBar({ loading }) {
   const linksRef = useRef([]);
   const navbarRef = useRef(null);
   const sidebarRef = useRef(null);
-
   const links = useMemo(() => [
     { id: 1, link: 'home', icon: <CustomIcons.Home /> },
     { id: 2, link: 'education', icon: <CustomIcons.Education /> },
-    { id: 3, link: 'experience', icon: <CustomIcons.Experience /> },
-    { id: 4, link: 'projects', icon: <CustomIcons.Projects /> },
+    { id: 3, link: 'experience', icon: <CustomIcons.Experience /> },    { id: 4, link: 'projects', icon: <CustomIcons.Projects /> },
     { id: 5, link: 'achievements', icon: <CustomIcons.Achievements /> },
-    { id: 6, link: 'skills', icon: <CustomIcons.Skills /> },
-    { id: 7, link: 'contact', icon: <CustomIcons.Contact /> }
+    { id: 6, link: 'certifications', icon: <CustomIcons.Certificates /> },
+    { id: 7, link: 'skills', icon: <CustomIcons.Skills /> },
+    { id: 8, link: 'contact', icon: <CustomIcons.Contact /> }
   ], []);
 
   const navItems = useMemo(() => 
