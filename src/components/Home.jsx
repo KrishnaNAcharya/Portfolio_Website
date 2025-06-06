@@ -61,11 +61,9 @@ const Home = ({ setLoading }) => {
 
   if (localLoading) {
     return <Loading />;
-  }
-
-  return (
-    <section name="home" className="min-h-screen w-full pt-10 md:pt-24 pb-8 md:pb-16 flex items-center">
-      <div className='max-w-[1440px] w-full mx-auto flex flex-col items-center justify-center px-4 md:px-10 md:flex-row md:gap-20'>
+  }  return (
+    <section id="home" name="home" className="min-h-screen w-full flex items-center justify-center pt-24 md:pt-32">
+      <div className='max-w-[1440px] w-full h-full mx-auto flex flex-col items-center justify-center px-4 md:px-10 md:flex-row md:gap-20'>
         <div className='flex flex-col justify-center w-full text-center md:text-left md:w-3/5'>
           <h1 ref={textRef} className='text-4xl sm:text-5xl md:text-[5.5rem] font-bold text-white'>
             Hello there! My name is {" "}
@@ -75,13 +73,13 @@ const Home = ({ setLoading }) => {
           </h1>
           <div ref={descriptionRef} className="text-white text-lg md:text-2xl py-4 md:py-5 max-w-3xl text-justify leading-relaxed">
             <p className="mb-3 text-justify">
-              Hey, I'm Krishna N Acharya, a final-year AI & Data Science student at NMAMIT. I'm into full-stack development, always exploring the latest in tech, and I love messing around with new (and old) tools just to see what they can do. I love focusing on building good user experience, high performance, and top efficiency – maybe a little too much, leaning towards perfectionism. I can't seem to run away from it.
+              Hey, I&apos;m Krishna N Acharya, a final-year AI & Data Science student at NMAMIT. I&apos;m into full-stack development, always exploring the latest in tech, and I love messing around with new (and old) tools just to see what they can do. I love focusing on building good user experience, high performance, and top efficiency – maybe a little too much, leaning towards perfectionism. I can&apos;t seem to run away from it.
             </p>
             <p className="mb-3 text-justify">
               Outside the usual coding grind, I keep up with tech news, dive deep into random research rabbit holes, and enjoy photography, music, and, once every 12 full moons, video games.
             </p>
             <p className="text-justify">
-              If you're looking for me, I'm probably geeking out over some new tech or testing something weird just because I can.
+              If you&apos;re looking for me, I&apos;m probably geeking out over some new tech or testing something weird just because I can.
             </p>
           </div>
           <br className="hidden md:block" />
@@ -94,7 +92,7 @@ const Home = ({ setLoading }) => {
             </a>
           </div>
         </div>
-        <div ref={imageRef} className='hidden md:flex mt-10 mb-20 md:mt-0 md:mb-0 w-full md:w-2/5 justify-center'>
+        <div ref={imageRef} className='flex mt-8 md:mt-0 mb-16 md:mb-0 w-full md:w-2/5 justify-center'>
           <img 
             src={Hero} 
             alt="Krishna N Acharya - Portfolio Hero Image"

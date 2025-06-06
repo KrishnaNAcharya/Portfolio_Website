@@ -229,7 +229,7 @@ export const Vortex = (props) => {
         ref={containerRef}
         className="fixed inset-0 h-full w-full flex items-center justify-center" // Changed 'absolute' to 'fixed'
       >
-        <canvas ref={canvasRef} className="w-full h-full"></canvas>
+        <canvas ref={canvasRef} className="w-full h-full" style={{ pointerEvents: 'none' }}></canvas>
       </motion.div>
       {props.children && (
         <div className={cn("relative z-10", props.className)}>

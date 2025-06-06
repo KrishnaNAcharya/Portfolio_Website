@@ -169,9 +169,7 @@ const Projects = memo(function Projects() {
           scrub: 1
         }
       }
-    );
-
-    // Individual project card animations are now handled by HoverEffect
+    );    // Individual project card animations are now handled by HoverEffect
     // projectsRef.current.forEach((project, index) => {
     //   gsap.fromTo(project,
     //     { 
@@ -192,9 +190,8 @@ const Projects = memo(function Projects() {
     //   );
     // });
   }, []);
-
   return (
-    <section name="projects" className="min-h-screen w-full pt-8 md:pt-16 pb-16 md:pb-20">
+    <section name="projects" className="min-h-screen w-full pt-16 md:pt-24 pb-16 md:pb-20">
       <div className="max-w-[1440px] mx-auto p-4 md:p-10 flex flex-col justify-center w-full h-full">
         <div ref={headerRef} className="pb-10 md:pb-16 text-center sm:text-left">
           <h2 className="text-5xl sm:text-8xl font-bold inline border-b-4 border-emerald-500 text-white">Projects</h2> {/* Ensure this is h2 */}

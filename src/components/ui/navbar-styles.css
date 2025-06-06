@@ -1,0 +1,20 @@
+/* Optimized CSS transitions for navbar */
+.navbar-container {
+  will-change: transform, opacity;
+  transform: translateZ(0); /* Force hardware acceleration */
+}
+
+.navbar-floating {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.navbar-item {
+  will-change: color;
+  transform: translateZ(0);
+}
+
+/* Reduce repaint/reflow */
+.navbar-backdrop {
+  contain: layout style paint;
+}

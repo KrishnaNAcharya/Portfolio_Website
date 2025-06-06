@@ -85,10 +85,8 @@ const Experience = () => {
           end: "top center",
           scrub: 1
         }
-      }
-    );
+      }    );
   }, []);
-
   return (
     <section name="experience" className="w-full min-h-screen pt-16 md:pt-24 pb-16 md:pb-20">
       <div className='max-w-[1440px] mx-auto p-4 md:p-10 flex flex-col justify-center w-full h-full'>

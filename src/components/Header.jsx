@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { useRouter } from 'next/navigation'; // Import useRouter
+import { useState, useEffect } from "react";
 import Link from 'next/link'; // Import Link for avatar
 import Image from 'next/image'; // Import Image for avatar
 import {
@@ -21,7 +20,6 @@ import tempAvatar from '@/app/profile/temp/temp.png'; // Example avatar image
 export default function Header() {
   const [visible, setVisible] = useState(false);
   const [isOpen, setIsOpen] = useState(false); // For mobile menu toggle
-  const router = useRouter(); // Initialize router
   const [isAuthenticated, setIsAuthenticated] = useState(false); // For auth status
   const [isLoadingAuth, setIsLoadingAuth] = useState(true); // For auth check loading
 
@@ -145,7 +143,7 @@ export default function Header() {
           <MobileNavToggle isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />
         </MobileNavHeader>
         {/* Mobile Menu Content */}
-        <MobileNavMenu isOpen={isOpen} onClose={() => setIsOpen(false)}>
+        <MobileNavMenu isOpen={isOpen} onClose={() => setIsOpen(false)} className="bg-black/80 backdrop-blur-lg">
           {/* Render NavItems specifically for mobile */}
           <NavItems items={navItems} mobile />
           {/* Conditionally render AuthElement in mobile menu */}
