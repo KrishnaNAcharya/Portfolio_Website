@@ -61,14 +61,13 @@ export const FloatingNav = memo(({ navItems, className }) => {
           isFloating ? 
             "max-w-fit rounded-full px-12 py-3 space-x-8" :
             "w-full px-16 py-2 space-x-10"
-        )}
-        style={{
-          background: isFloating ? 'rgba(0, 0, 0, 0.85)' : 'rgba(0, 0, 0, 0.95)',
-          backdropFilter: isFloating ? 'blur(20px)' : 'none',
-          WebkitBackdropFilter: isFloating ? 'blur(20px)' : 'none',
-          border: isFloating ? '1px solid rgba(255, 255, 255, 0.18)' : 'none',
+        )}        style={{
+          background: isFloating ? 'rgba(0, 0, 0, 0.75)' : 'rgba(0, 0, 0, 0.05)',
+          backdropFilter: isFloating ? 'blur(10px)' : 'blur(20px)',
+          WebkitBackdropFilter: isFloating ? 'blur(10px)' : 'blur(20px)',
+          border: isFloating ? '1px solid rgb(16, 185, 129)' : 'none', // Emerald-500 green border
           borderRadius: isFloating ? '50px' : '0px',
-          boxShadow: isFloating ? '0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1)' : 'none',
+          boxShadow: isFloating ? '0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 20px rgba(16, 185, 129, 0.3)' : '0 2px 10px rgba(0, 0, 0, 0.2)', // Added subtle shadow for desktop
         }}
       >
         {navItems.map((navItem, idx) => (
