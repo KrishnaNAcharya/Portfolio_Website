@@ -32,7 +32,7 @@ const Projects = memo(function Projects() {
       id: 2,
       title: "Portfolio Website",
       description: "Modern Next.js portfolio website with advanced animations and responsive design. Features lazy loading, GSAP scroll-triggered animations, Vortex particle background, and interactive UI components. Built with semantic HTML structure, custom hover effects, scroll-based animations, and optimized performance. Includes comprehensive sections for projects, experience, education, achievements, and skills with HoverEffect cards, SEO optimization with React Helmet, and Vercel Analytics integration.",
-      tech: ["React.js", "Vite", "GSAP", "Tailwind CSS", "React Helmet", "Vercel Analytics","namecheap"],
+      tech: ["React.js", "Vite", "GSAP", "Tailwind CSS", "React Helmet", "Vercel Analytics","Namecheap"],
       github: "https://github.com/KrishnaNAcharya/portfolio",
       demo: "https://krishnanacharya.vercel.app"
     },
@@ -185,16 +185,27 @@ const Projects = memo(function Projects() {
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
-  }, [setupHeaderAnimation]);
-  return (
-    <section name="projects" className="min-h-screen w-full pt-16 md:pt-24 pb-16 md:pb-20">
+  }, [setupHeaderAnimation]);  return (
+    <section 
+      id="projects" 
+      name="projects" 
+      className="min-h-screen w-full pt-16 md:pt-24 pb-16 md:pb-20"
+      aria-labelledby="projects-heading"
+      role="region"
+    >
       <div className="max-w-[1440px] mx-auto p-4 md:p-10 flex flex-col justify-center w-full h-full">
-        <div ref={headerRef} className="pb-10 md:pb-16 text-center sm:text-left">
-          <h2 className="text-5xl sm:text-8xl font-bold inline border-b-4 border-emerald-500 text-white">Projects</h2> {/* Ensure this is h2 */}
-        </div>
+        <header ref={headerRef} className="pb-10 md:pb-16 text-center sm:text-left">
+          <h2 
+            id="projects-heading"
+            className="text-5xl sm:text-8xl font-bold inline border-b-4 border-emerald-500 text-white"
+          >
+            Projects
+          </h2>
+        </header>
 
-        {/* Replace the existing grid with HoverEffect */}
-        <HoverEffect items={transformedProjects} />
+        <main aria-label="Portfolio projects and technical work">
+          <HoverEffect items={transformedProjects} />
+        </main>
         
         {/* Old grid structure (to be removed or commented out):
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-10">

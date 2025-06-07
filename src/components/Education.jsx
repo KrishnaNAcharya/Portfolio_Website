@@ -90,14 +90,25 @@ const Education = memo(function Education() {
       }
     };
   }, [animationConfig]);  return (
-    <section name="education" className="min-h-screen w-full pt-32 md:pt-48 pb-16 md:pb-20">
+    <section 
+      id="education" 
+      name="education" 
+      className="min-h-screen w-full pt-32 md:pt-48 pb-16 md:pb-20"
+      aria-labelledby="education-heading"
+      role="region"
+    >
       <div className="max-w-[1440px] mx-auto p-4 md:p-10 flex flex-col justify-center w-full h-full">
-        <div ref={headerRef} className="pb-10 md:pb-16 text-center sm:text-left">
-          <h2 className="text-5xl sm:text-8xl font-bold inline text-white border-b-4 border-emerald-500">
+        <header ref={headerRef} className="pb-10 md:pb-16 text-center sm:text-left">
+          <h2 
+            id="education-heading"
+            className="text-5xl sm:text-8xl font-bold inline text-white border-b-4 border-emerald-500"
+          >
             Education
           </h2>
-        </div>
-        <HoverEffect items={transformedEducation} />
+        </header>
+        <main aria-label="Educational qualifications and achievements">
+          <HoverEffect items={transformedEducation} />
+        </main>
       </div>
     </section>
   );

@@ -91,20 +91,31 @@ const Contact = memo(function Contact() {
         scrollTriggerRef.current = null;
       }
     };
-  }, [animationConfig]);
-  return (
-    <section name="contact" className="w-full py-8 mt-auto">
+  }, [animationConfig]);  return (
+    <section 
+      id="contact" 
+      name="contact" 
+      className="w-full py-8 mt-auto"
+      aria-labelledby="contact-heading"
+      role="region"
+    >
       <div className="max-w-screen-lg w-full px-4 py-8 mx-auto">
-        <div ref={headerRef} className="flex justify-center mb-8 text-center sm:text-left">
-          <h2 className="text-4xl sm:text-6xl font-bold inline border-b-4 border-emerald-500 text-white">
+        <header ref={headerRef} className="flex justify-center mb-8 text-center sm:text-left">
+          <h2 
+            id="contact-heading"
+            className="text-4xl sm:text-6xl font-bold inline border-b-4 border-emerald-500 text-white"
+          >
             Contact Me
           </h2>
-        </div>
-        <div className="flex flex-col items-center">
-          <div className="flex flex-wrap justify-center gap-8 md:gap-12 pb-4">
+        </header>
+        <main className="flex flex-col items-center">
+          <nav 
+            className="flex flex-wrap justify-center gap-8 md:gap-12 pb-4"
+            aria-label="Contact methods and social media links"
+          >
             {contactLinks.map(renderContactLink)}
-          </div>
-        </div>
+          </nav>
+        </main>
       </div>
     </section>
   );

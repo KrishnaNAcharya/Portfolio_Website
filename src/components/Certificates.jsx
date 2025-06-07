@@ -25,7 +25,7 @@ const Certificates = memo(function Certificates() {
       title: "Java Programming I",
       description: "Successfully completed the Java Programming I course as part of the Java Programming MOOC series by University of Helsinki. This comprehensive course covers Java fundamentals, object-oriented programming concepts, and practical coding exercises.",
       organization: "University of Helsinki",
-      date: "Completed",
+      date: "June, 2023",
       institution: "University of Helsinki - Department of Computer Science",
       skills: ["Java Programming", "Object-Oriented Programming", "Data Structures", "Algorithm Implementation"],
       verificationUrl: "https://drive.google.com/file/d/1aOA1W4XusvSTTbQ4Q95jtdONdGaZNx3D/view?usp=sharing"
@@ -171,17 +171,26 @@ const Certificates = memo(function Certificates() {
         scrollTriggerRef.current = null;
       }
     };
-  }, [animationConfig]);
-  return (
-    <section name="certifications" className="min-h-screen w-full pt-16 md:pt-24 pb-16 md:pb-20">
+  }, [animationConfig]);  return (
+    <section 
+      id="certifications" 
+      name="certifications" 
+      className="min-h-screen w-full pt-16 md:pt-24 pb-16 md:pb-20"
+      aria-labelledby="certifications-heading"
+      role="region"
+    >
       <div className="max-w-[1440px] mx-auto p-4 md:p-10 flex flex-col justify-center w-full h-full">
-        <div ref={headerRef} className="pb-10 md:pb-16 text-center sm:text-left">
-          <h2 className="text-5xl sm:text-8xl font-bold inline text-white border-b-4 border-emerald-500">
+        <header ref={headerRef} className="pb-10 md:pb-16 text-center sm:text-left">
+          <h2 
+            id="certifications-heading"
+            className="text-5xl sm:text-8xl font-bold inline text-white border-b-4 border-emerald-500"
+          >
             Certifications
           </h2>
-          
-        </div>
-        <HoverEffect items={transformedCertificates} />
+        </header>
+        <main aria-label="Professional certifications and credentials">
+          <HoverEffect items={transformedCertificates} />
+        </main>
       </div>
     </section>
   );

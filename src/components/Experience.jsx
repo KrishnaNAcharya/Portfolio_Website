@@ -116,18 +116,29 @@ const Experience = memo(function Experience() {
       }
     };
   }, [animationConfig]);  return (
-    <section name="experience" className="w-full min-h-screen pt-16 md:pt-24 pb-16 md:pb-20">
+    <section 
+      id="experience" 
+      name="experience" 
+      className="w-full min-h-screen pt-16 md:pt-24 pb-16 md:pb-20"
+      aria-labelledby="experience-heading"
+      role="region"
+    >
       <div className='max-w-[1440px] mx-auto p-4 md:p-10 flex flex-col justify-center w-full h-full'>
-        <div ref={headerRef} className='pb-10 md:pb-16 text-center sm:text-left'>
-          <h2 className='text-5xl sm:text-8xl font-bold inline border-b-4 border-emerald-500 text-white'>
+        <header ref={headerRef} className='pb-10 md:pb-16 text-center sm:text-left'>
+          <h2 
+            id="experience-heading"
+            className='text-5xl sm:text-8xl font-bold inline border-b-4 border-emerald-500 text-white'
+          >
             Experience
           </h2>
-        </div>
+        </header>
         
-        <HoverEffect 
-          items={transformedExperiences} 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6 md:gap-8 py-10" 
-        />
+        <main aria-label="Professional work experience and accomplishments">
+          <HoverEffect 
+            items={transformedExperiences} 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6 md:gap-8 py-10" 
+          />
+        </main>
       </div>
     </section>
   );

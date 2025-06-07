@@ -73,14 +73,13 @@ const Home = memo(function Home({ setLoading }) {
   if (localLoading) {
     return <Loading />;
   }
-
   return (
-    <section name="home" className="min-h-screen w-full pt-20 md:pt-24 pb-8 md:pb-16 flex items-center">
+    <section id="home" name="home" className="min-h-screen w-full pt-20 md:pt-24 pb-8 md:pb-16 flex items-center" aria-label="Krishna N Acharya - Home Section">
       <div className='max-w-[1440px] w-full mx-auto flex flex-col items-center justify-center px-4 md:px-10 md:flex-row md:gap-20'>
-        <div className='flex flex-col justify-center w-full text-center md:text-left md:w-3/5'>
+        <header className='flex flex-col justify-center w-full text-center md:text-left md:w-3/5'>
           <h1 ref={textRef} className='text-4xl sm:text-5xl md:text-[5.5rem] font-bold text-white'>
             Hello there! My name is {" "}
-            <span className='animate-shine'>
+            <span className='animate-shine' aria-label="Krishna">
               Krishna
             </span>.
           </h1>
@@ -103,9 +102,8 @@ const Home = memo(function Home({ setLoading }) {
               <button className="w-full md:w-auto text-white group border-2 border-emerald-500 px-8 py-4 my-3 flex items-center justify-center md:justify-start btn-fill-animation hover:border-emerald-500">
                 Resume <MdArrowRightAlt className="ml-2 text-xl group-hover:translate-x-1 transition-transform duration-300" />
               </button>
-            </a>
-          </div>
-        </div>
+            </a>          </div>
+        </header>
         
         {/* Hero Image - shown on all screen sizes now */}
         <div ref={imageRef} className='flex mt-10 mb-6 md:mt-0 md:mb-0 w-full md:w-2/5 justify-center relative'>
