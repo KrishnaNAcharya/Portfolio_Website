@@ -2,16 +2,12 @@
   "name": "personalportfolio",
   "private": true,
   "version": "0.0.0",
-  "type": "module",  "scripts": {
+  "type": "module",
+  "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:seo": "vite build && npm run generate:sitemap",
-    "build:production": "npm run generate:images && vite build && npm run generate:sitemap",
-    "generate:images": "node scripts/generate-images.js",
-    "generate:sitemap": "node scripts/generate-sitemap.js",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "analyze": "vite build --mode analyze"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@react-three/fiber": "^8.18.0",
@@ -42,7 +38,6 @@
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
     "postcss": "^8.4.39",
-    "sharp": "^0.34.2",
     "tailwindcss": "^3.4.4",
     "vite": "^5.3.1"
   }

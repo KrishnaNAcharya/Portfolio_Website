@@ -76,10 +76,9 @@ const Home = memo(function Home({ setLoading }) {
   return (
     <section id="home" name="home" className="min-h-screen w-full pt-20 md:pt-24 pb-8 md:pb-16 flex items-center" aria-label="Krishna N Acharya - Home Section">
       <div className='max-w-[1440px] w-full mx-auto flex flex-col items-center justify-center px-4 md:px-10 md:flex-row md:gap-20'>
-        <header className='flex flex-col justify-center w-full text-center md:text-left md:w-3/5'>
-          <h1 ref={textRef} className='text-4xl sm:text-5xl md:text-[5.5rem] font-bold text-white'>
+        <header className='flex flex-col justify-center w-full text-center md:text-left md:w-3/5'>          <h1 ref={textRef} className='text-4xl sm:text-5xl md:text-[5.5rem] font-bold text-white'>
             Hello there! My name is {" "}
-            <span className='animate-shine' aria-label="Krishna">
+            <span className='animate-shine text-6xl sm:text-7xl md:text-[6.5rem]' aria-label="Krishna" style={{ fontFamily: '"Great Vibes", "Dancing Script", cursive', fontWeight: '400', letterSpacing: '0.05em' }}>
               Krishna
             </span>.
           </h1>
