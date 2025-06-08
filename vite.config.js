@@ -50,10 +50,7 @@ export default defineConfig({
             './src/components/ui/floating-navbar'
           ]
         },
-        chunkFileNames: (chunkInfo) => {
-          const facadeModuleId = chunkInfo.facadeModuleId
-            ? chunkInfo.facadeModuleId.split('/').pop().replace(/\.\w+$/, '')
-            : 'chunk';
+        chunkFileNames: () => {
           return `assets/js/[name]-[hash].js`;
         },
         entryFileNames: 'assets/js/[name]-[hash].js',

@@ -159,7 +159,7 @@ const About = memo(() => {
         <article ref={setSectionRef(0)} className='text-justify'>
           <h3 className='text-3xl font-semibold mt-8 md:mt-10 mb-4 md:mb-5 text-center sm:text-left'>Current Focus</h3>
           <p className='text-lg md:text-2xl text-white text-justify leading-relaxed'>
-            My current efforts are centered on enhancing my problem-solving capabilities by deepening my understanding of Data Structures and Algorithms (DSA). Simultaneously, I'm actively developing several projects, including NASAR, Wipfli MentorStack, and the IDEA Website. Alongside these technical pursuits, I am dedicated to maintaining my physical and mental well-being and am also diligently preparing for upcoming placement opportunities.
+            My current efforts are centered on enhancing my problem-solving capabilities by deepening my understanding of Data Structures and Algorithms (DSA). Simultaneously, I&apos;m actively developing several projects, including NASAR, Wipfli MentorStack, and the IDEA Website. Alongside these technical pursuits, I am dedicated to maintaining my physical and mental well-being and am also diligently preparing for upcoming placement opportunities.
           </p>
         </article>
 
@@ -173,7 +173,7 @@ const About = memo(() => {
         <div ref={setSectionRef(2)} className='text-justify'>
           <h3 className='text-3xl font-semibold mt-10 mb-5 text-center sm:text-left'>What I do in my free time?</h3>
           <p className='text-lg md:text-2xl text-white text-justify leading-relaxed'>
-            During my leisure time, I enjoy listening to music, playing video games, and exploring a wide array of technologies, both new and old. Photography is another passion. I also have a penchant for conducting in-depth research on various topics that pique my curiosity. An interesting quirk: I don't really watch web series, anime, or movies – I simply read the plot summaries. It's much faster, and I still grasp the main points (blame my love-hate relationship with perfection and efficiency). So please, refrain from calling me a walking encyclopedia. Also, my Reddit and LeetCode accounts are impossible to find, so don't bother searching because I'm a tad shy. Anyway, that's all I can yap about. Adios for now!
+            During my leisure time, I enjoy listening to music, playing video games, and exploring a wide array of technologies, both new and old. Photography is another passion. I also have a penchant for conducting in-depth research on various topics that pique my curiosity. An interesting quirk: I don&apos;t really watch web series, anime, or movies – I simply read the plot summaries. It&apos;s much faster, and I still grasp the main points (blame my love-hate relationship with perfection and efficiency). So please, refrain from calling me a walking encyclopedia. Also, my Reddit and LeetCode accounts are impossible to find, so don&apos;t bother searching because I&apos;m a tad shy. Anyway, that&apos;s all I can yap about. Adios for now!
           </p>
         </div>
       </div>
