@@ -17,9 +17,17 @@
     /* Removed crisscross background properties */
    
   }
-
   section {
     @apply bg-transparent;
+  }
+  
+  /* Reduced section spacing */
+  .section-spacing {
+    @apply pt-8 md:pt-12 pb-8 md:pb-12;
+  }
+  
+  .header-spacing {
+    @apply pb-6 md:pb-8;
   }
 }
 

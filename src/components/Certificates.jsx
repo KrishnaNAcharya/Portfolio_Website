@@ -175,12 +175,12 @@ const Certificates = memo(function Certificates() {
     <section 
       id="certifications" 
       name="certifications" 
-      className="min-h-screen w-full pt-16 md:pt-24 pb-16 md:pb-20"
+      className="w-full pt-8 md:pt-12 pb-8 md:pb-12"
       aria-labelledby="certifications-heading"
       role="region"
     >
-      <div className="max-w-[1440px] mx-auto p-4 md:p-10 flex flex-col justify-center w-full h-full">
-        <header ref={headerRef} className="pb-10 md:pb-16 text-center sm:text-left">
+      <div className="max-w-[1440px] mx-auto p-4 md:p-10 flex flex-col w-full h-full">
+        <header ref={headerRef} className="pb-6 md:pb-8 text-center sm:text-left">
           <h2 
             id="certifications-heading"
             className="text-5xl sm:text-8xl font-bold inline text-white border-b-4 border-emerald-500"

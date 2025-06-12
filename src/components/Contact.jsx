@@ -95,12 +95,12 @@ const Contact = memo(function Contact() {
     <section 
       id="contact" 
       name="contact" 
-      className="w-full py-8 mt-auto"
+      className="w-full py-4 mt-auto"
       aria-labelledby="contact-heading"
       role="region"
     >
-      <div className="max-w-screen-lg w-full px-4 py-8 mx-auto">
-        <header ref={headerRef} className="flex justify-center mb-8 text-center sm:text-left">
+      <div className="max-w-screen-lg w-full px-4 py-4 mx-auto">
+        <header ref={headerRef} className="flex justify-center mb-4 text-center sm:text-left">
           <h2 
             id="contact-heading"
             className="text-4xl sm:text-6xl font-bold inline border-b-4 border-emerald-500 text-white"
@@ -110,7 +110,7 @@ const Contact = memo(function Contact() {
         </header>
         <main className="flex flex-col items-center">
           <nav 
-            className="flex flex-wrap justify-center gap-8 md:gap-12 pb-4"
+            className="flex flex-wrap justify-center gap-8 md:gap-12 pb-2"
             aria-label="Contact methods and social media links"
           >
             {contactLinks.map(renderContactLink)}

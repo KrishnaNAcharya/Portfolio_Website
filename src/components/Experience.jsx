@@ -115,16 +115,15 @@ const Experience = memo(function Experience() {
         scrollTriggerRef.current = null;
       }
     };
-  }, [animationConfig]);  return (
-    <section 
+  }, [animationConfig]);  return (    <section 
       id="experience" 
       name="experience" 
-      className="w-full min-h-screen pt-16 md:pt-24 pb-16 md:pb-20"
+      className="w-full pt-8 md:pt-12 pb-8 md:pb-12"
       aria-labelledby="experience-heading"
       role="region"
     >
-      <div className='max-w-[1440px] mx-auto p-4 md:p-10 flex flex-col justify-center w-full h-full'>
-        <header ref={headerRef} className='pb-10 md:pb-16 text-center sm:text-left'>
+      <div className='max-w-[1440px] mx-auto p-4 md:p-10 flex flex-col w-full h-full'>
+        <header ref={headerRef} className='pb-6 md:pb-8 text-center sm:text-left'>
           <h2 
             id="experience-heading"
             className='text-5xl sm:text-8xl font-bold inline border-b-4 border-emerald-500 text-white'
@@ -136,7 +135,7 @@ const Experience = memo(function Experience() {
         <main aria-label="Professional work experience and accomplishments">
           <HoverEffect 
             items={transformedExperiences} 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6 md:gap-8 py-10" 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6 md:gap-8 py-4" 
           />
         </main>
       </div>

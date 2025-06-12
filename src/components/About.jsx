@@ -137,12 +137,12 @@ const About = memo(() => {
     <section 
       id="skills" 
       name="skills" 
-      className="w-full min-h-screen pt-32 md:pt-48 pb-16 md:pb-20"
+      className="w-full pt-8 md:pt-12 pb-8 md:pb-12"
       aria-labelledby="skills-heading"
       role="region"
     >
-      <div className='max-w-[1440px] mx-auto p-4 md:p-10 flex flex-col justify-center w-full h-full'>
-        <header ref={headerRef} className='pb-10 md:pb-16 text-center sm:text-left'>
+      <div className='max-w-[1440px] mx-auto p-4 md:p-10 flex flex-col w-full h-full'>
+        <header ref={headerRef} className='pb-6 md:pb-8 text-center sm:text-left'>
           <h2 
             id="skills-heading"
             className='text-5xl sm:text-8xl font-bold inline border-b-4 border-emerald-500 text-white'

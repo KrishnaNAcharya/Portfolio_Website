@@ -74,7 +74,7 @@ const Home = memo(function Home({ setLoading }) {
     return <Loading />;
   }
   return (
-    <section id="home" name="home" className="min-h-screen w-full pt-20 md:pt-24 pb-8 md:pb-16 flex items-center" aria-label="Krishna N Acharya - Home Section">
+    <section id="home" name="home" className="min-h-screen w-full pt-16 md:pt-20 pb-4 md:pb-8 flex items-center" aria-label="Krishna N Acharya - Home Section">
       <div className='max-w-[1440px] w-full mx-auto flex flex-col items-center justify-center px-4 md:px-10 md:flex-row md:gap-20'>
       <header className='flex flex-col justify-center w-full text-center md:text-left md:w-3/5'>
   <h1 ref={textRef} className='text-4xl sm:text-5xl md:text-[5.5rem] font-medium text-white'>
