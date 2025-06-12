@@ -76,12 +76,13 @@ const Home = memo(function Home({ setLoading }) {
   return (
     <section id="home" name="home" className="min-h-screen w-full pt-20 md:pt-24 pb-8 md:pb-16 flex items-center" aria-label="Krishna N Acharya - Home Section">
       <div className='max-w-[1440px] w-full mx-auto flex flex-col items-center justify-center px-4 md:px-10 md:flex-row md:gap-20'>
-        <header className='flex flex-col justify-center w-full text-center md:text-left md:w-3/5'>          <h1 ref={textRef} className='text-4xl sm:text-5xl md:text-[5.5rem] font-bold text-white'>
-            Hello there! My name is {" "}
-            <span className='animate-shine text-4xl sm:text-5xl md:text-[5.8rem]' aria-label="Krishna" style={{ fontFamily: '"Great Vibes", "Dancing Script", cursive', fontWeight: '400', letterSpacing: '0.05em' }}>
-              Krishna
-            </span>.
-          </h1>
+      <header className='flex flex-col justify-center w-full text-center md:text-left md:w-3/5'>
+  <h1 ref={textRef} className='text-4xl sm:text-5xl md:text-[5.5rem] font-medium text-white'>
+    Hello there! My name is {" "}
+    <span className='animate-shine text-4xl sm:text-5xl md:text-[5.8rem]' aria-label="Krishna" style={{ fontFamily: '"Great Vibes", "Dancing Script", cursive', fontWeight: '500', letterSpacing: '0.05em' }}>
+      Krishna
+    </span>.
+  </h1>
           <div ref={descriptionRef} className="text-white text-lg md:text-2xl py-4 md:py-5 max-w-3xl text-justify leading-relaxed">
             <p className="mb-3 text-justify">
               Hey, I&apos;m Krishna N Acharya, a final-year AI & Data Science student at NMAMIT. I&apos;m into full-stack development, always exploring the latest in tech, and I love messing around with new (and old) tools just to see what they can do. I love focusing on building good user experience, high performance, and top efficiency – maybe a little too much, leaning towards perfectionism. I can&apos;t seem to run away from it.
