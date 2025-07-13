@@ -19,7 +19,7 @@ const Contact = memo(function Contact() {
       ariaLabel: "Visit my GitHub profile"
     },
     {
-      href: "https://www.linkedin.com/in/krishna-n-acharya-a3136b284/",
+      href: "https://www.linkedin.com/in/krishnanacharya",
       target: "_blank", 
       rel: "noopener noreferrer",
       icon: FaLinkedin,
