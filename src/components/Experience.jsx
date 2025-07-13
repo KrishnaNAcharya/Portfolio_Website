@@ -53,16 +53,16 @@ const Experience = memo(function Experience() {
       description: (
         <ul className="list-disc pl-5 space-y-2">
           <li>
-            Built a sophisticated image gallery page with 25+ state variables, a 3D carousel, semantic URL filters, and real-time fuzzy search using <b>Next.js 15</b>, <b>TypeScript</b>, and <b>Tailwind CSS</b>. Enhanced user experience with dynamic filtering and seamless navigation.
+            Built a sophisticated image gallery page with 25+ state variables, a 3D carousel, semantic URL filters, and real-time fuzzy search using Next.js 15,TypeScript, and Tailwind CSS. Enhanced user experience with dynamic filtering and seamless navigation.
           </li>
           <li>
-            Engineered a fully responsive and accessible UI with <b>Framer Motion</b>, <b>Radix UI</b>, and <b>shadcn</b> components, ensuring smooth animations, keyboard navigation, and cross-device usability for all users and devices.
+            Engineered a fully responsive and accessible UI with Framer Motion, Radix UI, and shadcn components, ensuring smooth animations, keyboard navigation, and cross-device usability for all users and devices.
           </li>
           <li>
-            Architected modular API routes and a relational <b>PostgreSQL</b> database with <b>Prisma ORM</b>, enabling optimized full-text search, category-based filtering, and performant data queries for scalable content management.
+            Architected modular API routes and a relational PostgreSQL database with Prisma ORM, enabling optimized full-text search, category-based filtering, and performant data queries for scalable content management.
           </li>
           <li>
-            Integrated <b>Cloudinary</b> for progressive image loading and CDN delivery, reducing bandwidth by 70%. Collaborated in Agile sprints within a 10-member team, using Git-based version control and CI/CD workflows for efficient development.
+            Integrated Cloudinary for progressive image loading and CDN delivery, reducing bandwidth by 70%. Collaborated in Agile sprints within a 10-member team, using Git-based version control and CI/CD workflows for efficient development.
           </li>
         </ul>
       ),
