@@ -53,6 +53,7 @@ const About = memo(() => {
           <li>VS Code</li>
           <li>Postman</li>
           <li>Cloudinary</li>
+          <li>Prisma ORM</li>
           <li>Figma</li>
           <li>Firebase</li>
           <li>MongoDB</li>
@@ -157,21 +158,22 @@ const About = memo(() => {
         <article ref={setSectionRef(0)} className='text-justify'>
           <h3 className='text-3xl font-semibold mt-8 md:mt-10 mb-4 md:mb-5 text-center sm:text-left'>Current Focus</h3>
           <p className='text-lg md:text-2xl text-white text-justify leading-relaxed'>
-            My current efforts are centered on enhancing my problem-solving capabilities by deepening my understanding of Data Structures and Algorithms (DSA). Simultaneously, I&apos;m actively developing several projects, including MentorStack and the IDEA Website. Alongside these technical pursuits, I am dedicated to maintaining my physical and mental well-being and am also diligently preparing for upcoming placement opportunities.
+            I am currently focused on strengthening my problem-solving skills through an in-depth study of Data Structures and Algorithms (DSA). Alongside this, I am actively building projects such as MentorStack and the IDEA Website, applying full-stack development principles with an emphasis on performance, UX, and scalability. Beyond technical growth, I prioritize maintaining both physical and mental well-being and am preparing rigorously for upcoming placement opportunities.
           </p>
         </article>
 
         <article ref={setSectionRef(1)} className='text-justify'>
           <h3 className='text-3xl font-semibold mt-10 mb-5 text-center sm:text-left'>Additional Interests</h3>
           <p className='text-lg md:text-2xl text-white text-justify leading-relaxed'>
-            Beyond my primary focus, I possess a foundational understanding of Machine Learning (ML) and Large Language Models (LLMs), which fuels my passion for exploring cutting-edge technology solutions. I am also keenly interested in the future trajectory of AI, including its societal impact and the underlying hardware advancements that power these technologies.
+            I have a foundational understanding of Machine Learning (ML) and Large Language Models (LLMs), which drives my curiosity toward cutting-edge developments in AI. I&apos;m especially interested in the evolving landscape of artificial intelligence, its societal implications, real-world applications, and the hardware innovations that enable progress.
           </p>
         </article>
 
         <div ref={setSectionRef(2)} className='text-justify'>
-          <h3 className='text-3xl font-semibold mt-10 mb-5 text-center sm:text-left'>What I do in my free time?</h3>
+          <h3 className='text-3xl font-semibold mt-10 mb-5 text-center sm:text-left'>Outside the Code</h3>
           <p className='text-lg md:text-2xl text-white text-justify leading-relaxed'>
-            During my leisure time, I enjoy listening to music, playing video games, and exploring a wide array of technologies, both new and old. Photography is another passion. I also have a penchant for conducting in-depth research on various topics that pique my curiosity. An interesting quirk: I don&apos;t really watch web series, anime, or movies – I simply read the plot summaries. It&apos;s much faster, and I still grasp the main points (blame my love-hate relationship with perfection and efficiency). So please, refrain from calling me a walking encyclopedia. Also, my Reddit and LeetCode accounts are impossible to find, so don&apos;t bother searching because I&apos;m a tad shy. Anyway, that&apos;s all I can yap about. Adios for now!
+            In my downtime, I enjoy listening to music, playing video games, and exploring technologies, both new and vintage. I&apos;m also passionate about photography and often find myself deep in niche research topics just for the thrill of understanding something new.<br/>
+            Fun fact: I rarely watch movies, series, or anime. Instead, I read the plot summaries. It&apos;s faster, more efficient, and oddly satisfying (yes, I&apos;m that person). And while I&apos;m somewhat active on platforms like Reddit and LeetCode, good luck finding me. I prefer to keep a low profile.
           </p>
         </div>
       </div>

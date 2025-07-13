@@ -85,13 +85,14 @@ const Home = memo(function Home({ setLoading }) {
   </h1>
           <div ref={descriptionRef} className="text-white text-lg md:text-2xl py-4 md:py-5 max-w-3xl text-justify leading-relaxed">
             <p className="mb-3 text-justify">
-              Hey, I&apos;m Krishna N Acharya, a final-year AI & Data Science student at NMAMIT. I&apos;m into full-stack development, always exploring the latest in tech, and I love messing around with new (and old) tools just to see what they can do. I love focusing on building good user experience, high performance, and top efficiency – maybe a little too much, leaning towards perfectionism. I can&apos;t seem to run away from it.
+              Hi, I&apos;m Krishna N Acharya, a final-year B.Tech student in Artificial Intelligence and Data Science at NMAM Institute of Technology.<br/>
+              I&apos;m passionate about full-stack development, with a strong focus on building high-performance, efficient, and user-centric applications. I enjoy exploring both modern and legacy technologies, often experimenting with tools just to understand their potential. It&apos;s a habit fueled by curiosity and a touch of perfectionism.
             </p>
             <p className="mb-3 text-justify">
-              Outside the usual coding grind, I keep up with tech news, dive deep into random research rabbit holes, and enjoy photography, music, and, once every 12 full moons, video games.
+              Beyond coding, I stay updated with tech trends, frequently dive into deep research rabbit holes, and have a keen interest in photography, music, and the occasional video game.
             </p>
             <p className="text-justify">
-              If you&apos;re looking for me, I&apos;m probably geeking out over some new tech or testing something weird just because I can.
+              Whether it&apos;s tinkering with new frameworks or refining UX details, you&apos;ll usually find me immersed in something technical, just for the love of building and learning.
             </p>
           </div>
           <br className="hidden md:block" />
