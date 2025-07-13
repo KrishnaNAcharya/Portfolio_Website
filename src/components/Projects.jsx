@@ -167,7 +167,7 @@ const Projects = memo(function Projects() {
           />
           <ul className="list-disc pl-5 space-y-2">
             <li>
-              Built a high-performance portfolio with React.js, Vite, and Tailwind CSS, achieving 97+ Lighthouse scores on Accessibility, Best Practices and SEO. Deployed on Vercel with automated CI/CD and a modular, reusable component structure.
+              Built a high-performance portfolio with React.js, Vite, and Tailwind CSS, achieving 97+ Lighthouse scores on Accessibility, Best Practices and SEO.
             </li>
             <li>
               Designed advanced UI/UX with GSAP animations, a custom Vortex background, and Framer Motion effects for a visually immersive, interactive experience across all devices.
@@ -176,7 +176,8 @@ const Projects = memo(function Projects() {
               Delivered a fully responsive, mobile-first layout with semantic HTML5 and accessibility best practices, supporting keyboard navigation and ARIA labels for inclusivity.
             </li>
             <li>
-              Integrated React Helmet for dynamic SEO, Open Graph, and JSON-LD, boosting search visibility and rich social previews. Includes sitemap and robots.txt for indexing.
+              Integrated React Helmet for dynamic SEO, Open Graph, and JSON-LD, boosting search visibility and rich social previews.
+              Deployed on Vercel with automated CI/CD and a modular, reusable component structure.
             </li>
             <li>
               Optimized asset delivery with code splitting, lazy loading, and tree shaking, achieving 40% faster load times. Used analytics and audits to monitor and improve site speed.
