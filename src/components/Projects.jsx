@@ -167,7 +167,7 @@ const Projects = memo(function Projects() {
           />
           <ul className="list-disc pl-5 space-y-2">
             <li>
-              Built a high-performance portfolio with React.js, Vite, and Tailwind CSS, achieving 98+ Lighthouse scores. Deployed on Vercel with automated CI/CD and a modular, reusable component structure.
+              Built a high-performance portfolio with React.js, Vite, and Tailwind CSS, achieving 97+ Lighthouse scores on Accessibility, Best Practices and SEO. Deployed on Vercel with automated CI/CD and a modular, reusable component structure.
             </li>
             <li>
               Designed advanced UI/UX with GSAP animations, a custom Vortex background, and Framer Motion effects for a visually immersive, interactive experience across all devices.
