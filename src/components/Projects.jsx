@@ -31,7 +31,7 @@ const Projects = memo(function Projects() {
             draggable="false"
           />
           <ul className="list-disc pl-5 space-y-1">
-            <li>Developed a full-stack AI media platform achieving 99.4% accurate real-time speech-to-text transcription with timestamps, using <b>Next.js 15</b>, <b>Express.js</b>, <b>MongoDB Atlas</b>, <b>Hugging Face models</b>, and <b>OpenAI Faster-Whisper</b>.</li>
+            <li>Developed a full-stack AI media platform achieving 99.4% accurate real-time speech-to-text transcription with timestamps, using Next.js 15, Express.js, MongoDB Atlas, Hugging Face models, and OpenAI Faster-Whisper.</li>
             <li>Architected a flexible NoSQL schema enabling efficient storage, indexing, and retrieval of multilingual transcripts, speaker metadata, and sentiment tags with semantic search capabilities.</li>
             <li>Integrated Facebook NLLB-200’s distilled 600M, PyAnnote.audio, D3.js and Meta LLaMA 3 for multi-language translation, speaker diarization, and generative mind map summarization of dialogue flow and key speaker topics across media formats.</li>
             <li>Built NLP pipelines for speech summarization, emotion detection, entity extraction, and interactive synchronized playback with semantic search across 10+ languages using sentiment.js, compromise.js, Facebook BART, WaveSurfer.js, and FFmpeg.</li>
@@ -140,9 +140,9 @@ const Projects = memo(function Projects() {
           />
           <ul className="list-disc pl-5 space-y-1">
             <li>Developed a comprehensive web-based statistical analysis tool enabling users to upload CSV datasets and instantly generate detailed statistical insights and visualizations.</li>
-            <li>Built an automated analysis engine that computes descriptive statistics—mean, median, mode, quartiles, standard deviation, variance, skewness, kurtosis, and sum of squared errors—for all numerical columns.</li>
+            <li>Built an automated analysis engine that computes descriptive statistics—mean, median, mode, quartiles, standard deviation, variance, skewness, kurtosis, & sum of squared errors for all numerical columns.</li>
             <li>Engineered an interactive visualization suite supporting 8 dynamic chart types, including histograms, box plots, pie charts, scatter plots, and correlation heatmaps, with real-time attribute selection.</li>
-            <li>Integrated a robust backend using Express.js and Python (pandas, NumPy, SciPy, matplotlib, seaborn) for data processing, RESTful APIs, and automated file management with Multer and Dockerized deployment.</li>
+            <li>Integrated a robust backend using Express.js and Python (pandas, NumPy, SciPy, matplotlib, seaborn) for data processing, RESTful APIs, & automated file management with Multer & Dockerized deployment.</li>
             <li>Designed a fully responsive, mobile-first UI with adaptive navigation, dynamic UI components, and seamless user experience, supporting multiple concurrent users with session isolation and automatic file cleanup.</li>
           </ul>
         </div>
@@ -304,7 +304,7 @@ const Projects = memo(function Projects() {
       aria-labelledby="projects-heading"
       role="region"
     >
-      <div className="max-w-[1440px] mx-auto p-4 md:p-10 flex flex-col w-full h-full">
+      <div className="max-w-[1440px] mx-auto p-4 md:p-10 flex flex-col w-full h-full px-4 md:px-10">
         <header ref={headerRef} className="pb-6 md:pb-8 text-center sm:text-left">
           <h2 
             id="projects-heading"

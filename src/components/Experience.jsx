@@ -19,7 +19,7 @@ const Experience = memo(function Experience() {
       description: (
         <ul className="list-disc pl-5 space-y-2">
           <li>
-            Developed an enterprise-grade College ERP system handling academic workflows such as attendance, enrollment, assessments, and multi-role dashboards using <b>Next.js 15</b>, <b>TypeScript</b>, <b>PostgreSQL</b>, and <b>Prisma ORM</b>. Mentored junior developers and led code reviews to ensure best practices and maintainability across the team.
+            Developed an enterprise-grade College ERP system handling academic workflows such as attendance, enrollment, assessments, and multi-role dashboards using Next.js 15, TypeScript, PostgreSQL, and Prisma ORM. Mentored junior developers and led code reviews to ensure best practices and maintainability across the team.
           </li>
           <li>
             Implemented scalable RESTful APIs with modular routing, JWT-based RBAC, and CSV import/export pipelines. Ensured robust validation and error handling across student, teacher, and admin workflows for secure and reliable operations.
@@ -161,7 +161,7 @@ const Experience = memo(function Experience() {
       aria-labelledby="experience-heading"
       role="region"
     >
-      <div className='max-w-[1440px] mx-auto p-4 md:p-10 flex flex-col w-full h-full'>
+      <div className='max-w-[1440px] mx-auto p-4 md:p-10 flex flex-col w-full h-full px-4 md:px-10'>
         <header ref={headerRef} className='pb-6 md:pb-8 text-center sm:text-left'>
           <h2 
             id="experience-heading"

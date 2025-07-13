@@ -181,7 +181,7 @@ const Certificates = memo(function Certificates() {
       aria-labelledby="certifications-heading"
       role="region"
     >
-      <div className="max-w-[1440px] mx-auto p-4 md:p-10 flex flex-col w-full h-full">
+      <div className="max-w-[1440px] mx-auto p-4 md:p-10 flex flex-col w-full h-full px-4 md:px-10">
         <header ref={headerRef} className="pb-6 md:pb-8 text-center sm:text-left">
           <h2 
             id="certifications-heading"
