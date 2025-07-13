@@ -16,12 +16,12 @@ const Education = memo(function Education() {
       institution: "NMAM Institute of Technology",
       location: "Nitte, India",
       degree: "B.Tech in Artificial Intelligence and Data Science",
-      score: "CGPA: 8.82",
+      score: "CGPA: 8.85",
       duration: "August 2022 - May 2026 (Expected)",
     },
     {
       id: 2,
-      institution: "Canara PU College",
+      institution: "Canara Pre-University College",
       location: "Mangaluru, India",
       degree: "Class XII (Science - PCMC)",
       score: "Percentage: 91.16%",
@@ -106,7 +106,7 @@ const Education = memo(function Education() {
           </h2>
         </header>
         <main aria-label="Educational qualifications and achievements">
-          <HoverEffect items={transformedEducation} />
+          <HoverEffect items={transformedEducation} className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 py-4" />
         </main>
       </div>
     </section>

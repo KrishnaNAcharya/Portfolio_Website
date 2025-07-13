@@ -9,12 +9,14 @@ export const HoverEffect = ({
 }) => {
   let [hoveredIndex, setHoveredIndex] = useState(null);
 
-  return (    <div
+  return (
+    <div
       className={cn(
-        "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-4",
+        "grid py-4",
         className
       )}
-    >{items.map((item, idx) => (
+    >
+      {items.map((item, idx) => (
         <a
           href={item?.link}
           target={item?.link ? "_blank" : undefined}

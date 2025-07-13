@@ -16,14 +16,33 @@ const Experience = memo(function Experience() {
       role: "Full Stack Developer",
       company: "Inspirante Technologies Private Limited",
       duration: "May 2025 - Present",
-      description: "Working as a Full Stack Developer at Inspirante Technologies Private Limited, contributing to web application development and software solutions.",  
+      description: (
+        <ul className="list-disc pl-5 space-y-2">
+          <li>
+            Developed an enterprise-grade College ERP system handling academic workflows such as attendance, enrollment, assessments, and multi-role dashboards using <b>Next.js 15</b>, <b>TypeScript</b>, <b>PostgreSQL</b>, and <b>Prisma ORM</b>. Mentored junior developers and led code reviews to ensure best practices and maintainability across the team.
+          </li>
+          <li>
+            Implemented scalable RESTful APIs with modular routing, JWT-based RBAC, and CSV import/export pipelines. Ensured robust validation and error handling across student, teacher, and admin workflows for secure and reliable operations.
+          </li>
+          <li>
+            Designed a normalized relational schema with 40+ entities and 20+ tables supporting electives, multi-attempt assessments, and semester-wise offerings. Enforced department-based restrictions and granular access controls for academic integrity.
+          </li>
+          <li>
+            Optimized performance and cost with Prisma connection pooling, filtered queries, and selective data inclusion. Enabled seamless usage for over 10,000+ users with minimal latency and efficient resource utilization.
+          </li>
+        </ul>
+      ),
       skills: [
-        "Next.js",
+        "Next.js 15",
         "TypeScript",
         "Node.js",
         "PostgreSQL",
         "Tailwind CSS",
         "Express.js",
+        "Prisma ORM",
+        "JWT",
+        "CSV",
+        "RESTful APIs"
       ]      
     },
     {
@@ -31,16 +50,36 @@ const Experience = memo(function Experience() {
       role: "Full Stack Developer",
       company: "Intelligence and Data Science Engineers' Association",
       duration: "August 2024 - Present",
-      description: "Developed a responsive Gallery Page using Next.js, featuring a custom-built image carousel for enhanced user experience. Integrated a RESTful API to dynamically fetch and display content. Utilized NeonDB with Prisma ORM for efficient database management, Cloudinary for optimized image storage and delivery, and Postman for testing and validating API endpoints.",  
+      description: (
+        <ul className="list-disc pl-5 space-y-2">
+          <li>
+            Built a sophisticated image gallery page with 25+ state variables, a 3D carousel, semantic URL filters, and real-time fuzzy search using <b>Next.js 15</b>, <b>TypeScript</b>, and <b>Tailwind CSS</b>. Enhanced user experience with dynamic filtering and seamless navigation.
+          </li>
+          <li>
+            Engineered a fully responsive and accessible UI with <b>Framer Motion</b>, <b>Radix UI</b>, and <b>shadcn</b> components, ensuring smooth animations, keyboard navigation, and cross-device usability for all users and devices.
+          </li>
+          <li>
+            Architected modular API routes and a relational <b>PostgreSQL</b> database with <b>Prisma ORM</b>, enabling optimized full-text search, category-based filtering, and performant data queries for scalable content management.
+          </li>
+          <li>
+            Integrated <b>Cloudinary</b> for progressive image loading and CDN delivery, reducing bandwidth by 70%. Collaborated in Agile sprints within a 10-member team, using Git-based version control and CI/CD workflows for efficient development.
+          </li>
+        </ul>
+      ),
       skills: [
-        "Next.js",
-        "RESTful APIs",
+        "Next.js 15",
+        "TypeScript",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Radix UI",
+        "shadcn/ui",
+        "PostgreSQL",
         "Prisma ORM",
-        "NeonDB",
         "Cloudinary",
-        "Postman",
+        "Agile",
+        "CI/CD",
         "Git"
-      ]      
+      ]
     },
   ], []);
 
@@ -135,7 +174,7 @@ const Experience = memo(function Experience() {
         <main aria-label="Professional work experience and accomplishments">
           <HoverEffect 
             items={transformedExperiences} 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6 md:gap-8 py-4" 
+            className="grid grid-cols-1 md:grid-cols-2 auto-cols-fr gap-6 md:gap-8 py-4" 
           />
         </main>
       </div>

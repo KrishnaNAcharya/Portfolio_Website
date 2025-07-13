@@ -15,7 +15,7 @@ const About = memo(() => {
       id: "prog-lang",
       title: "Programming Languages",
       description: (
-        <ul className='list-disc ml-5 space-y-1'>
+        <ul className='list-disc ml-5 space-y-1 columns-2'>
           <li>Java</li>
           <li>C</li>
           <li>C++</li>
@@ -33,7 +33,7 @@ const About = memo(() => {
       id: "frameworks-libs",
       title: "Frameworks & Libraries",
       description: (
-        <ul className='list-disc ml-5 space-y-1'>
+        <ul className='list-disc ml-5 space-y-1 columns-2'>
           <li>React.js</li>
           <li>Next.js</li>
           <li>Node.js</li>
@@ -41,8 +41,6 @@ const About = memo(() => {
           <li>Tailwind CSS</li>
           <li>GSAP</li>
           <li>TensorFlow</li>
-          <li>PyTorch</li>
-          <li>Scikit-learn</li>
         </ul>
       ),
     },
@@ -50,7 +48,7 @@ const About = memo(() => {
       id: "tools-platforms",
       title: "Tools & Platforms",
       description: (
-        <ul className='list-disc ml-5 space-y-1'>
+        <ul className='list-disc ml-5 space-y-1 columns-2'>
           <li>GitHub</li>
           <li>VS Code</li>
           <li>Postman</li>
@@ -152,14 +150,14 @@ const About = memo(() => {
         </header>
         
         <section aria-label="Technical skills and expertise">
-          <HoverEffect items={skillCategories} />
+          <HoverEffect items={skillCategories} className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 py-4" />
         </section>
 
         {/* Text Sections */}
         <article ref={setSectionRef(0)} className='text-justify'>
           <h3 className='text-3xl font-semibold mt-8 md:mt-10 mb-4 md:mb-5 text-center sm:text-left'>Current Focus</h3>
           <p className='text-lg md:text-2xl text-white text-justify leading-relaxed'>
-            My current efforts are centered on enhancing my problem-solving capabilities by deepening my understanding of Data Structures and Algorithms (DSA). Simultaneously, I&apos;m actively developing several projects, including NASAR, Wipfli MentorStack, and the IDEA Website. Alongside these technical pursuits, I am dedicated to maintaining my physical and mental well-being and am also diligently preparing for upcoming placement opportunities.
+            My current efforts are centered on enhancing my problem-solving capabilities by deepening my understanding of Data Structures and Algorithms (DSA). Simultaneously, I&apos;m actively developing several projects, including MentorStack and the IDEA Website. Alongside these technical pursuits, I am dedicated to maintaining my physical and mental well-being and am also diligently preparing for upcoming placement opportunities.
           </p>
         </article>
 

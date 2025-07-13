@@ -10,21 +10,21 @@ const Certificates = memo(function Certificates() {
   const scrollTriggerRef = useRef(null);
 
   // Memoize static certificates data based on the provided images
-  const certificatesData = useMemo(() => [    {
+  const certificatesData = useMemo(() => [     {
       id: 1,
-      title: "Blockchain Essentials: A Hands-On Workshop",
-      description: "Participated in a comprehensive one-day workshop on blockchain fundamentals organized by the Department of Artificial Intelligence & Data Science at NMAM Institute of Technology, Nitte.",
-      organization: "NMAM Institute of Technology",
-      date: "January 25, 2025",
-      institution: "Nitte - NMAM Institute of Technology",
-      skills: ["Blockchain Fundamentals", "Hands-on Experience", "Cryptocurrency", "Distributed Ledger Technology"],
-      verificationUrl: "https://drive.google.com/file/d/1bTMHFZzq4kZHM0F6SIa_2DXG3c5WsC4-/view?usp=sharing"
-    },
+      title: "Introduction to Japanese Language and Culture",
+      description: "Successfully completed a comprehensive 12-week intensive online course covering Japanese language fundamentals and cultural immersion through NPTEL. Mastered essential Japanese writing systems including all 46 Hiragana and Katakana characters, plus introduction to over 100 basic Kanji with proper stroke order and radicals.",
+      organization: "NPTEL - Indian Institute of Technology, Kanpur",
+      date: "January-April 2025",
+      institution: "Indian Institute of Technology Kanpur",
+      skills: ["Japanese Language", "Cultural Understanding", "Communication", "Cross-cultural Competency"],
+      verificationUrl: "https://drive.google.com/file/d/15uJE-YOmuBb1HzSzSEkGbAZzMi6vu87f/view?usp=sharing"
+    }, 
     {
       id: 2,
       title: "Java Programming I",
       description: "Successfully completed the Java Programming I course as part of the Java Programming MOOC series by University of Helsinki. This comprehensive course covers Java fundamentals, object-oriented programming concepts, and practical coding exercises.",
-      organization: "University of Helsinki",
+      organization: "University of Helsinki, Finland",
       date: "June, 2023",
       institution: "University of Helsinki - Department of Computer Science",
       skills: ["Java Programming", "Object-Oriented Programming", "Data Structures", "Algorithm Implementation"],
@@ -38,16 +38,16 @@ const Certificates = memo(function Certificates() {
       institution: "NMAM Institute of Technology, Nitte",
       skills: ["Generative AI", "Prompt Engineering", "AI Model Interaction", "Machine Learning"],
       verificationUrl: "https://drive.google.com/file/d/1337oybR8-wbkX0KPd2-JsLs-L9DA4Xwk/view?usp=sharing"
-    },    {
+    },   {
       id: 4,
-      title: "Introduction to Japanese Language and Culture",
-      description: "Successfully completed a comprehensive 12-week intensive online course covering Japanese language fundamentals and cultural immersion through NPTEL. Mastered essential Japanese writing systems including all 46 Hiragana and Katakana characters, plus introduction to over 100 basic Kanji with proper stroke order and radicals.",
-      organization: "NPTEL - IIT Kanpur",
-      date: "January-April 2025",
-      institution: "Indian Institute of Technology Kanpur",
-      skills: ["Japanese Language", "Cultural Understanding", "Communication", "Cross-cultural Competency"],
-      verificationUrl: "https://drive.google.com/file/d/15uJE-YOmuBb1HzSzSEkGbAZzMi6vu87f/view?usp=sharing"
-    },    {
+      title: "Blockchain Essentials: A Hands-On Workshop",
+      description: "Participated in a comprehensive one-day workshop on blockchain fundamentals organized by the Department of Artificial Intelligence & Data Science at NMAM Institute of Technology, Nitte.",
+      organization: "NMAM Institute of Technology",
+      date: "January 25, 2025",
+      institution: "Nitte - NMAM Institute of Technology",
+      skills: ["Blockchain Fundamentals", "Hands-on Experience", "Cryptocurrency", "Distributed Ledger Technology"],
+      verificationUrl: "https://drive.google.com/file/d/1bTMHFZzq4kZHM0F6SIa_2DXG3c5WsC4-/view?usp=sharing"
+    },   {
       id: 5,
       title: "Creating Responsive Web Pages using Bootstrap 4",
       description: "Successfully completed a comprehensive course on responsive web development using Bootstrap 4 framework. The course covered modern web design principles, responsive layouts, CSS framework implementation, and mobile-first development approaches.",
@@ -77,22 +77,20 @@ const Certificates = memo(function Certificates() {
   // Memoize view certificate button rendering
   const renderViewButton = useCallback((certificate) => {
     const hasValidUrl = certificate.verificationUrl && certificate.verificationUrl !== "#";
-    
     return (
-      <div className="mt-auto pt-4">
-        <button
-          onClick={(e) => handleCertificateClick(e, certificate.verificationUrl)}
-          className={`px-4 py-2 text-sm border rounded-md duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 ${
-            hasValidUrl 
-              ? 'border-emerald-500 hover:bg-emerald-500/20 text-emerald-400 hover:text-emerald-300 focus:ring-emerald-500 cursor-pointer' 
-              : 'border-gray-500 text-gray-500 cursor-not-allowed'
-          }`}
-          disabled={!hasValidUrl}
-          aria-label={`View ${certificate.title} certificate`}
-        >
-          View Certificate
-        </button>
-      </div>
+      <a
+        href={hasValidUrl ? certificate.verificationUrl : undefined}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={hasValidUrl ? (e) => handleCertificateClick(e, certificate.verificationUrl) : (e) => e.preventDefault()}
+        className={
+          `ml-0 md:ml-2 mt-4 md:mt-0 px-4 py-2 text-sm border border-emerald-500 hover:bg-emerald-500/20 rounded-md duration-200 text-emerald-400 hover:text-emerald-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 focus:ring-offset-gray-900 font-normal block md:inline-block w-full md:w-auto text-center ${!hasValidUrl ? 'opacity-50 pointer-events-none cursor-not-allowed' : ''}`
+        }
+        aria-label={`View ${certificate.title} certificate`}
+        tabIndex={hasValidUrl ? 0 : -1}
+      >
+        View Certificate
+      </a>
     );
   }, [handleCertificateClick]);
 
@@ -100,42 +98,46 @@ const Certificates = memo(function Certificates() {
   const transformedCertificates = useMemo(() => 
     certificatesData.map(certificate => ({
       id: certificate.id,
-      title: certificate.title,
+      title: (
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-3 w-full">
+          <span className="whitespace-normal">{certificate.title}</span>
+          {/* Show button on right side only on md+ screens */}
+          <span className="hidden md:block">{renderViewButton(certificate)}</span>
+        </div>
+      ),
       description: (
-        <>
-          <div className="flex-grow space-y-3">
-            {/* Organization and Date */}
-            <div className="flex flex-col space-y-1">
-              <p className="text-sm text-emerald-400 font-semibold">{certificate.organization}</p>
-              <p className="text-xs text-gray-400">{certificate.date}</p>
-            </div>
-              {/* Description */}
-            <p className="text-sm leading-relaxed">{certificate.description}</p>
-            
-            {/* Skills */}
-            {certificate.skills && certificate.skills.length > 0 && (
-              <div className="space-y-1">
-                <p className="text-xs text-emerald-400 font-medium">Skills Acquired:</p>
-                <div className="flex flex-wrap gap-1">
-                  {certificate.skills.slice(0, 4).map((skill, index) => (
-                    <span key={index} className="px-2 py-0.5 bg-gray-700/50 text-gray-300 rounded text-xs">
-                      {skill}
-                    </span>
-                  ))}
-                  {certificate.skills.length > 4 && (
-                    <span className="px-2 py-0.5 bg-gray-700/50 text-gray-300 rounded text-xs">
-                      +{certificate.skills.length - 4} more
-                    </span>
-                  )}
-                </div>
-              </div>
-            )}
+        <div className="flex-grow space-y-3">
+          {/* Organization and Date */}
+          <div className="flex flex-col space-y-1">
+            <p className="text-sm text-emerald-400 font-semibold">{certificate.organization}</p>
+            <p className="text-xs text-gray-400">{certificate.date}</p>
           </div>
-          {renderViewButton(certificate)}
-        </>
+          {/* Description */}
+          <p className="text-sm leading-relaxed">{certificate.description}</p>
+          {/* Skills */}
+          {certificate.skills && certificate.skills.length > 0 && (
+            <div className="space-y-1">
+              <p className="text-xs text-emerald-400 font-medium">Skills Acquired:</p>
+              <div className="flex flex-wrap gap-1">
+                {certificate.skills.slice(0, 4).map((skill, index) => (
+                  <span key={index} className="px-2 py-0.5 bg-gray-700/50 text-gray-300 rounded text-xs">
+                    {skill}
+                  </span>
+                ))}
+                {certificate.skills.length > 4 && (
+                  <span className="px-2 py-0.5 bg-gray-700/50 text-gray-300 rounded text-xs">
+                    +{certificate.skills.length - 4} more
+                  </span>
+                )}
+              </div>
+            </div>
+          )}
+          {/* Show button below description only on mobile */}
+          <span className="block md:hidden mt-2">{renderViewButton(certificate)}</span>
+        </div>
       ),
       link: certificate.verificationUrl || "#",
-    })), 
+    })),
     [certificatesData, renderViewButton]
   );
 
@@ -189,7 +191,7 @@ const Certificates = memo(function Certificates() {
           </h2>
         </header>
         <main aria-label="Professional certifications and credentials">
-          <HoverEffect items={transformedCertificates} />
+          <HoverEffect items={transformedCertificates} className="grid grid-cols-1 gap-6 md:gap-8 py-4" />
         </main>
       </div>
     </section>

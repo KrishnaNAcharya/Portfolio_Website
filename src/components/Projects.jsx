@@ -12,79 +12,138 @@ const Projects = memo(function Projects() {
   const projectsData = useMemo(() => [
     {
       id: 1,
-      title: "SonicSeeker",
-      description: "Comprehensive AI-powered media analysis platform built with Next.js and Python. Features audio/video transcription using Whisper AI, speaker diarization with PyAnnote, sentiment analysis, entity recognition, and grammar analysis. Includes AI-powered summarization using BART, mind map generation with Ollama/Llama3, multi-language translation with NLLB-200, and YouTube integration. Built with advanced media player, interactive transcripts, WER/CER comparison, and MongoDB storage with GridFS.",
+      title: "SonicSeeker: AI powered media analysis platform",
+      description: (
+        <ul className="list-disc pl-5 space-y-1">
+          <li>Developed a full-stack AI media platform achieving 99.4% accurate real-time speech-to-text transcription with timestamps, using <b>Next.js 15</b>, <b>Express.js</b>, <b>MongoDB Atlas</b>, <b>Hugging Face models</b>, and <b>OpenAI Faster-Whisper</b>.</li>
+          <li>Architected a flexible NoSQL schema enabling efficient storage, indexing, and retrieval of multilingual transcripts, speaker metadata, and sentiment tags with semantic search capabilities.</li>
+          <li>Integrated Facebook NLLB-200’s distilled 600M, PyAnnote.audio, D3.js and Meta LLaMA 3 for multi-language translation, speaker diarization, and generative mind map summarization of dialogue flow and key speaker topics across media formats.</li>
+          <li>Built NLP pipelines for speech summarization, emotion detection, entity extraction, and interactive synchronized playback with semantic search across 10+ languages using sentiment.js, compromise.js, Facebook BART, WaveSurfer.js, and FFmpeg.</li>
+          <li>Engineered a scalable backend with RESTful APIs, Memoization, Batch processing, Model caching, JWT authentication, and file processing pipelines supporting 5+ formats, with CUDA acceleration improving processing speed by 90%.</li>
+        </ul>
+      ),
       tech: [
-        "Next.js",
-        "TypeScript",
-        "Python",
-        "Whisper AI",
-        "PyAnnote",
+        "Next.js 15",
+        "Express.js",
+        "MongoDB Atlas",
         "Hugging Face",
-        "Ollama Llama3",
-        "MongoDB",
+        "OpenAI Faster-Whisper",
+        "NLLB-200",
+        "PyAnnote.audio",
+        "D3.js",
+        "Meta LLaMA 3",
+        "sentiment.js",
+        "compromise.js",
+        "Facebook BART",
+        "WaveSurfer.js",
         "FFmpeg",
-        "WaveSurfer.js"
+        "CUDA",
+        "RESTful APIs",
+        "JWT Auth",
+        "Batch Processing",
+        "Model Caching"
       ],
       github: "https://github.com/hackfest-dev/Hackfest25-56",
     },
     {
       id: 2,
-      title: "Portfolio Website",
-      description: "Modern Next.js portfolio website with advanced animations and responsive design. Features lazy loading, GSAP scroll-triggered animations, Vortex particle background, and interactive UI components. Built with semantic HTML structure, custom hover effects, scroll-based animations, and optimized performance. Includes comprehensive sections for projects, experience, education, achievements, and skills with HoverEffect cards, SEO optimization with React Helmet, and Vercel Analytics integration.",
-      tech: ["React.js", "Vite", "GSAP", "Tailwind CSS", "React Helmet", "Vercel Analytics","Namecheap"],
-      github: "https://github.com/KrishnaNAcharya/portfolio",
-      demo: "https://krishnanacharya.vercel.app"
+      title: "NASAR: Terrain-Aware Synthetic Aperture Radar Image (SAR) to RGB Colorization through Automated Terrain Classification using Conditional Generative Adversarial Network (GAN)",
+      description: (
+        <ul className="list-disc pl-5 space-y-1">
+          <li>Designed a 2-stage deep learning pipeline using ResNet-34 and conditional GANs to colorize SAR images across 4 terrain classes: urban, grassland, agriculture, and barren.</li>
+          <li>Developed a U-Net-based generator and terrain-aware PatchGAN discriminator with attention layers for detail fidelity and texture preservation in translated RGB images.</li>
+          <li>Achieved 99.94% terrain classification accuracy and trained on 16,000+ SAR-optical image pairs using mixed-precision and multi-GPU training for 100+ epochs using Kaggle.</li>
+          <li>Evaluated model using PSNR (19dB), SSIM (0.36), FID (108.18), IS (3.07), and LPIPS metrics to ensure both perceptual and statistical image quality.</li>
+          <li>Optimized performance with cosine annealing, gradient checkpointing, and batch size tuning, reducing memory usage by 2x and enabling scalable model deployment.</li>
+        </ul>
+      ),
+      tech: ["Python", "PyTorch", "Computer Vision", "GANs", "ResNet34", "U-Net", "PatchGAN", "CUDA", "Deep Learning"],
+      github: "https://github.com/KrishnaNAcharya/SAR",
+      demo: "example.com"
     },
     {
       id: 3,
-      title: "HireIN-JP",
-      description: "Comprehensive React-based job portal connecting job seekers with employers. Features Firebase authentication with Google OAuth, advanced job search with multiple filters (job type, timings, eligibility), user profile management with resume uploads, and job posting capabilities for recruiters. Built with responsive design, real-time database updates, secure file storage, and role-based access control. Includes mobile-first approach with collapsible navigation and touch-friendly interfaces.",
+      title: "HireIN-JP: Recruitment Platform",
+      description: (
+        <ul className="list-disc pl-5 space-y-1">
+          <li>Developed a fully responsive recruitment platform with real-time search, filtering, and role-based dashboards for candidates and recruiters.</li>
+          <li>Engineered Firebase-based auth, Firestore data models, and secure file uploads for resumes and media with CDN-backed delivery.</li>
+          <li>Implemented dynamic job matching filters (role, location, experience, salary, mode) with debounced search and fuzzy match scoring.</li>
+          <li>Designed profile systems with resume upload, skills portfolio, and visibility controls; recruiters can post, track, and manage applicants.</li>
+          <li>Delivered 60% faster hiring cycle through advanced UX, admin dashboards, email automation, and analytics-driven process optimization.</li>
+        </ul>
+      ),
       tech: ["React.js", "Firebase", "Tailwind CSS", "Firestore", "Firebase Auth", "React Router", "Material Tailwind"],
       github: "https://github.com/KrishnaNAcharya/HireIn-JP",
       demo: "https://hire-in-jp.vercel.app"
     },
     {
       id: 4,
-      title: "HIMS",
-      description: "Comprehensive Health Insurance Management System with multi-step application process, admin panel, and document generation. Features Firebase authentication with Google OAuth, role-based access control, and three insurance plans (Basic, Standard, Premium). Built with React + Vite frontend, Node.js/Express backend, and PostgreSQL database. Includes payment processing, family member management, health information tracking, and PDF generation for applications.",
+      title: "HIMS: Health Insurance Management System",
+      description: (
+        <ul className="list-disc pl-5 space-y-1">
+          <li>Built a production-grade full-stack health insurance platform with 20+ validated form rules, multi-step workflows, and role-based access.</li>
+          <li>Engineered 15+ RESTful APIs and PostgreSQL schemas with ACID-compliant transactions, FK constraints, and optimized queries.</li>
+          <li>Integrated Firebase Auth for secure session handling and RBAC, and deployed to Render with full CI/CD automation.</li>
+          <li>Designed a dynamic pricing engine supporting UPI, card, and EMI methods with frequency-based premium calculations.</li>
+          <li>Delivered a responsive, mobile-first PWA UI with PDF export, toast notifications, admin CRUD dashboard, and analytics.</li>
+        </ul>
+      ),
       tech: ["React.js", "Express.js", "PostgreSQL", "Firebase", "Tailwind CSS", "Vite", "Node.js"],
       github: "https://github.com/KrishnaNAcharya/HIMS",
       demo: "https://hims-f.onrender.com"
     },
     {
       id: 5,
-      title: "Xtract",
-      description: "Full-stack statistical data analysis web application that enables users to upload CSV files and automatically generate comprehensive statistical insights and visualizations. Features robust encoding handling, eight different chart types (scatter plots, histograms, box plots, heat maps, etc.), and a complete analysis engine. Built with Express.js backend, Python data processing using Pandas/Matplotlib/Seaborn, and modern responsive frontend. Includes Docker support and automatic file cleanup for production deployment.",
+      title: "Xtract: Statistical Analysis Tool",
+      description: (
+        <ul className="list-disc pl-5 space-y-1">
+          <li>Developed a comprehensive web-based statistical analysis tool enabling users to upload CSV datasets and instantly generate detailed statistical insights and visualizations.</li>
+          <li>Built an automated analysis engine that computes descriptive statistics—mean, median, mode, quartiles, standard deviation, variance, skewness, kurtosis, and sum of squared errors—for all numerical columns.</li>
+          <li>Engineered an interactive visualization suite supporting 8 dynamic chart types, including histograms, box plots, pie charts, scatter plots, and correlation heatmaps, with real-time attribute selection.</li>
+          <li>Integrated a robust backend using Express.js and Python (pandas, NumPy, SciPy, matplotlib, seaborn) for data processing, RESTful APIs, and automated file management with Multer and Dockerized deployment.</li>
+          <li>Designed a fully responsive, mobile-first UI with adaptive navigation, dynamic UI components, and seamless user experience, supporting multiple concurrent users with session isolation and automatic file cleanup.</li>
+        </ul>
+      ),
       tech: ["Express.js", "Python", "Pandas", "Matplotlib", "Seaborn", "Tailwind CSS", "Multer", "Docker"],
       github: "https://github.com/KrishnaNAcharya/Xtract",
       demo: "example.com"
     },
     {
       id: 6,
-      title: "InsureFlow",
-      description: "Comprehensive ML project for insurance subscription prediction using advanced algorithms. Handled class imbalance using SMOTE techniques, implemented multiple models (XGBoost, Random Forest, CatBoost), and achieved 93.54% accuracy with 0.986 AUROC. Features outlier detection, feature importance analysis, and real-time prediction interface. Provides business insights for customer targeting and acquisition optimization.",
-      tech: ["Python", "XGBoost", "CatBoost", "Random Forest", "SMOTE", "Flask", "Scikit-learn", "Pandas", "Matplotlib"],
-      github: "https://www.kaggle.com/code/krishnanacharya/insureflow",
+      title: "Portfolio Website",
+      description: (
+        <ul className="list-disc pl-5 space-y-2">
+          <li>
+            Built a high-performance portfolio with React.js, Vite, and Tailwind CSS, achieving 98+ Lighthouse scores. Deployed on Vercel with automated CI/CD and a modular, reusable component structure.
+          </li>
+          <li>
+            Designed advanced UI/UX with GSAP animations, a custom Vortex background, and Framer Motion effects for a visually immersive, interactive experience across all devices.
+          </li>
+          <li>
+            Delivered a fully responsive, mobile-first layout with semantic HTML5 and accessibility best practices, supporting keyboard navigation and ARIA labels for inclusivity.
+          </li>
+          <li>
+            Integrated React Helmet for dynamic SEO, Open Graph, and JSON-LD, boosting search visibility and rich social previews. Includes sitemap and robots.txt for indexing.
+          </li>
+          <li>
+            Optimized asset delivery with code splitting, lazy loading, and tree shaking, achieving 40% faster load times. Used analytics and audits to monitor and improve site speed.
+          </li>
+        </ul>
+      ),
+      tech: ["React.js", "Vite", "GSAP", "Tailwind CSS", "React Helmet", "Vercel Analytics","Namecheap"],
+      github: "https://github.com/KrishnaNAcharya/portfolio",
+      demo: "https://www.krishnanacharya.me"
     },
-    {
-      id: 7,
-      title: "NASAR",
-      description: "Comprehensive DL project for SAR image colorization. Built a ResNet34-based terrain classifier to categorize SAR images into urban, grassland, agricultural, and barren land types. Implemented a conditional GAN with U-Net generator and PatchGAN discriminator for realistic colorization. Features multiple loss functions (adversarial, L1, perceptual, feature matching), mixed precision training, and automatic terrain prediction pipeline.",
-      tech: ["Python", "PyTorch", "Computer Vision", "GANs", "ResNet34", "U-Net", "PatchGAN", "CUDA", "Deep Learning"],
-      github: "https://github.com/KrishnaNAcharya/SAR",
-      demo: "example.com",
-      wip: true
-    },
-    {
-      id: 8,
-      title: "Wipfli MentorStack",
-      description: "A Stack Overflow-like knowledge sharing platform for IT & Management Mentorship and Problem Solving.",
-      tech: ["Next.js", "GSAP", "Tailwind CSS", "ShadCN","Express.js", "PostgreSQL","Prisma","NeonDB"],
-      github: "#",
-      demo: "example.com",
-      wip: true
-    }
+    // {
+    //   id: 7,
+    //   title: "Wipfli MentorStack: IT & Management Mentorship Platform",
+    //   description: "A Stack Overflow-like knowledge sharing platform for IT & Management Mentorship and Problem Solving.",
+    //   tech: ["Next.js", "GSAP", "Tailwind CSS", "ShadCN","Express.js", "PostgreSQL","Prisma","NeonDB"],
+    //   github: "#",
+    //   demo: "example.com",
+    //   wip: true
+    // }
   ], []);
   // Memoize button click handlers
   const createButtonHandler = useCallback((url) => (e) => {
@@ -203,11 +262,11 @@ const Projects = memo(function Projects() {
         </header>
 
         <main aria-label="Portfolio projects and technical work">
-          <HoverEffect items={transformedProjects} />
+          <HoverEffect items={transformedProjects} className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 py-4" />
         </main>
         
         {/* Old grid structure (to be removed or commented out):
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-10">
+        <div className="grid sm:grid-cols-2 md:grid-cols-2 gap-6 md:gap-10">
           {projects.map(({ id, title, description, tech, github, demo, wip }, index) => (
             <div
               key={id}
