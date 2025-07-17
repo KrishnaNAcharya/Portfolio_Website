@@ -98,7 +98,7 @@ const Home = memo(function Home({ setLoading }) {
           <br className="hidden md:block" />
           {/* Desktop Resume Button - only shown on md screens and larger */}
           <div ref={buttonRef} className="w-full md:w-auto hidden md:block">
-            <a href="https://drive.google.com/file/d/10x3UVs88-T8vO-3lOWOC7ozpE52CM4Uq/view?usp=sharing" target="_blank" rel="noopener noreferrer" 
+            <a href="https://drive.google.com/file/d/1wTYGWbn2Ytlx22-cINL579gtQzm9djTt/view?usp=sharing" target="_blank" rel="noopener noreferrer" 
                className="w-full md:w-auto">
               <button className="w-full md:w-auto text-white group border-2 border-emerald-500 px-8 py-4 my-3 flex items-center justify-center md:justify-start btn-fill-animation hover:border-emerald-500">
                 Resume <MdArrowRightAlt className="ml-2 text-xl group-hover:translate-x-1 transition-transform duration-300" />
@@ -165,7 +165,7 @@ const Home = memo(function Home({ setLoading }) {
         
         {/* Mobile Resume Button - only shown on screens smaller than md */}
         <div ref={mobileButtonRef} className="w-full md:hidden">
-          <a href="https://drive.google.com/file/d/10x3UVs88-T8vO-3lOWOC7ozpE52CM4Uq/view?usp=sharing" target="_blank" rel="noopener noreferrer" 
+          <a href="https://drive.google.com/file/d/1wTYGWbn2Ytlx22-cINL579gtQzm9djTt/view?usp=sharing" target="_blank" rel="noopener noreferrer" 
              className="w-full">
             <button className="w-full text-white group border-2 border-emerald-500 px-8 py-4 my-3 flex items-center justify-center btn-fill-animation hover:border-emerald-500">
               Resume <MdArrowRightAlt className="ml-2 text-xl group-hover:translate-x-1 transition-transform duration-300" />
