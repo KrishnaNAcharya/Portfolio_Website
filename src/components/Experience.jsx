@@ -19,16 +19,20 @@ const Experience = memo(function Experience() {
       description: (
         <ul className="list-disc pl-5 space-y-2">
           <li>
-            Developed an enterprise-grade College ERP system handling academic workflows such as attendance, enrollment, assessments, and multi-role dashboards using Next.js 15, TypeScript, PostgreSQL, and Prisma ORM. Mentored junior developers and led code reviews to ensure best practices and maintainability across the team.
+            Developed an enterprise-grade College ERP system handling academic workflows such as attendance, enrollment, assessments,
+and multi-role dashboards using Next.js 15, TypeScript, PostgreSQL, and Prisma ORM, while 2 mentoring junior developers.
           </li>
           <li>
-            Implemented scalable RESTful APIs with modular routing, JWT-based RBAC, and CSV import/export pipelines. Ensured robust validation and error handling across student, teacher, and admin workflows for secure and reliable operations.
+        Implemented scalable RESTful APIs with modular routing, JWT-based RBAC, and CSV import/export pipelines, ensuring robust
+validation across student, teacher, and admin workflows.
           </li>
           <li>
-            Designed a normalized relational schema with 40+ entities and 20+ tables supporting electives, multi-attempt assessments, and semester-wise offerings. Enforced department-based restrictions and granular access controls for academic integrity.
+           Designed a normalized relational schema with 40+ entities and 20+ tables supporting electives, multi-attempt assessments, and
+semester-wise offerings with department-based restrictions.
           </li>
           <li>
-            Optimized performance and cost with Prisma connection pooling, filtered queries, and selective data inclusion. Enabled seamless usage for over 10,000+ users with minimal latency and efficient resource utilization.
+            Optimized performance and cost with Prisma connection pooling, filtered queries, and selective data inclusion, enabling seamless
+usage for over 10,000+ users.
           </li>
         </ul>
       ),
@@ -53,16 +57,20 @@ const Experience = memo(function Experience() {
       description: (
         <ul className="list-disc pl-5 space-y-2">
           <li>
-            Built a sophisticated image gallery page with 25+ state variables, a 3D carousel, semantic URL filters, and real-time fuzzy search using Next.js 15,TypeScript, and Tailwind CSS. Enhanced user experience with dynamic filtering and seamless navigation.
+           Built a sophisticated image gallery page with 25+ state variables, a 3D carousel, semantic URL filters, and real-time fuzzy search
+using Next.js 15, TypeScript, and Tailwind CSS.
           </li>
           <li>
-            Engineered a fully responsive and accessible UI with Framer Motion, Radix UI, and shadcn components, ensuring smooth animations, keyboard navigation, and cross-device usability for all users and devices.
+            Engineered a fully responsive and accessible UI with Framer Motion, Radix UI, and shadcn components, ensuring smooth
+animations and cross-device usability.
           </li>
           <li>
-            Architected modular API routes and a relational PostgreSQL database with Prisma ORM, enabling optimized full-text search, category-based filtering, and performant data queries for scalable content management.
+            Architected modular API routes and a relational PostgreSQL database with Prisma ORM, enabling optimized full-text search,
+category-based filtering, and performant data queries.
           </li>
           <li>
-            Integrated Cloudinary for progressive image loading and CDN delivery, reducing bandwidth by 70%. Collaborated in Agile sprints within a 10-member team, using Git-based version control and CI/CD workflows for efficient development.
+            Integrated Cloudinary for progressive image loading and CDN delivery, reducing bandwidth by 70%, and followed Agile sprint
+cycles in a 10-member team using Git-based version control and CI/CD workflows.
           </li>
         </ul>
       ),

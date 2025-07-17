@@ -58,11 +58,15 @@ const Projects = memo(function Projects() {
             draggable="false"
           />
           <ul className="list-disc pl-5 space-y-1">
-            <li>Designed a 2-stage deep learning pipeline using ResNet-34 and conditional GANs to colorize SAR images across 4 terrain classes: urban, grassland, agriculture, and barren.</li>
+            <li> Designed and trained a Terrain-Aware SAR-to-RGB colorization pipeline using a Conditional GAN architecture enhanced with a
+ terrain-classifying ResNet34, enabling domain-specific image translation across 4 terrains.</li>
             <li>Developed a U-Net-based generator and terrain-aware PatchGAN discriminator with attention layers for detail fidelity and texture preservation in translated RGB images.</li>
-            <li>Achieved 99.94% terrain classification accuracy and trained on 16,000+ SAR-optical image pairs using mixed-precision and multi-GPU training for 100+ epochs using Kaggle.</li>
-            <li>Evaluated model using PSNR (19dB), SSIM (0.36), FID (108.18), IS (3.07), and LPIPS metrics to ensure both perceptual and statistical image quality.</li>
-            <li>Optimized performance with cosine annealing, gradient checkpointing, and batch size tuning, reducing memory usage by 2x and enabling scalable model deployment.</li>
+            <li> Implemented real-time terrain prediction and one-hot conditioning by finetuning ResNet34 on a custom multi-terrain SAR dataset
+ consisting 16000 pairs of images, boosting generalization through modular training of classifier and GAN blocks.</li>
+            <li>Achieved robust performance with mixed-precision training, automatic terrain classification accuracy of 99.94%, and image
+translation scores of FID: 108.18, SSIM: 0.36, PSNR: 19 dB, and IS: 3.07 over multi-domain SAR datasets.</li>
+            <li>Optimized training using PyTorch Lightning-style routines, advanced loss functions (L1, perceptual), and visualizations with
+side-by-side SAR, ground-truth, and generated RGB outputs, showcasing spatial coherence and terrain-aware realism.</li>
           </ul>
         </div>
       ),
