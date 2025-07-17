@@ -115,7 +115,7 @@ cycles in a 10-member team using Git-based version control and CI/CD workflows.
       id: exp.id,
       title: (
         <div>
-          <div className="text-lg font-bold">{exp.company}</div>
+          <div className="text-2xl md:text-3xl font-bold">{exp.company}</div>
           <div className="text-base font-medium text-emerald-400">{exp.role}</div>
         </div>
       ),
@@ -171,9 +171,10 @@ cycles in a 10-member team using Git-based version control and CI/CD workflows.
     >
       <div className='max-w-[1440px] mx-auto p-4 md:p-10 flex flex-col w-full h-full px-4 md:px-10'>
         <header ref={headerRef} className='pb-6 md:pb-8 text-center sm:text-left'>
-          <h2 
+          <h2
             id="experience-heading"
-            className='text-5xl sm:text-8xl font-bold inline border-b-4 border-emerald-500 text-white'
+            className="text-5xl sm:text-8xl font-bold inline border-b-4 border-emerald-500 text-white"
+            style={{ lineHeight: 1.1 }}
           >
             Experience
           </h2>
