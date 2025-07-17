@@ -45,7 +45,7 @@ const Projects = memo(function Projects() {
     },
     {
       id: 2,
-      title: "NASAR: Terrain-Aware Synthetic Aperture Radar Image (SAR) to RGB Colorization through Automated Terrain Classification using Conditional Generative Adversarial Network (GAN)",
+      title: "SAR: Terrain - SAR to RGB colorization using cGAN",
       image: NASARImg,
       description: (
         <div>

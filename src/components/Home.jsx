@@ -79,7 +79,7 @@ const Home = memo(function Home({ setLoading }) {
       <header className='flex flex-col justify-center w-full text-center md:text-left md:w-3/5'>
   <h1 ref={textRef} className='text-4xl sm:text-5xl md:text-[5.5rem] font-medium text-white'>
     Hello there! My name is {" "}
-    <span className='animate-shine text-4xl sm:text-5xl md:text-[5.8rem]' aria-label="Krishna" style={{ fontFamily: '"Great Vibes", "Dancing Script", cursive', fontWeight: '500', letterSpacing: '0.05em' }}>
+    <span className='animate-shine text-4xl sm:text-5xl md:text-[5.8rem]' aria-label="Krishna" style={{ fontFamily: '"Great Vibes", "Dancing Script", cursive', fontWeight: '400', letterSpacing: '0.05em' }}>
       Krishna
     </span>.
   </h1>
