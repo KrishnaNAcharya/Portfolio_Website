@@ -45,7 +45,7 @@ const Projects = memo(function Projects() {
     },
     {
       id: 2,
-      title: "SAR: Terrain - SAR to RGB colorization using cGAN",
+      title: "NASAR: Terrain-Aware SAR to RGB Translation using cGAN",
       image: NASARImg,
       description: (
         <div>
