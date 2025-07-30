@@ -57,20 +57,20 @@ usage for over 10,000+ users.
       description: (
         <ul className="list-disc pl-5 space-y-2">
           <li>
-           Built a sophisticated image gallery page with 25+ state variables, a 3D carousel, semantic URL filters, and real-time fuzzy search
-using Next.js 15, TypeScript, and Tailwind CSS.
+           Built a sophisticated image gallery page with 25+ state variables, a 3D carousel, and semantic URL filters using Next.js 15,
+ TypeScript and Tailwind CSS for AI and DS department Association, NMAM Institute of Technology, Nitte.
           </li>
           <li>
             Engineered a fully responsive and accessible UI with Framer Motion, Radix UI, and shadcn components, ensuring smooth
 animations and cross-device usability.
           </li>
           <li>
-            Architected modular API routes and a relational PostgreSQL database with Prisma ORM, enabling optimized full-text search,
-category-based filtering, and performant data queries.
+            Architected modular API routes and a relational PostgreSQL database with Prisma ORM and Fuse.js, enabling optimized fuzzy
+ search, category-based filtering and performant data queries.
           </li>
           <li>
-            Integrated Cloudinary for progressive image loading and CDN delivery, reducing bandwidth by 70%, and followed Agile sprint
-cycles in a 10-member team using Git-based version control and CI/CD workflows.
+           Integrated Cloudinary for progressive image loading and CDN delivery, reducing bandwidth by 70% and followed Agile sprint
+ cycles in a 10-member team using Git-based version control and CI/CD workflows using Vercel.
           </li>
         </ul>
       ),
@@ -86,7 +86,8 @@ cycles in a 10-member team using Git-based version control and CI/CD workflows.
         "Cloudinary",
         "Agile",
         "CI/CD",
-        "Git"
+        "Git",
+        "Vercel"
       ]
     },
   ], []);

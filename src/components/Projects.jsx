@@ -35,13 +35,13 @@ const Projects = memo(function Projects() {
             <li>Architected a flexible NoSQL schema enabling efficient storage, indexing, and retrieval of multilingual transcripts, speaker metadata, and sentiment tags with semantic search capabilities.</li>
             <li>Integrated Facebook NLLB-200’s distilled 600M, PyAnnote.audio, D3.js and Meta LLaMA 3 for multi-language translation, speaker diarization, and generative mind map summarization of dialogue flow and key speaker topics across media formats.</li>
             <li>Built NLP pipelines for speech summarization, emotion detection, entity extraction, and interactive synchronized playback with semantic search across 10+ languages using sentiment.js, compromise.js, Facebook BART, WaveSurfer.js, and FFmpeg.</li>
-            <li>Engineered a scalable backend with RESTful APIs, Memoization, Batch processing, Model caching, JWT authentication, and file processing pipelines supporting 5+ formats, with CUDA acceleration improving processing speed by 90%.</li>
+            <li>Engineered a scalable backend with RESTful APIs, Memoization, Batch processing, Model caching, JWT authentication, and file processing pipelines supporting 5+ formats, with CUDA acceleration improving processing speed by 93.34%.</li>
           </ul>
         </div>
       ),
       tech: ["Next.js 15", "Express.js", "MongoDB Atlas", "Hugging Face", "OpenAI Faster-Whisper", "PyAnnote.audio", "D3.js", "Meta LLaMA 3", "WaveSurfer.js", "CUDA"],
       github: "https://github.com/KrishnaNAcharya/SonicSeeker",
-      demo: "https://sonicseeker.vercel.app"
+      demo: "example.com"
     },
     {
       id: 2,
@@ -60,13 +60,14 @@ const Projects = memo(function Projects() {
           <ul className="list-disc pl-5 space-y-1">
             <li> Designed and trained a Terrain-Aware SAR-to-RGB colorization pipeline using a Conditional GAN architecture enhanced with a
  terrain-classifying ResNet34, enabling domain-specific image translation across 4 terrains.</li>
-            <li>Developed a U-Net-based generator and terrain-aware PatchGAN discriminator with attention layers for detail fidelity and texture preservation in translated RGB images.</li>
+            <li> Built a UNet-based generator and PatchGAN discriminator, integrating terrain embeddings into the generation process to improve
+ realism and structure preservation in translated RGB outputs.</li>
             <li> Implemented real-time terrain prediction and one-hot conditioning by finetuning ResNet34 on a custom multi-terrain SAR dataset
  consisting 16000 pairs of images, boosting generalization through modular training of classifier and GAN blocks.</li>
             <li>Achieved robust performance with mixed-precision training, automatic terrain classification accuracy of 99.94%, and image
 translation scores of FID: 108.18, SSIM: 0.36, PSNR: 19 dB, and IS: 3.07 over multi-domain SAR datasets.</li>
             <li>Optimized training using PyTorch Lightning-style routines, advanced loss functions (L1, perceptual), and visualizations with
-side-by-side SAR, ground-truth, and generated RGB outputs, showcasing spatial coherence and terrain-aware realism.</li>
+ SAR, ground-truth, and generated RGB outputs, while keeping the system within a 1.5GB VRAM limit.</li>
           </ul>
         </div>
       ),
