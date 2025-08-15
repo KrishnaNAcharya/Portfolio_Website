@@ -69,36 +69,6 @@
   .btn-fill-animation:hover::before {
     transform: translateX(0);
   }
-
-  /* Optimized loading animations */
-  .loading-spinner {
-    will-change: transform;
-    transform-origin: center;
-    animation: loading-spin 0.8s linear infinite;
-  }
-
-  .loading-fade-in {
-    animation: loading-fade-in 0.15s ease-out forwards;
-  }
-
-  .loading-fade-out {
-    animation: loading-fade-out 0.15s ease-in forwards;
-  }
-}
-
-@keyframes loading-spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-@keyframes loading-fade-in {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-@keyframes loading-fade-out {
-  0% { opacity: 1; }
-  100% { opacity: 0; }
 }
 
 

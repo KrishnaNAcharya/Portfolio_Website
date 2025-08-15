@@ -1,61 +1,81 @@
-import { useEffect, useRef, memo, useMemo, useCallback } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { HoverEffect } from './ui/card-hover-effect';
+import { useEffect, useRef, memo, useMemo, useCallback } from 'react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { HoverEffect } from './ui/card-hover-effect'
+import { AchievementItem } from '@/lib/types'
+import { ReactNode } from 'react'
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger)
 
 const Achievements = memo(function Achievements() {
-  const headerRef = useRef(null);
-  const scrollTriggerRef = useRef(null);
+  const headerRef = useRef<HTMLElement>(null)
+  const scrollTriggerRef = useRef<gsap.core.Tween | null>(null)
 
   // Memoize static achievements data
-  const achievementsData = useMemo(() => [
+  const achievementsData = useMemo((): AchievementItem[] => [
     {
       id: 1,
-      title: "Hackfest 2025 - Runner Up",
-      description: "Led the team to 2nd place at Hackfest 2025, a national hackathon hosted by the Finite Loop Club at NMAM Institute of Technology, competing among 628 teams.",
-      category: "Hackathon",
-      link: "https://drive.google.com/file/d/12IX6u7TaBYX1ZSWjVj9F45awucm8GOsg/view?usp=sharing"
+      title: "Class Representative - AI & DS Batch 2026",
+      description: "Serving as the official Class Representative for the 2026 batch of B.Tech in Artificial Intelligence and Data Science, facilitating communication between students and faculty while representing class interests in academic and administrative matters.",
+      date: "2024 - Present",
+      organization: "NMAM Institute of Technology",
+      category: "academic"
     },
     {
       id: 2,
-      title: "Hackfest 2024 - Top 15",
-      description: "Among top 15 overall position and placed in the Top 3 in the Open Innovation track at Hackfest 2024, a national hackathon hosted by the Finite Loop Club at NMAM Institute of Technology, with over 300 participating teams.",
-      category: "Hackathon",
-      link: "https://drive.google.com/file/d/13ctWL3RuGc0my0zErnxp5IuGYqJj_IYq/view?usp=sharing"
+      title: "Hackfest 2025 - Runner Up",
+      description: "Led the team to 2nd place at Hackfest 2025, a national hackathon hosted by the Finite Loop Club at NMAM Institute of Technology, competing among 628 teams.",
+      date: "2025",
+      organization: "NMAM Institute of Technology",
+      category: "competition",
+      link: "https://drive.google.com/file/d/12IX6u7TaBYX1ZSWjVj9F45awucm8GOsg/view?usp=sharing"
     },
     {
       id: 3,
-      title: "Locked in Reality (Incredia 2024) - Winner",
-      description: "Won 1st place in 'Locked in Reality', a technical event held during Incredia 2024, the annual college fest of NMAM Institute of Technology.",
-      category: "Technical Event",
-      link: "https://drive.google.com/file/d/17d5bdK5GyXgm_SFpibwnA_5Mv9DUeQ-b/view?usp=sharing"
+      title: "Hackfest 2024 - Top 15",
+      description: "Among top 15 overall position and placed in the Top 3 in the Open Innovation track at Hackfest 2024, a national hackathon hosted by the Finite Loop Club at NMAM Institute of Technology, with over 300 participating teams.",
+      date: "2024",
+      organization: "NMAM Institute of Technology",
+      category: "competition",
+      link: "https://drive.google.com/file/d/13ctWL3RuGc0my0zErnxp5IuGYqJj_IYq/view?usp=sharing"
     },
     {
       id: 4,
-      title: "Hackloop 2024 - Top 7",
-      description: "Among Top 7 position at HackLoop 2024, a college-level hackathon hosted by the Finite Loop Club at NMAM Institute of Technology.",
-      category: "Hackathon",
-      link: "https://drive.google.com/file/d/1rVph358TfQZ8MbbkM6erqeLiCfV3EDkO/view?usp=drive_link"
+      title: "Locked in Reality (Incredia 2024) - Winner",
+      description: "Won 1st place in 'Locked in Reality', a technical event held during Incredia 2024, the annual college fest of NMAM Institute of Technology.",
+      date: "2024",
+      organization: "NMAM Institute of Technology",
+      category: "competition",
+      link: "https://drive.google.com/file/d/17d5bdK5GyXgm_SFpibwnA_5Mv9DUeQ-b/view?usp=sharing"
     },
     {
       id: 5,
+      title: "Hackloop 2024 - Top 7",
+      description: "Among Top 7 position at HackLoop 2024, a college-level hackathon hosted by the Finite Loop Club at NMAM Institute of Technology.",
+      date: "2024",
+      organization: "NMAM Institute of Technology",
+      category: "competition",
+      link: "https://drive.google.com/file/d/1rVph358TfQZ8MbbkM6erqeLiCfV3EDkO/view?usp=drive_link"
+    },
+    {
+      id: 6,
       title: "SIH 2024 Internal Hackathon - Qualified",
       description: "Selected for the national round of Smart India Hackathon (SIH) 2024 from the Internal Hackathon held at NMAM Institute of Technology, qualifying among 86,000+ participants.",
-      category: "Hackathon",
+      date: "2024",
+      organization: "NMAM Institute of Technology",
+      category: "competition",
       link: "https://drive.google.com/file/d/1G9XX5um5Yl4hu_asMG_mpkiYZGOEyZb2/view"
     },
-  ], []);
+  ], [])
 
   // Memoize certificate button click handler
-  const handleCertificateClick = useCallback((e) => {
-    e.stopPropagation();
-  }, []);
+  const handleCertificateClick = useCallback((e: React.MouseEvent) => {
+    e.stopPropagation()
+  }, [])
 
   // Memoize certificate button rendering
-  const renderCertificateButton = useCallback((link) => {
-    if (!link) return null;
+  const renderCertificateButton = useCallback((link?: string) => {
+    if (!link) return null
     return (
       <a
         href={link}
@@ -67,32 +87,44 @@ const Achievements = memo(function Achievements() {
       >
         View Certificate
       </a>
-    );
-  }, [handleCertificateClick]);
+    )
+  }, [handleCertificateClick])
 
   // Memoize transformed achievements to prevent recreation on every render
   const transformedAchievements = useMemo(() => 
-    achievementsData.map(achievement => ({
-      id: achievement.id,
-      title: (
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-3 w-full">
-          <span className="whitespace-normal">{achievement.title}</span>
-          {/* Show button on right side only on md+ screens */}
-          <span className="hidden md:block">{renderCertificateButton(achievement.link)}</span>
-        </div>
-      ),
-      description: (
-        <div className="flex-grow">
-          <p className="text-sm text-emerald-400 mb-2">{achievement.category}</p>
-          <p>{achievement.description}</p>
-          {/* Show button below description only on mobile */}
-          <span className="block md:hidden mt-2">{renderCertificateButton(achievement.link)}</span>
-        </div>
-      ),
-      link: achievement.link,
-    })),
+    achievementsData.map(achievement => {
+      let categoryDisplay = 'Technical Event'
+      
+      if (achievement.title.includes('Hackfest') || achievement.title.includes('Hackloop') || achievement.title.includes('SIH')) {
+        categoryDisplay = 'Hackathon'
+      } else if (achievement.title.includes('Class Representative')) {
+        categoryDisplay = 'Leadership'
+      } else if (achievement.title.includes('Locked in Reality')) {
+        categoryDisplay = 'Technical Event'
+      }
+      
+      return {
+        id: achievement.id,
+        title: (
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-3 w-full">
+            <span className="whitespace-normal">{achievement.title}</span>
+            {/* Show button on right side only on md+ screens */}
+            <span className="hidden md:block">{renderCertificateButton(achievement.link)}</span>
+          </div>
+        ) as ReactNode,
+        description: (
+          <div className="flex-grow">
+            <p className="text-sm text-emerald-400 mb-2">{categoryDisplay}</p>
+            <p>{achievement.description}</p>
+            {/* Show button below description only on mobile */}
+            <span className="block md:hidden mt-2">{renderCertificateButton(achievement.link)}</span>
+          </div>
+        ) as ReactNode,
+        link: achievement.link,
+      }
+    }),
     [achievementsData, renderCertificateButton]
-  );
+  )
 
   // Memoize animation configuration
   const animationConfig = useMemo(() => ({
@@ -102,37 +134,39 @@ const Achievements = memo(function Achievements() {
       opacity: 1,
       duration: 1,
       scrollTrigger: {
-        trigger: null, // Will be set in useEffect
+        trigger: null as HTMLElement | null,
         start: "top bottom",
         end: "top center",
         scrub: 1
       }
     }
-  }), []);
+  }), [])
 
   useEffect(() => {
-    if (!headerRef.current) return;
+    if (!headerRef.current) return
 
-    const element = headerRef.current;
-    const config = { ...animationConfig.to };
-    config.scrollTrigger.trigger = element;
+    const element = headerRef.current
+    const config = { ...animationConfig.to }
+    config.scrollTrigger.trigger = element
 
-    scrollTriggerRef.current = gsap.fromTo(element, animationConfig.from, config);
+    scrollTriggerRef.current = gsap.fromTo(element, animationConfig.from, config)
 
     // Cleanup function to prevent memory leaks
     return () => {
       if (scrollTriggerRef.current) {
-        scrollTriggerRef.current.kill();
-        scrollTriggerRef.current = null;
+        scrollTriggerRef.current.kill()
+        scrollTriggerRef.current = null
       }
-    };
-  }, [animationConfig]);  return (
+    }
+  }, [animationConfig])
+
+  return (
     <section 
       id="achievements" 
-      name="achievements" 
       className="w-full pt-8 md:pt-12 pb-8 md:pb-12"
       aria-labelledby="achievements-heading"
       role="region"
+      data-name="achievements"
     >
       <div className="max-w-[1440px] mx-auto p-4 md:p-10 flex flex-col w-full h-full px-4 md:px-10">
         <header ref={headerRef} className="pb-6 md:pb-8 text-center sm:text-left">
@@ -148,7 +182,9 @@ const Achievements = memo(function Achievements() {
         </main>
       </div>
     </section>
-  );
-});
+  )
+})
 
-export default Achievements;
+Achievements.displayName = 'Achievements'
+
+export default Achievements

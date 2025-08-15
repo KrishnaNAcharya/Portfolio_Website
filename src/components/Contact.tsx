@@ -1,15 +1,26 @@
-import { useRef, useEffect, memo, useMemo, useCallback } from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useRef, useEffect, memo, useMemo, useCallback } from 'react'
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhoneAlt } from 'react-icons/fa'
+import { IconType } from 'react-icons'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger)
+
+interface ContactLink {
+  href: string
+  target: '_blank' | '_self'
+  rel?: string
+  icon: IconType
+  label: string
+  ariaLabel: string
+}
 
 const Contact = memo(function Contact() {
-  const headerRef = useRef(null);
-  const scrollTriggerRef = useRef(null);
+  const headerRef = useRef<HTMLElement>(null)
+  const scrollTriggerRef = useRef<gsap.core.Tween | null>(null)
+
   // Memoize contact links data
-  const contactLinks = useMemo(() => [
+  const contactLinks = useMemo((): ContactLink[] => [
     {
       href: "https://github.com/KrishnaNAcharya",
       target: "_blank",
@@ -29,7 +40,6 @@ const Contact = memo(function Contact() {
     {
       href: "mailto:knacharyakavoor@gmail.com",
       target: "_self",
-      rel: undefined,
       icon: FaEnvelope,
       label: "Email",
       ariaLabel: "Send me an email"
@@ -37,15 +47,14 @@ const Contact = memo(function Contact() {
     {
       href: "tel:+918088022968",
       target: "_self",
-      rel: undefined,
       icon: FaPhoneAlt,
       label: "Phone",
       ariaLabel: "Call me"
     }
-  ], []);
+  ], [])
 
   // Memoize contact link rendering
-  const renderContactLink = useCallback(({ href, target, rel, icon: Icon, label, ariaLabel }) => (
+  const renderContactLink = useCallback(({ href, target, rel, icon: Icon, label, ariaLabel }: ContactLink) => (
     <a 
       key={label}
       href={href}
@@ -57,7 +66,7 @@ const Contact = memo(function Contact() {
       <Icon className="text-4xl hover:text-emerald-500 transition duration-300" />
       <span className="mt-2 group-hover:text-emerald-500">{label}</span>
     </a>
-  ), []);
+  ), [])
 
   // Memoize animation configuration
   const animationConfig = useMemo(() => ({
@@ -68,36 +77,38 @@ const Contact = memo(function Contact() {
       duration: 1,
       ease: "power3.out",
       scrollTrigger: {
-        trigger: null, // Will be set in useEffect
+        trigger: null as HTMLElement | null,
         start: "top bottom-=100",
         toggleActions: "play none none reverse"
       }
     }
-  }), []);
+  }), [])
 
   useEffect(() => {
-    if (!headerRef.current) return;
+    if (!headerRef.current) return
 
-    const element = headerRef.current;
-    const config = { ...animationConfig.to };
-    config.scrollTrigger.trigger = element;
+    const element = headerRef.current
+    const config = { ...animationConfig.to }
+    config.scrollTrigger.trigger = element
 
-    scrollTriggerRef.current = gsap.fromTo(element, animationConfig.from, config);
+    scrollTriggerRef.current = gsap.fromTo(element, animationConfig.from, config)
 
     // Cleanup function to prevent memory leaks
     return () => {
       if (scrollTriggerRef.current) {
-        scrollTriggerRef.current.kill();
-        scrollTriggerRef.current = null;
+        scrollTriggerRef.current.kill()
+        scrollTriggerRef.current = null
       }
-    };
-  }, [animationConfig]);  return (
+    }
+  }, [animationConfig])
+
+  return (
     <section 
       id="contact" 
-      name="contact" 
       className="w-full py-4 mt-auto"
       aria-labelledby="contact-heading"
       role="region"
+      data-name="contact"
     >
       <div className="max-w-screen-lg w-full px-4 py-4 mx-auto">
         <header ref={headerRef} className="flex justify-center mb-4 text-center sm:text-left">
@@ -118,7 +129,9 @@ const Contact = memo(function Contact() {
         </main>
       </div>
     </section>
-  );
-});
+  )
+})
 
-export default Contact;
+Contact.displayName = 'Contact'
+
+export default Contact

@@ -1,16 +1,18 @@
-import { useEffect, useRef, useMemo, useCallback, memo } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { HoverEffect } from './ui/card-hover-effect';
+import { useEffect, useRef, useMemo, useCallback, memo } from 'react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { HoverEffect } from './ui/card-hover-effect'
+import { SkillCategory } from '@/lib/types'
+import { ReactNode } from 'react'
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger)
 
-const About = memo(() => {
-  const headerRef = useRef(null);
-  const sectionsRef = useRef([]);
+const About = memo(function About() {
+  const headerRef = useRef<HTMLElement>(null)
+  const sectionsRef = useRef<Array<HTMLElement | null>>([])
 
   // Memoize skill categories to prevent recreation on every render
-  const skillCategories = useMemo(() => [
+  const skillCategories = useMemo((): Array<{ id: string; title: ReactNode; description: ReactNode; }> => [
     {
       id: "prog-lang",
       title: "Programming Languages",
@@ -27,7 +29,7 @@ const About = memo(() => {
           <li>SQL</li>
           <li>R</li>
         </ul>
-      ),
+      ) as ReactNode,
     },
     {
       id: "frameworks-libs",
@@ -42,7 +44,7 @@ const About = memo(() => {
           <li>GSAP</li>
           <li>TensorFlow</li>
         </ul>
-      ),
+      ) as ReactNode,
     },
     {
       id: "tools-platforms",
@@ -62,9 +64,9 @@ const About = memo(() => {
           <li>NeonDB</li>
           <li>Kaggle</li>
         </ul>
-      ),
+      ) as ReactNode,
     }
-  ], []);
+  ], [])
 
   // Memoize GSAP animation configurations
   const animationConfig = useMemo(() => ({
@@ -75,7 +77,7 @@ const About = memo(() => {
         opacity: 1,
         duration: 1,
         scrollTrigger: {
-          trigger: null, // Will be set dynamically
+          trigger: null as HTMLElement | null,
           start: "top bottom",
           end: "top center",
           scrub: 1
@@ -89,56 +91,57 @@ const About = memo(() => {
         opacity: 1,
         duration: 1,
         scrollTrigger: {
-          trigger: null, // Will be set dynamically
+          trigger: null as HTMLElement | null,
           start: "top bottom-=50",
           end: "top center+=100",
           scrub: 1
         }
       }
     }
-  }), []);
+  }), [])
 
   // Memoize ref callback functions
-  const setSectionRef = useCallback((index) => (el) => {
-    sectionsRef.current[index] = el;
-  }, []);
+  const setSectionRef = useCallback((index: number) => (el: HTMLElement | null) => {
+    sectionsRef.current[index] = el
+  }, [])
 
   // Memoize animation setup
   const setupAnimations = useCallback(() => {
     // Header animation
     if (headerRef.current) {
-      const headerConfig = { ...animationConfig.header.to };
-      headerConfig.scrollTrigger.trigger = headerRef.current;
+      const headerConfig = { ...animationConfig.header.to }
+      headerConfig.scrollTrigger.trigger = headerRef.current
       
-      gsap.fromTo(headerRef.current, animationConfig.header.from, headerConfig);
+      gsap.fromTo(headerRef.current, animationConfig.header.from, headerConfig)
     }
 
     // Text sections animation
     sectionsRef.current.forEach((section) => {
       if (section) {
-        const sectionConfig = { ...animationConfig.sections.to };
-        sectionConfig.scrollTrigger.trigger = section;
+        const sectionConfig = { ...animationConfig.sections.to }
+        sectionConfig.scrollTrigger.trigger = section
         
-        gsap.fromTo(section, animationConfig.sections.from, sectionConfig);
+        gsap.fromTo(section, animationConfig.sections.from, sectionConfig)
       }
-    });
-  }, [animationConfig]);
+    })
+  }, [animationConfig])
 
   useEffect(() => {
-    setupAnimations();
+    setupAnimations()
     
     // Cleanup function for ScrollTrigger
     return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
-  }, [setupAnimations]);
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill())
+    }
+  }, [setupAnimations])
+
   return (
     <section 
       id="skills" 
-      name="skills" 
       className="w-full pt-8 md:pt-12 pb-8 md:pb-12"
       aria-labelledby="skills-heading"
       role="region"
+      data-name="skills"
     >
       <div className='max-w-[1440px] mx-auto p-4 md:p-10 flex flex-col w-full h-full'>
         <header ref={headerRef} className='pb-6 md:pb-8 text-center sm:text-left'>
@@ -158,7 +161,7 @@ const About = memo(() => {
         <article ref={setSectionRef(0)} className='text-justify px-2 md:px-0'>
           <h3 className='text-3xl font-semibold mt-8 md:mt-10 mb-4 md:mb-5 text-center sm:text-left'>Current Focus</h3>
           <p className='text-lg md:text-2xl text-white text-justify leading-relaxed'>
-            I am currently focused on strengthening my problem-solving skills through an in-depth study of Data Structures and Algorithms (DSA). Alongside this, I am actively building projects such as MentorStack and the IDEA Website, applying full-stack development principles with an emphasis on performance, UX, and scalability. Beyond technical growth, I prioritize maintaining both physical and mental well-being and am preparing rigorously for upcoming placement opportunities.
+            I am currently focused on strengthening my problem-solving skills through an in-depth study of Data Structures and Algorithms (DSA). Alongside this, I am actively working on my research papers and building projects such as MentorStack, applying full-stack development principles with an emphasis on performance, UX, and scalability. Beyond technical growth, I prioritize maintaining both physical and mental well-being and am preparing rigorously for upcoming placement opportunities.
           </p>
         </article>
 
@@ -178,9 +181,9 @@ const About = memo(() => {
         </div>
       </div>
     </section>
-  );
-});
+  )
+})
 
-About.displayName = 'About';
+About.displayName = 'About'
 
-export default About;
+export default About

@@ -1,25 +1,27 @@
-import { useState, useEffect, useRef, memo, useMemo, useCallback } from 'react';
-import { FaBars, FaTimes } from "react-icons/fa";
-import { CustomIcons } from './ui/custom-icons';
-import gsap from 'gsap';
-import { FloatingNav } from './ui/floating-navbar';
-import PropTypes from 'prop-types';
+import { useState, useEffect, useRef, memo, useMemo, useCallback } from 'react'
+import { FaBars, FaTimes } from "react-icons/fa"
+import { CustomIcons } from './ui/custom-icons'
+import gsap from 'gsap'
+import { FloatingNav } from './ui/floating-navbar'
+import { NavBarProps } from '@/lib/types'
 
-const NavBar = memo(function NavBar({ loading }) {
-  const [nav, setNav] = useState(false);
-  const [isClosing, setIsClosing] = useState(false);
-  const linksRef = useRef([]);
-  const navbarRef = useRef(null);
-  const sidebarRef = useRef(null);
+const NavBar = memo(function NavBar({ loading }: NavBarProps) {
+  const [nav, setNav] = useState(false)
+  const [isClosing, setIsClosing] = useState(false)
+  const linksRef = useRef<(HTMLLIElement | null)[]>([])
+  const navbarRef = useRef<HTMLDivElement>(null)
+  const sidebarRef = useRef<HTMLElement>(null)
+  
   const links = useMemo(() => [
     { id: 1, link: 'home', icon: <CustomIcons.Home /> },
     { id: 2, link: 'education', icon: <CustomIcons.Education /> },
-    { id: 3, link: 'experience', icon: <CustomIcons.Experience /> },    { id: 4, link: 'projects', icon: <CustomIcons.Projects /> },
+    { id: 3, link: 'experience', icon: <CustomIcons.Experience /> },
+    { id: 4, link: 'projects', icon: <CustomIcons.Projects /> },
     { id: 5, link: 'achievements', icon: <CustomIcons.Achievements /> },
     { id: 6, link: 'certifications', icon: <CustomIcons.Certificates /> },
     { id: 7, link: 'skills', icon: <CustomIcons.Skills /> },
     { id: 8, link: 'contact', icon: <CustomIcons.Contact /> }
-  ], []);
+  ], [])
 
   const navItems = useMemo(() => 
     links.map(({ link, icon }) => ({
@@ -28,58 +30,58 @@ const NavBar = memo(function NavBar({ loading }) {
       icon
     })), 
     [links]
-  );
+  )
 
-  const handleClick = useCallback((targetSection) => {
-    const element = document.querySelector(`section[name="${targetSection}"]`);
+  const handleClick = useCallback((targetSection: string) => {
+    const element = document.querySelector(`section[data-name="${targetSection}"]`)
     if (element) {
-      const offset = 0;
-      const elementTop = element.offsetTop - offset;
+      const offset = 0
+      const elementTop = (element as HTMLElement).offsetTop - offset
       
       window.scrollTo({
         top: Math.max(0, elementTop),
         behavior: 'smooth'
-      });
+      })
     }
-  }, []);
+  }, [])
 
   const handleClose = useCallback(() => {
     if (nav && !isClosing) {
-      setIsClosing(true);
+      setIsClosing(true)
     }
-  }, [nav, isClosing]);
+  }, [nav, isClosing])
 
   const handleNavToggle = useCallback(() => {
     if (nav) {
-      handleClose();
+      handleClose()
     } else {
-      setNav(true);
+      setNav(true)
     }
-  }, [nav, handleClose]);
+  }, [nav, handleClose])
 
-  const handleLinkClick = useCallback((link) => {
-    handleClick(link);
-    handleClose();
-  }, [handleClick, handleClose]);
+  const handleLinkClick = useCallback((link: string) => {
+    handleClick(link)
+    handleClose()
+  }, [handleClick, handleClose])
 
   useEffect(() => {
     if (!loading && navbarRef.current) {
-      const tl = gsap.timeline();
+      const tl = gsap.timeline()
       
       tl.fromTo(navbarRef.current, 
         { opacity: 0, y: -10 },
         { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }
-      );
+      )
       
       if (linksRef.current.length > 0) {
-        tl.fromTo(linksRef.current,
+        tl.fromTo(linksRef.current.filter(Boolean),
           { opacity: 0 },
           { opacity: 1, duration: 0.2, stagger: 0.05, ease: "power2.out" },
           "-=0.1"
-        );
+        )
       }
     }
-  }, [loading]);
+  }, [loading])
 
   useEffect(() => {
     if (sidebarRef.current) {
@@ -87,10 +89,10 @@ const NavBar = memo(function NavBar({ loading }) {
         gsap.fromTo(sidebarRef.current, 
           { x: -176, opacity: 0 },
           { x: 0, opacity: 1, duration: 0.15, ease: "power2.out" }
-        );
+        )
         
         if (linksRef.current.length > 0) {
-          gsap.fromTo(linksRef.current,
+          gsap.fromTo(linksRef.current.filter(Boolean),
             { x: -30, opacity: 0 },
             { 
               x: 0, 
@@ -100,10 +102,10 @@ const NavBar = memo(function NavBar({ loading }) {
               delay: 0.03, 
               ease: "power2.out" 
             }
-          );
+          )
         }
       } else if (isClosing) {
-        gsap.to(linksRef.current, {
+        gsap.to(linksRef.current.filter(Boolean), {
           x: -30,
           opacity: 0,
           duration: 0.08,
@@ -116,15 +118,15 @@ const NavBar = memo(function NavBar({ loading }) {
               duration: 0.1,
               ease: "power2.in",
               onComplete: () => {
-                setNav(false);
-                setIsClosing(false);
+                setNav(false)
+                setIsClosing(false)
               }
-            });
+            })
           }
-        });
+        })
       }
     }
-  }, [nav, isClosing]);
+  }, [nav, isClosing])
 
   if (loading) {
     return (
@@ -146,7 +148,7 @@ const NavBar = memo(function NavBar({ loading }) {
           </div>
         </div>
       </div>
-    );
+    )
   }
 
   return (
@@ -187,7 +189,8 @@ const NavBar = memo(function NavBar({ loading }) {
             ref={sidebarRef}
             className="md:hidden fixed left-0 w-44 z-50 rounded-r-2xl"
             onClick={e => e.stopPropagation()} 
-            aria-label="Mobile navigation"            style={{
+            aria-label="Mobile navigation"
+            style={{
               top: '35px',
               background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.7) 70%, rgba(0, 0, 0, 0.3) 100%)',
               backdropFilter: 'blur(2px)',
@@ -205,7 +208,7 @@ const NavBar = memo(function NavBar({ loading }) {
                 {links.map(({ id, link }, index) => (
                   <li 
                     key={id} 
-                    ref={el => linksRef.current[index] = el}
+                    ref={el => {linksRef.current[index] = el}}
                     onClick={() => handleLinkClick(link)}
                     className="px-2 py-2 cursor-pointer font-medium text-white hover:text-emerald-400 transition-colors duration-200"
                   >
@@ -218,11 +221,9 @@ const NavBar = memo(function NavBar({ loading }) {
         </>
       )}
     </>
-  );
-});
+  )
+})
 
-NavBar.propTypes = {
-  loading: PropTypes.bool.isRequired,
-};
+NavBar.displayName = 'NavBar'
 
-export default NavBar;
+export default NavBar
