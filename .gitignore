@@ -9,18 +9,9 @@ lerna-debug.log*
 
 node_modules
 .next
-out
 dist
 dist-ssr
 *.local
-.env*.local
-
-# Vercel
-.vercel
-
-# TypeScript
-*.tsbuildinfo
-next-env.d.ts
 
 # Editor directories and files
 .vscode/*
