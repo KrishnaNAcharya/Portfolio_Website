@@ -15,6 +15,23 @@ const Projects = memo(function Projects() {
   const projectsData = useMemo((): ProjectItem[] => [
     {
       id: 1,
+      title: "MentorStack: Comprehensive Mentorship Platform",
+      description: "Full-stack mentorship platform with Next.js 15 frontend, Express + Prisma backend, and AI-powered features",
+      image: "/assets/mentorstack.png",
+      technologies: ["Next.js 15", "Express.js", "Prisma ORM", "PostgreSQL", "Docker", "RabbitMQ", "JWT", "Gemini API", "RESTful APIs"],
+      features: [
+        "Architected MentorStack with Next.js 15 frontend and Express + Prisma backend on PostgreSQL, Dockerized for repeatable builds and deployments, with Articles, Community hubs, unified Tags, and RabbitMQ-driven background flows.",
+        "Designed Prisma schema and unified tagging (Articles, Communities and Questions) to surface relevant content by skill/category.",
+        "Implemented JWT authentication and RESTful APIs for publishing, community moderation, question posting, and article voting for authenticated users.",
+        "Dockerized services (frontend, backend, RabbitMQ, workers) with container-friendly configs enabling consistent local dev, CI, and cloud deployments.",
+        "Launched Gen-AI helper endpoints (rephrase, summarize, AI-assisted authoring) isolated behind service endpoints using Gemini API."
+      ],
+      githubUrl: "https://github.com/KrishnaNAcharya/MentorStack",
+      liveUrl: "example.com",
+      category: "web"
+    },
+    {
+      id: 2,
       title: "SonicSeeker: AI powered media analysis platform",
       description: "Full-stack AI media platform with 99.4% accurate speech-to-text transcription and multi-language support",
       image: "/assets/SonicSeeker.png",
@@ -31,7 +48,7 @@ const Projects = memo(function Projects() {
       category: "ai"
     },
     {
-      id: 2,
+      id: 3,
       title: "NASAR: Terrain-Aware SAR to RGB Translation using cGAN",
       description: "Advanced computer vision project using Conditional GANs for SAR-to-RGB image translation with terrain awareness",
       image: "/assets/NASAR.jpg",
@@ -48,7 +65,7 @@ const Projects = memo(function Projects() {
       category: "ai"
     },
     {
-      id: 3,
+      id: 4,
       title: "HireIN-JP: Recruitment Platform",
       description: "Full-stack recruitment platform with real-time search, filtering, and role-based dashboards",
       image: "/assets/HireIn.png",
@@ -65,7 +82,7 @@ const Projects = memo(function Projects() {
       category: "web"
     },
     {
-      id: 4,
+      id: 5,
       title: "HIMS: Health Insurance Management System",
       description: "Production-grade health insurance platform with multi-step workflows and role-based access",
       image: "/assets/HIMS.png",
@@ -82,7 +99,7 @@ const Projects = memo(function Projects() {
       category: "web"
     },
     {
-      id: 5,
+      id: 6,
       title: "Xtract: Statistical Analysis Tool",
       description: "Web-based statistical analysis tool with automated insights and interactive visualizations",
       image: "/assets/Xtract.png",
@@ -99,7 +116,7 @@ const Projects = memo(function Projects() {
       category: "web"
     },
     {
-      id: 6,
+      id: 7,
       title: "Portfolio Website",
       description: "High-performance portfolio with advanced animations and 97+ Lighthouse scores",
       image: "/assets/Portfolio.png",

@@ -15,6 +15,14 @@ const Achievements = memo(function Achievements() {
   const achievementsData = useMemo((): AchievementItem[] => [
     {
       id: 1,
+      title: "Technical Advisor - IDEA Association",
+      description: "Serving as Technical Advisor for the Intelligence and Data Science Engineers' Association (IDEA) at NMAM Institute of Technology, guiding technical development initiatives and mentoring students in AI and Data Science projects.",
+      date: "2024 - Present",
+      organization: "NMAM Institute of Technology",
+      category: "other"
+    },
+    {
+      id: 2,
       title: "Class Representative - AI & DS Batch 2026",
       description: "Serving as the official Class Representative for the 2026 batch of B.Tech in Artificial Intelligence and Data Science, facilitating communication between students and faculty while representing class interests in academic and administrative matters.",
       date: "2024 - Present",
@@ -22,7 +30,7 @@ const Achievements = memo(function Achievements() {
       category: "academic"
     },
     {
-      id: 2,
+      id: 3,
       title: "Hackfest 2025 - Runner Up",
       description: "Led the team to 2nd place at Hackfest 2025, a national hackathon hosted by the Finite Loop Club at NMAM Institute of Technology, competing among 628 teams.",
       date: "2025",
@@ -31,7 +39,7 @@ const Achievements = memo(function Achievements() {
       link: "https://drive.google.com/file/d/12IX6u7TaBYX1ZSWjVj9F45awucm8GOsg/view?usp=sharing"
     },
     {
-      id: 3,
+      id: 4,
       title: "Hackfest 2024 - Top 15",
       description: "Among top 15 overall position and placed in the Top 3 in the Open Innovation track at Hackfest 2024, a national hackathon hosted by the Finite Loop Club at NMAM Institute of Technology, with over 300 participating teams.",
       date: "2024",
@@ -40,7 +48,7 @@ const Achievements = memo(function Achievements() {
       link: "https://drive.google.com/file/d/13ctWL3RuGc0my0zErnxp5IuGYqJj_IYq/view?usp=sharing"
     },
     {
-      id: 4,
+      id: 5,
       title: "Locked in Reality (Incredia 2024) - Winner",
       description: "Won 1st place in 'Locked in Reality', a technical event held during Incredia 2024, the annual college fest of NMAM Institute of Technology.",
       date: "2024",
@@ -49,7 +57,7 @@ const Achievements = memo(function Achievements() {
       link: "https://drive.google.com/file/d/17d5bdK5GyXgm_SFpibwnA_5Mv9DUeQ-b/view?usp=sharing"
     },
     {
-      id: 5,
+      id: 6,
       title: "Hackloop 2024 - Top 7",
       description: "Among Top 7 position at HackLoop 2024, a college-level hackathon hosted by the Finite Loop Club at NMAM Institute of Technology.",
       date: "2024",
@@ -58,7 +66,7 @@ const Achievements = memo(function Achievements() {
       link: "https://drive.google.com/file/d/1rVph358TfQZ8MbbkM6erqeLiCfV3EDkO/view?usp=drive_link"
     },
     {
-      id: 6,
+      id: 7,
       title: "SIH 2024 Internal Hackathon - Qualified",
       description: "Selected for the national round of Smart India Hackathon (SIH) 2024 from the Internal Hackathon held at NMAM Institute of Technology, qualifying among 86,000+ participants.",
       date: "2024",

@@ -24,6 +24,33 @@ const Certificates = memo(function Certificates() {
     },
     {
       id: 2,
+      title: "Microsoft AI Learning Challenge",
+      issuer: "Microsoft",
+      date: "August 2025",
+      url: "https://drive.google.com/file/d/1bp4zYj6JqlwhN7ESEnw8JPX0FgoBacPI/view?usp=sharing",
+      description: "Completed the AI-focused learning challenge, gaining knowledge in Microsoft AI ecosystem.",
+      skills: ["Microsoft AI", "Artificial Intelligence", "AI Ecosystem", "Machine Learning"]
+    },
+    {
+      id: 3,
+      title: "Microsoft Azure Learning Challenge",
+      issuer: "Microsoft",
+      date: "August 2025",
+      url: "https://drive.google.com/file/d/1Q8O9wVEUT0vgwMsN1Kz8MlDTT1ndDw5i/view?usp=sharing",
+      description: "Successfully completed cloud computing challenge, mastering core Azure services.",
+      skills: ["Microsoft Azure", "Cloud Computing", "Azure Services", "Cloud Architecture"]
+    },
+    {
+      id: 4,
+      title: "Applied AI Learning Challenge",
+      issuer: "Microsoft",
+      date: "August 2025",
+      url: "https://drive.google.com/file/d/10WDBa36stY1soIlvR2XpyKY0h-Wz8XUY/view?usp=sharing",
+      description: "Completed applied AI challenge with focus on real-world problem-solving using AI.",
+      skills: ["Applied AI", "Problem Solving", "Real-world Applications", "AI Implementation"]
+    },
+    {
+      id: 5,
       title: "Java Programming I",
       issuer: "University of Helsinki, Finland",
       date: "June, 2023",
@@ -32,7 +59,7 @@ const Certificates = memo(function Certificates() {
       skills: ["Java Programming", "Object-Oriented Programming", "Data Structures", "Algorithm Implementation"]
     },
     {
-      id: 3,
+      id: 6,
       title: "Generative AI & Prompt Engineering Workshop",
       issuer: "Finite Loop Club - NMAM Institute of Technology",
       date: "December 1, 2023",
@@ -41,7 +68,7 @@ const Certificates = memo(function Certificates() {
       skills: ["Generative AI", "Prompt Engineering", "AI Model Interaction", "Machine Learning"]
     },
     {
-      id: 4,
+      id: 7,
       title: "Blockchain Essentials: A Hands-On Workshop",
       issuer: "NMAM Institute of Technology",
       date: "January 25, 2025",
@@ -50,7 +77,7 @@ const Certificates = memo(function Certificates() {
       skills: ["Blockchain Fundamentals", "Hands-on Experience", "Cryptocurrency", "Distributed Ledger Technology"]
     },
     {
-      id: 5,
+      id: 8,
       title: "Creating Responsive Web Pages using Bootstrap 4",
       issuer: "Infosys Springboard",
       date: "April 17, 2025",
@@ -59,7 +86,7 @@ const Certificates = memo(function Certificates() {
       skills: ["Bootstrap 4", "Responsive Design", "Mobile-First Development", "Frontend Development"]
     },
     {
-      id: 6,
+      id: 9,
       title: "Flutter Development Workshop",
       issuer: "DLithe - NMAM Institute of Technology",
       date: "March 20, 2025",
