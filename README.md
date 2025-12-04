@@ -251,10 +251,6 @@ Sitemap: https://www.krishnanacharya.me/sitemap.xml
 - **Image Optimization**: Next.js built-in image optimization
 - **Font Optimization**: Google Fonts integration with preloading
 
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
 ## 🙏 Acknowledgments
 
 - **Next.js Team** for the powerful React framework
