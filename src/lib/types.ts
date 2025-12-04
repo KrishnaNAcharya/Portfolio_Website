@@ -42,6 +42,7 @@ export interface ExperienceItem {
   description: string[]
   technologies: string[]
   companyUrl?: string
+  certificateUrl?: string
 }
 
 // Project types

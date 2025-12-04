@@ -16,18 +16,18 @@ const Projects = memo(function Projects() {
     {
       id: 1,
       title: "MentorStack: Comprehensive Mentorship Platform",
-      description: "Full-stack mentorship platform with Next.js 15 frontend, Express + Prisma backend, and AI-powered features",
+      description: "Full-stack mentorship platform with Next.js 15, React 19, Express.js, and AI-powered features for real-time developer mentorship",
       image: "/assets/mentorstack.png",
-      technologies: ["Next.js 15", "Express.js", "Prisma ORM", "PostgreSQL", "Docker", "RabbitMQ", "JWT", "Gemini API", "RESTful APIs"],
+      technologies: ["Next.js 15", "React 19", "Express.js", "TypeScript", "Prisma ORM", "PostgreSQL", "Docker", "RabbitMQ", "WebSocket", "Gemini AI", "Tailwind CSS", "GSAP", "JWT", "Cloudinary"],
       features: [
-        "Architected MentorStack with Next.js 15 frontend and Express + Prisma backend on PostgreSQL, Dockerized for repeatable builds and deployments, with Articles, Community hubs, unified Tags, and RabbitMQ-driven background flows.",
-        "Designed Prisma schema and unified tagging (Articles, Communities and Questions) to surface relevant content by skill/category.",
-        "Implemented JWT authentication and RESTful APIs for publishing, community moderation, question posting, and article voting for authenticated users.",
-        "Dockerized services (frontend, backend, RabbitMQ, workers) with container-friendly configs enabling consistent local dev, CI, and cloud deployments.",
-        "Launched Gen-AI helper endpoints (rephrase, summarize, AI-assisted authoring) isolated behind service endpoints using Gemini API."
+        "Engineered a full-stack mentorship platform using Next.js 15, React 19, and Express.js with TypeScript, serving real-time WebSocket chat with RabbitMQ pub/sub messaging, Q&A forums, article publishing, and AI-powered assistance to connect developers with mentors.",
+        "Architected microservices infrastructure with RabbitMQ message queuing, WebSocket real-time communication, and PostgreSQL database using Prisma ORM across 26 relational models for scalable async processing and message persistence.",
+        "Integrated Google Gemini AI for intelligent chatbot responses, answer validation, content summarization, and similarity detection, reducing user query resolution time by 60% through automated assistance.",
+        "Implemented gamification system with reputation tracking, badge achievements, and voting mechanisms using complex SQL queries and Prisma transactions, while securing application with JWT authentication, RBAC, and middleware validation.",
+        "Built responsive UI/UX with Tailwind CSS and GSAP animations across 25+ pages, optimized image handling with Cloudinary CDN reducing page load times by 40%, and deployed on Vercel, Render.com, Neon PostgreSQL, and CloudAMQP with Docker containerization."
       ],
       githubUrl: "https://github.com/KrishnaNAcharya/MentorStack",
-      liveUrl: "example.com",
+      liveUrl: "https://mentorstack.vercel.app",
       category: "web"
     },
     {
@@ -67,15 +67,15 @@ const Projects = memo(function Projects() {
     {
       id: 4,
       title: "HireIN-JP: Recruitment Platform",
-      description: "Full-stack recruitment platform with real-time search, filtering, and role-based dashboards",
+      description: "Production-ready job portal with role-based authentication, real-time search, and cloud-native architecture",
       image: "/assets/HireIn.png",
-      technologies: ["React.js", "Firebase", "Tailwind CSS", "Firestore", "Firebase Auth", "React Router", "Material Tailwind"],
+      technologies: ["React 18", "Firebase", "Tailwind CSS", "Firestore", "Firebase Auth", "Firebase Storage", "Material Tailwind", "Framer Motion", "GSAP"],
       features: [
-        "Developed a fully responsive recruitment platform with real-time search, filtering, and role-based dashboards for candidates and recruiters.",
-        "Engineered Firebase-based auth, Firestore data models, and secure file uploads for resumes and media with CDN-backed delivery.",
-        "Implemented dynamic job matching filters (role, location, experience, salary, mode) with debounced search and fuzzy match scoring.",
-        "Designed profile systems with resume upload, skills portfolio, and visibility controls; recruiters can post, track, and manage applicants.",
-        "Delivered 60% faster hiring cycle through advanced UX, admin dashboards, email automation, and analytics-driven process optimization."
+        "Engineered a production-ready job portal using React 18, Firebase, and Tailwind CSS with role-based authentication, real-time job search with advanced filtering, and secure file upload capabilities for scalable recruitment management.",
+        "Architected cloud-native infrastructure leveraging Firebase Authentication with Google OAuth, Cloud Firestore for NoSQL storage, and Firebase Storage for document management, enabling real-time data synchronization across distributed users.",
+        "Developed sophisticated multi-criteria search system processing job titles, locations, and categories with real-time filtering across job types (Remote, Hybrid, In-Office), employment duration, and eligibility requirements for enhanced user experience.",
+        "Designed mobile-first responsive UI using Tailwind CSS, Material Tailwind, Framer Motion, and GSAP animations, achieving seamless cross-device compatibility with glassmorphism effects and optimized loading states across mobile, tablet, and desktop platforms.",
+        "Built comprehensive profile management system with secure resume upload supporting multiple formats, dynamic skill portfolio, real-time validation, and Firebase Storage integration for encrypted document storage with privacy controls."
       ],
       githubUrl: "https://github.com/KrishnaNAcharya/HireIn-JP",
       liveUrl: "https://hire-in-jp.vercel.app",
@@ -84,15 +84,15 @@ const Projects = memo(function Projects() {
     {
       id: 5,
       title: "HIMS: Health Insurance Management System",
-      description: "Production-grade health insurance platform with multi-step workflows and role-based access",
+      description: "Full-stack health insurance platform with multi-step application forms, role-based access, and comprehensive admin dashboard",
       image: "/assets/HIMS.png",
-      technologies: ["React.js", "Express.js", "PostgreSQL", "Firebase", "Tailwind CSS", "Vite", "Node.js"],
+      technologies: ["React.js", "Express.js", "PostgreSQL", "Firebase Auth", "Tailwind CSS", "Node.js", "React-to-Print", "Render"],
       features: [
-        "Built a production-grade full-stack health insurance platform with 20+ validated form rules, multi-step workflows, and role-based access.",
-        "Engineered 15+ RESTful APIs and PostgreSQL schemas with ACID-compliant transactions, FK constraints, and optimized queries.",
-        "Integrated Firebase Auth for secure session handling and RBAC, and deployed to Render with full CI/CD automation.",
-        "Designed a dynamic pricing engine supporting UPI, card, and EMI methods with frequency-based premium calculations.",
-        "Delivered a responsive, mobile-first PWA UI with PDF export, toast notifications, admin CRUD dashboard, and analytics."
+        "Developed full-stack health insurance platform with React.js, Express.js, and PostgreSQL featuring multi-step application forms, Firebase authentication, and role-based access control.",
+        "Designed 5 normalized PostgreSQL tables with foreign key relationships and ACID-compliant transactions ensuring data integrity across personal information, coverage details, and family records.",
+        "Built comprehensive admin dashboard with CRUD operations, advanced search/filter functionality, and bulk data management for efficient oversight of insurance policies and customer data.",
+        "Integrated multiple payment gateways (UPI, Card, Net Banking, EMI) with dynamic pricing engine calculating premiums based on plan tier, coverage amount, and payment frequency.",
+        "Implemented complex validation logic including gender-specific benefits, age-based relationship rules, BMI calculation, and PDF generation with responsive dark/light mode UI deployed on Render."
       ],
       githubUrl: "https://github.com/KrishnaNAcharya/HIMS",
       liveUrl: "https://hims-f.onrender.com",

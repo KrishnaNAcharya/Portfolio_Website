@@ -19,7 +19,7 @@ const Home = memo(function Home({ setLoading }: HomeProps) {
   }, [setLoading])
 
   // Centralize resume URL so both desktop and mobile buttons use the same link
-  const RESUME_URL = "https://drive.google.com/file/d/1ioc5koS8k5aYkScQb4qM9_TSr-KS-cYx/view?usp=sharing"
+  const RESUME_URL = "https://drive.google.com/file/d/1iC6icsoHIYJu9r-JGymriCUw3rcbIFTK/view?usp=drive_link"
 
   useEffect(() => {
     const timer = setTimeout(handleLoadingComplete, 100)
@@ -92,9 +92,9 @@ const Home = memo(function Home({ setLoading }: HomeProps) {
       <div className='max-w-[1440px] w-full mx-auto flex flex-col items-center justify-center px-3 md:px-10 md:flex-row md:gap-20'>
         <header className='flex flex-col justify-center w-full text-center md:text-left md:w-3/5'>
           <h1 ref={textRef} className='text-4xl sm:text-5xl md:text-[5.5rem] font-medium text-white'>
-            Hello there! My name is{" "}
+            Hello there! I'm{" "}
             <span className='animate-shine text-4xl sm:text-5xl md:text-[5.8rem]' aria-label="Krishna" style={{ fontFamily: '"Great Vibes", "Dancing Script", cursive', fontWeight: '400', letterSpacing: '0.05em' }}>
-              Krishna
+              Krishna N Acharya
             </span>.
           </h1>
           <div ref={descriptionRef} className="text-white text-lg md:text-2xl py-4 md:py-5 max-w-3xl text-justify leading-relaxed">

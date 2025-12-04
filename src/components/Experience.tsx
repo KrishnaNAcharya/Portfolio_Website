@@ -40,16 +40,17 @@ const Experience = memo(function Experience() {
     },
     {
       id: 2,
-      title: "Full Stack Developer",
+      title: "Full Stack Developer → Technical Advisor",
       company: "Intelligence and Data Science Engineers' Association",
       companyUrl: "https://idea-nmamit.in",
       location: "NMAM Institute of Technology, Nitte",
       period: "August 2024 - Present",
+      certificateUrl: "https://drive.google.com/file/d/1hMHxjINLXC5sajj-U5HL3ngzGfRkqvUZ/view?usp=sharing",
       description: [
-        "Built a sophisticated image gallery page with 25+ state variables, a 3D carousel, and semantic URL filters using Next.js 15, TypeScript and Tailwind CSS for AI and DS department Association, NMAM Institute of Technology, Nitte.",
+        "Built an advanced image gallery featuring a 3D carousel using Next.js 15, integrated with Cloudinary and styled with TypeScript and Tailwind CSS for AI and DS department Association, NMAM Institute of Technology, Nitte.",
         "Engineered a fully responsive and accessible UI with Framer Motion, Radix UI, and shadcn components, ensuring smooth animations and cross-device usability.",
-        "Architected modular API routes and a relational PostgreSQL database with Prisma ORM and Fuse.js, enabling optimized fuzzy search, category-based filtering and performant data queries.",
-        "Integrated Cloudinary for progressive image loading and CDN delivery, reducing bandwidth by 70% and followed Agile sprint cycles in a 10-member team using Git-based version control and CI/CD workflows using Vercel."
+        "Architected modular API routes and implemented NeonDB with Prisma ORM, leveraging Fuse.js for optimized fuzzy search, advanced category filtering, and high-performance data retrieval.",
+        "Transitioned to Technical Advisor role (August 2025 onwards), now guiding a 10-member Agile team, leading sprint cycles, mentoring developers, and providing strategic technical consultation on architecture decisions and best practices."
       ],
       technologies: [
         "Next.js 15",
@@ -62,6 +63,7 @@ const Experience = memo(function Experience() {
         "Prisma ORM",
         "Cloudinary",
         "Agile",
+        "Technical Leadership",
         "CI/CD",
         "Git",
         "Vercel"
@@ -107,30 +109,54 @@ const Experience = memo(function Experience() {
             ))}
           </ul>
           {renderSkills(exp.technologies)}
-          {/* Website button: desktop (hidden on mobile) */}
-          {exp.companyUrl && (
-            <div className="hidden md:block mt-4">
-              <a
-                href={exp.companyUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 text-sm border border-emerald-500 hover:bg-emerald-500/20 rounded-md duration-200 text-emerald-400 hover:text-emerald-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 focus:ring-offset-gray-900"
-              >
-                View Website
-              </a>
+          {/* Buttons container: desktop (hidden on mobile) */}
+          {(exp.companyUrl || exp.certificateUrl) && (
+            <div className="hidden md:flex justify-between items-center mt-4">
+              {exp.companyUrl && (
+                <a
+                  href={exp.companyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 text-sm border border-emerald-500 hover:bg-emerald-500/20 rounded-md duration-200 text-emerald-400 hover:text-emerald-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+                >
+                  View Website
+                </a>
+              )}
+              {exp.certificateUrl && (
+                <a
+                  href={exp.certificateUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 text-sm border border-emerald-500 hover:bg-emerald-500/20 rounded-md duration-200 text-emerald-400 hover:text-emerald-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+                >
+                  View Certificate
+                </a>
+              )}
             </div>
           )}
-          {/* Website button: mobile visible */}
-          {exp.companyUrl && (
-            <div className="block md:hidden mt-3">
-              <a
-                href={exp.companyUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 text-sm border border-emerald-500 hover:bg-emerald-500/20 rounded-md duration-200 text-emerald-400 hover:text-emerald-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 focus:ring-offset-gray-900 w-full inline-block text-center"
-              >
-                View Website
-              </a>
+          {/* Buttons container: mobile visible */}
+          {(exp.companyUrl || exp.certificateUrl) && (
+            <div className="flex flex-col md:hidden gap-2 mt-3">
+              {exp.companyUrl && (
+                <a
+                  href={exp.companyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 text-sm border border-emerald-500 hover:bg-emerald-500/20 rounded-md duration-200 text-emerald-400 hover:text-emerald-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 focus:ring-offset-gray-900 text-center"
+                >
+                  View Website
+                </a>
+              )}
+              {exp.certificateUrl && (
+                <a
+                  href={exp.certificateUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 text-sm border border-emerald-500 hover:bg-emerald-500/20 rounded-md duration-200 text-emerald-400 hover:text-emerald-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 focus:ring-offset-gray-900 text-center"
+                >
+                  View Certificate
+                </a>
+              )}
             </div>
           )}
         </>

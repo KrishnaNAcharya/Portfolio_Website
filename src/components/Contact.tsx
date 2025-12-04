@@ -1,5 +1,6 @@
 import { useRef, useEffect, memo, useMemo, useCallback } from 'react'
 import { FaGithub, FaLinkedin, FaEnvelope, FaPhoneAlt } from 'react-icons/fa'
+import { SiLeetcode } from 'react-icons/si'
 import { IconType } from 'react-icons'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -36,6 +37,14 @@ const Contact = memo(function Contact() {
       icon: FaLinkedin,
       label: "LinkedIn",
       ariaLabel: "Visit my LinkedIn profile"
+    },
+    {
+      href: "https://leetcode.com/u/Krishna_N_Acharya",
+      target: "_blank",
+      rel: "noopener noreferrer",
+      icon: SiLeetcode,
+      label: "LeetCode",
+      ariaLabel: "Visit my LeetCode profile"
     },
     {
       href: "mailto:knacharyakavoor@gmail.com",

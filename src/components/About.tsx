@@ -161,7 +161,7 @@ const About = memo(function About() {
         <article ref={setSectionRef(0)} className='text-justify px-2 md:px-0'>
           <h3 className='text-3xl font-semibold mt-8 md:mt-10 mb-4 md:mb-5 text-center sm:text-left'>Current Focus</h3>
           <p className='text-lg md:text-2xl text-white text-justify leading-relaxed'>
-            I am currently focused on strengthening my problem-solving skills through an in-depth study of Data Structures and Algorithms (DSA). Alongside this, I am actively working on my research papers and building projects such as MentorStack, applying full-stack development principles with an emphasis on performance, UX, and scalability. Beyond technical growth, I prioritize maintaining both physical and mental well-being and am preparing rigorously for upcoming placement opportunities.
+            I am currently focused on strengthening my problem-solving skills through an in-depth study of Data Structures and Algorithms (DSA). I also plan to explore System Design and SpringBoot when I get the time. Beyond technical growth, I prioritize maintaining both physical and mental well-being and am preparing rigorously for upcoming placement opportunities.
           </p>
         </article>
 
@@ -176,7 +176,7 @@ const About = memo(function About() {
           <h3 className='text-3xl font-semibold mt-10 mb-5 text-center sm:text-left'>Outside the Code</h3>
           <p className='text-lg md:text-2xl text-white text-justify leading-relaxed'>
             In my downtime, I enjoy listening to music, playing video games, and exploring technologies, both new and vintage. I&apos;m also passionate about photography and often find myself deep in niche research topics just for the thrill of understanding something new.<br/>
-            Fun fact: I rarely watch movies, series, or anime. Instead, I read the plot summaries. It&apos;s faster, more efficient, and oddly satisfying (yes, I&apos;m that person). And while I&apos;m somewhat active on platforms like Reddit and LeetCode, good luck finding me. I prefer to keep a low profile.
+            Fun fact: I rarely watch movies, series, or anime. Instead, I read the plot summaries. It&apos;s faster, more efficient, and oddly satisfying (yes, I&apos;m that person).
           </p>
         </div>
       </div>
