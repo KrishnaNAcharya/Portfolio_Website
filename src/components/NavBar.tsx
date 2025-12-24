@@ -18,9 +18,10 @@ const NavBar = memo(function NavBar({ loading }: NavBarProps) {
     { id: 3, link: 'experience', icon: <CustomIcons.Experience /> },
     { id: 4, link: 'projects', icon: <CustomIcons.Projects /> },
     { id: 5, link: 'achievements', icon: <CustomIcons.Achievements /> },
-    { id: 6, link: 'certifications', icon: <CustomIcons.Certificates /> },
-    { id: 7, link: 'skills', icon: <CustomIcons.Skills /> },
-    { id: 8, link: 'contact', icon: <CustomIcons.Contact /> }
+    { id: 6, link: 'publications', icon: <CustomIcons.Certificates /> },
+    { id: 7, link: 'certifications', icon: <CustomIcons.Certificates /> },
+    { id: 8, link: 'skills', icon: <CustomIcons.Skills /> },
+    { id: 9, link: 'contact', icon: <CustomIcons.Contact /> }
   ], [])
 
   const navItems = useMemo(() => 

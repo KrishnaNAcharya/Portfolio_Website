@@ -90,6 +90,20 @@ export interface SkillCategory {
   icon?: ReactNode
 }
 
+// Publication types
+export interface PublicationItem {
+  id: number
+  title: string
+  authors: string[]
+  journal?: string
+  conference?: string
+  date: string
+  description: string
+  url?: string
+  doi?: string
+  keywords?: string[]
+}
+
 // Contact types
 export interface ContactInfo {
   email: string

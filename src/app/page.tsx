@@ -12,6 +12,7 @@ const Home = lazy(() => import('@/components/Home'))
 const Experience = lazy(() => import('@/components/Experience'))
 const Projects = lazy(() => import('@/components/Projects'))
 const Achievements = lazy(() => import('@/components/Achievements'))
+const Publications = lazy(() => import('@/components/Publications'))
 const Certificates = lazy(() => import('@/components/Certificates'))
 const About = lazy(() => import('@/components/About'))
 const Education = lazy(() => import('@/components/Education'))
@@ -81,6 +82,7 @@ export default function HomePage() {
           <Experience />
           <Projects />
           <Achievements />
+          <Publications />
           <Certificates />
           <About />
           <Contact />

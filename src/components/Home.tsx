@@ -19,7 +19,7 @@ const Home = memo(function Home({ setLoading }: HomeProps) {
   }, [setLoading])
 
   // Centralize resume URL so both desktop and mobile buttons use the same link
-  const RESUME_URL = "https://drive.google.com/file/d/1iC6icsoHIYJu9r-JGymriCUw3rcbIFTK/view?usp=drive_link"
+  const RESUME_URL = "https://drive.google.com/file/d/1Bc_4K2VqPVEkbq913JrijjUfd7-SwRz-/view?usp=sharing"
 
   useEffect(() => {
     const timer = setTimeout(handleLoadingComplete, 100)

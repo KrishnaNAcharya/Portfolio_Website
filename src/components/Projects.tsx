@@ -61,7 +61,7 @@ const Projects = memo(function Projects() {
         "Optimized training using PyTorch Lightning-style routines, advanced loss functions (L1, perceptual), and visualizations with SAR, ground-truth, and generated RGB outputs, while keeping the system within a 1.5GB VRAM limit."
       ],
       githubUrl: "https://github.com/KrishnaNAcharya/SAR",
-      liveUrl: "example.com",
+      liveUrl: "https://huggingface.co/spaces/sar-image-colorizer/NASAR-SARImageColorization",
       category: "ai"
     },
     {

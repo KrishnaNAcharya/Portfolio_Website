@@ -18,12 +18,14 @@ const Experience = memo(function Experience() {
       title: "Full Stack Developer",
       company: "Inspirante Technologies Private Limited",
       location: "Remote, India",
-      period: "May 2025 - Present",
+      period: "31 May 2025 - 30 November 2025",
+      certificateUrl: "https://drive.google.com/file/d/1-aUewJoKWJy-pUSDaUnKP6D7gRgEMSQ0/view?usp=sharing",
       description: [
         "Developed an enterprise-grade College ERP system handling academic workflows such as attendance, enrollment, assessments, and multi-role dashboards using Next.js 15, TypeScript, PostgreSQL, and Prisma ORM, while mentoring junior developers.",
         "Implemented scalable RESTful APIs with modular routing, JWT-based RBAC, and CSV import/export pipelines, ensuring robust validation across student, teacher, and admin workflows.",
         "Designed a normalized relational schema with 40+ entities and 20+ tables supporting electives, multi-attempt assessments, and semester-wise offerings with department-based restrictions.",
-        "Optimized performance and cost with Prisma connection pooling, filtered queries, and selective data inclusion, enabling seamless usage for over 10,000+ users."
+        "Optimized performance and cost with Prisma connection pooling, filtered queries, and selective data inclusion, enabling seamless usage for over 10,000+ users.",
+        "Developed responsive, accessible dashboards using Next.js App Router, React Server Components, implementing server-side rendering for 15+ pages with optimized data fetching patterns."
       ],
       technologies: [
         "Next.js 15",
@@ -111,7 +113,7 @@ const Experience = memo(function Experience() {
           {renderSkills(exp.technologies)}
           {/* Buttons container: desktop (hidden on mobile) */}
           {(exp.companyUrl || exp.certificateUrl) && (
-            <div className="hidden md:flex justify-between items-center mt-4">
+            <div className={`hidden md:flex items-center mt-4 ${exp.companyUrl && exp.certificateUrl ? 'justify-between' : 'justify-end'}`}>
               {exp.companyUrl && (
                 <a
                   href={exp.companyUrl}
