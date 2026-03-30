@@ -132,6 +132,23 @@ const Projects = memo(function Projects() {
       liveUrl: "https://www.krishnanacharya.me",
       category: "web"
     },
+    {
+      id: 8,
+      title: "IDEA Association Branch Website",
+      description: "Official interactive website for Intelligence and Data Science Engineers' Association with 3D carousel and fuzzy search capabilities",
+      image: "/assets/IDEA.png",
+      technologies: ["Next.js 15", "TypeScript", "Tailwind CSS", "Framer Motion", "Radix UI", "shadcn/ui", "PostgreSQL", "Prisma ORM", "Cloudinary"],
+      features: [
+        "Built an advanced image gallery featuring a 3D carousel using Next.js 15, integrated with Cloudinary and styled with TypeScript and Tailwind CSS.",
+        "Engineered a fully responsive and accessible UI with Framer Motion, Radix UI, and shadcn components, ensuring smooth animations and cross-device usability.",
+        "Architected modular API routes and implemented NeonDB with Prisma ORM, leveraging Fuse.js for optimized fuzzy search, advanced category filtering, and high-performance data retrieval.",
+        "Developed a secure, role-based admin dashboard integrating custom authentication hooks and Firebase, streamlining the management of dynamic content like events, team profiles, and achievements.",
+        "Designed a dynamic form-generation engine with unified media uploading capabilities, orchestrating seamless data pipelines across client interfaces, Firebase Storage, and Google Drive APIs."
+      ],
+      githubUrl: "",
+      liveUrl: "https://idea-nmamit.in",
+      category: "web"
+    }
   ], [])
 
   // Memoize button click handlers

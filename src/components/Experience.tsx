@@ -15,6 +15,19 @@ const Experience = memo(function Experience() {
   const experiencesData = useMemo((): ExperienceItem[] => [
     {
       id: 1,
+      title: "Backend Intern",
+      company: "Thomson Reuters",
+      location: "",
+      period: "",
+      description: [],
+      technologies: [
+        "Java",
+        "Spring Boot",
+        "Python",
+      ]
+    },
+    {
+      id: 2,
       title: "Full Stack Developer",
       company: "Inspirante Technologies Private Limited",
       location: "Remote, India",
@@ -39,38 +52,7 @@ const Experience = memo(function Experience() {
         "CSV",
         "RESTful APIs"
       ]
-    },
-    {
-      id: 2,
-      title: "Full Stack Developer → Technical Advisor",
-      company: "Intelligence and Data Science Engineers' Association",
-      companyUrl: "https://idea-nmamit.in",
-      location: "NMAM Institute of Technology, Nitte",
-      period: "August 2024 - Present",
-      certificateUrl: "https://drive.google.com/file/d/1hMHxjINLXC5sajj-U5HL3ngzGfRkqvUZ/view?usp=sharing",
-      description: [
-        "Built an advanced image gallery featuring a 3D carousel using Next.js 15, integrated with Cloudinary and styled with TypeScript and Tailwind CSS for AI and DS department Association, NMAM Institute of Technology, Nitte.",
-        "Engineered a fully responsive and accessible UI with Framer Motion, Radix UI, and shadcn components, ensuring smooth animations and cross-device usability.",
-        "Architected modular API routes and implemented NeonDB with Prisma ORM, leveraging Fuse.js for optimized fuzzy search, advanced category filtering, and high-performance data retrieval.",
-        "Transitioned to Technical Advisor role (August 2025 onwards), now guiding a 10-member Agile team, leading sprint cycles, mentoring developers, and providing strategic technical consultation on architecture decisions and best practices."
-      ],
-      technologies: [
-        "Next.js 15",
-        "TypeScript",
-        "Tailwind CSS",
-        "Framer Motion",
-        "Radix UI",
-        "shadcn/ui",
-        "PostgreSQL",
-        "Prisma ORM",
-        "Cloudinary",
-        "Agile",
-        "Technical Leadership",
-        "CI/CD",
-        "Git",
-        "Vercel"
-      ]
-    },
+    }
   ], [])
 
   // Memoize skill rendering function
@@ -103,13 +85,15 @@ const Experience = memo(function Experience() {
       ) as ReactNode,
       description: (
         <>
-          <p className="text-sm text-emerald-400 mb-2">{exp.period}</p>
-          <p className="text-sm text-zinc-400 mb-2">{exp.location}</p>
-          <ul className="list-disc pl-5 space-y-2">
-            {exp.description.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
+          {exp.period && <p className="text-sm text-emerald-400 mb-2">{exp.period}</p>}
+          {exp.location && <p className="text-sm text-zinc-400 mb-2">{exp.location}</p>}
+          {exp.description && exp.description.length > 0 && (
+            <ul className="list-disc pl-5 space-y-2">
+              {exp.description.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+          )}
           {renderSkills(exp.technologies)}
           {/* Buttons container: desktop (hidden on mobile) */}
           {(exp.companyUrl || exp.certificateUrl) && (
