@@ -43,6 +43,7 @@ const About = memo(function About() {
           <li>Tailwind CSS</li>
           <li>GSAP</li>
           <li>TensorFlow</li>
+          <li>Spring Boot</li>
         </ul>
       ) as ReactNode,
     },
