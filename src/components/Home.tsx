@@ -148,8 +148,7 @@ const Home = memo(function Home({ setLoading }: HomeProps) {
             {/* Role box - positioned more inside bottom-right edge */}
             <div className="absolute -bottom-2 -right-2 bg-black/80 backdrop-blur-md rounded-xl px-4 py-3 border border-white/30 shadow-lg">
               <div className="text-white text-right">
-                <div className="text-base font-semibold">Full Stack & ML Developer</div>
-                <div className="text-sm text-emerald-400">AI Engineer and Enthusiast</div>
+                <div className="text-base font-semibold text-emerald-400">AI & Backend Developer</div>
               </div>
             </div>
           </div>
@@ -172,8 +171,7 @@ const Home = memo(function Home({ setLoading }: HomeProps) {
             {/* Role box - positioned more inside for mobile */}
             <div className="absolute -bottom-1 -right-1 bg-black/80 backdrop-blur-md rounded-lg px-3 py-2 border border-white/30 shadow-lg">
               <div className="text-white text-right">
-                <div className="text-sm font-semibold">Full Stack & ML Developer</div>
-                <div className="text-xs text-emerald-400">AI Engineer and Enthusiast</div>
+                <div className="text-sm font-semibold text-emerald-400">AI & Backend Developer</div>
               </div>
             </div>
           </div>
