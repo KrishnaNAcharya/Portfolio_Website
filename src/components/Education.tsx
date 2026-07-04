@@ -18,7 +18,7 @@ const Education = memo(function Education() {
       institution: "NMAM Institute of Technology",
       location: "Nitte, India",
       degree: "B.Tech in Artificial Intelligence and Data Science",
-      score: "CGPA: 8.85",
+      score: "CGPA: 9.01",
       duration: "August 2022 - May 2026 (Expected)",
     },
     {
@@ -41,11 +41,13 @@ const Education = memo(function Education() {
 
   // Memoize education description rendering
   const renderEducationDescription = useCallback((edu: EducationItem): ReactNode => (
-    <div className="flex-grow">
-      <p className="text-sm text-emerald-400 mb-1">{edu.degree}</p>
-      <p className="text-sm text-zinc-400 mb-1">{edu.location}</p>
-      <p className="text-sm text-zinc-400 mb-2">{edu.duration}</p>
-      <p className="font-semibold text-emerald-300">{edu.score}</p>
+    <div className="flex-grow flex flex-col gap-1.5">
+      <p className="text-sm text-emerald-400">{edu.degree}</p>
+      <p className="text-sm text-zinc-400">{edu.location}</p>
+      <p className="text-sm text-zinc-400">{edu.duration}</p>
+      <p className="text-sm font-semibold text-emerald-300 whitespace-nowrap">
+        {edu.score}
+      </p>
     </div>
   ), [])
 
@@ -53,7 +55,11 @@ const Education = memo(function Education() {
   const transformedEducation = useMemo(() => 
     educationData.map(edu => ({
       id: edu.id,
-      title: edu.institution,
+      title: (
+        <div className="min-h-[4.5rem] flex items-start">
+          {edu.institution}
+        </div>
+      ),
       description: renderEducationDescription(edu),
     })), 
     [educationData, renderEducationDescription]

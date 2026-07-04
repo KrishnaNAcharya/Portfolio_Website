@@ -15,7 +15,7 @@ const Experience = memo(function Experience() {
   const experiencesData = useMemo((): ExperienceItem[] => [
     {
       id: 1,
-      title: "Backend Intern",
+      title: "AI Backend Intern",
       company: "Thomson Reuters",
       location: "",
       period: "",
@@ -24,6 +24,10 @@ const Experience = memo(function Experience() {
         "Java",
         "Spring Boot",
         "Python",
+        "LangGraph",
+        "LangChain",
+        "MCP",
+        "Agents"
       ]
     },
     {
@@ -207,7 +211,7 @@ const Experience = memo(function Experience() {
         <main aria-label="Professional work experience and accomplishments">
           <HoverEffect 
             items={transformedExperiences} 
-            className="grid grid-cols-1 md:grid-cols-2 auto-cols-fr gap-6 md:gap-8 py-4" 
+            className="grid grid-cols-1 gap-6 md:gap-8 py-4" 
           />
         </main>
       </div>

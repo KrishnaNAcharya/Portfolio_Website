@@ -38,7 +38,7 @@ export const HoverEffect = ({
   return (
     <div
       className={cn(
-        "grid py-4",
+        "grid grid-cols-1 py-4",
         className
       )}
     >
@@ -83,7 +83,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "rounded-2xl h-full w-full p-4 overflow-hidden bg-black/50 backdrop-blur-sm border border-transparent dark:border-white/[0.2] group-hover:border-emerald-500 group-hover:shadow-[0_0_15px_1px_rgba(16,185,129,0.6)] relative z-20 flex flex-col transition-all duration-200",
+        "rounded-2xl h-full w-full p-5 overflow-hidden bg-black/50 backdrop-blur-sm border border-transparent dark:border-white/[0.2] group-hover:border-emerald-500 group-hover:shadow-[0_0_15px_1px_rgba(16,185,129,0.6)] relative z-20 flex flex-col transition-all duration-200",
         className
       )}
     >
@@ -97,7 +97,7 @@ export const CardTitle = ({
   children,
 }: CardTitleProps) => {
   return (
-    <h4 className={cn("text-zinc-100 font-bold tracking-wide mt-4 text-2xl md:text-3xl", className)}>
+    <h4 className={cn("text-zinc-100 font-bold tracking-wide mt-3 text-2xl md:text-3xl", className)}>
       {children}
     </h4>
   )
@@ -110,7 +110,7 @@ export const CardDescription = ({
   return (
     <div
       className={cn(
-        "mt-4 text-zinc-400 tracking-wide leading-relaxed text-base md:text-lg flex-grow flex flex-col",
+        "mt-3 text-zinc-400 tracking-wide leading-relaxed text-base md:text-lg flex-grow flex flex-col w-full",
         className
       )}
     >
