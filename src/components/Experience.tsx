@@ -24,8 +24,8 @@ const Experience = memo(function Experience() {
         "Java",
         "Spring Boot",
         "Python",
-        "Langraph",
-        "Langchain",
+        "LangGraph",
+        "LangChain",
         "MCP",
         "Agents"
       ]

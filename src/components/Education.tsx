@@ -59,7 +59,7 @@ const Education = memo(function Education() {
         <div className="min-h-[4.5rem] flex items-start">
           {edu.institution}
         </div>
-      ) as ReactNode,
+      ),
       description: renderEducationDescription(edu),
     })), 
     [educationData, renderEducationDescription]
